@@ -30,6 +30,7 @@ def get_ai_content(text, prompt_type="summary"):
 def sync_github():
     feeds = []
     try:
+        # 搜索 CVE-2026 或最新的 Exploit
         res = requests.get("https://api.github.com/search/repositories?q=CVE-2026+OR+Exploit&sort=updated", timeout=15).json()
         for repo in res.get('items', [])[:4]:
             feeds.append({"name": repo['full_name'], "url": repo['html_url'], "desc": get_ai_content(repo['description'] or "No desc", "summary")})
@@ -57,50 +58,58 @@ def run():
     github_data = sync_github()
     news_data = crawl_solidot()
     
-    # 构造卡片内容
-    g_html = "".join([f"<div style='margin-bottom:15px;padding:12px;background:rgba(255,121,198,0.1);border-radius:8px;border:1px solid #ff79c6;'><a href='{g['url']}' target='_blank' style='color:#ff79c6;text-decoration:none;font-weight:bold;'>{g['name']}</a><br><small style='color:#bd93f9;'>{g['desc']}</small></div>" for g in github_data])
-    n_html = "".join([f"<div style='margin-bottom:18px;'><a href='{n['url']}' target='_blank' style='color:#8be9fd;text-decoration:none;font-weight:bold;'>• {n['title']}</a><p style='font-size:13px;color:#f8f8f2;margin-top:6px;opacity:0.8;'>{n['summary']}</p></div>" for n in news_data])
+    # 构建 HTML 结构
+    g_list = "".join([f"<div class='item-card-p'><a href='{g['url']}'>{g['name']}</a><p>{g['desc']}</p></div>" for g in github_data])
+    n_list = "".join([f"<div class='item-card-b'><a href='{n['url']}'>{n['title']}</a><p>{n['summary']}</p></div>" for n in news_data])
     
-    # 🚩 重要：CSS 全部大括号使用 {{}} 逃逸，确保不会触发 Python SyntaxError
+    # 🚩 修正大括号转义，确保 CSS 生效
     html = f"""
     <html><head><meta charset='utf-8'><meta http-equiv="refresh" content="600">
     <style>
-        body{{{{ background: #0b0e14; color: #f8f8f2; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }}}}
-        .banner{{{{ width: 100%; height: 250px; background: url('https://img.api.aa1.cn/2026/03/05/tuyu-aesthetic.jpg') center/cover; position: relative; border-bottom: 4px solid #ff79c6; }}}}
-        .banner-overlay{{{{ position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, #0b0e14); height: 100px; }}}}
-        .content{{{{ padding: 25px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 20px; }}}}
-        .panel{{{{ background: rgba(25, 29, 45, 0.7); backdrop-filter: blur(10px); border: 1px solid #2d3143; padding: 20px; border-radius: 15px; }}}}
-        .word-box{{{{ background: linear-gradient(135deg, #ff79c6 0%, #bd93f9 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 0 20px rgba(255,121,198,0.3); }}}}
-        .jp-word{{{{ font-size: 48px; font-weight: bold; color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.5); }}}}
-        h3{{{{ color: #ff79c6; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; border-left: 3px solid #ff79c6; padding-left: 10px; margin-bottom: 15px; }}}}
-        @media (max-width: 800px) {{{{ .content {{{{ grid-template-columns: 1fr; }}}} }}}}
+        body {{ 
+            background-color: #0d0d16; 
+            color: #e0e0e0; 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0; padding: 20px; 
+            background-image: linear-gradient(rgba(13, 13, 22, 0.8), rgba(13, 13, 22, 0.8)), url('tuyu_bg.jpg'); 
+            background-size: cover; background-attachment: fixed;
+        }}
+        .header {{ border-left: 5px solid #ff007f; padding-left: 15px; margin-bottom: 30px; }}
+        .header h1 {{ color: #ff007f; margin: 0; font-size: 28px; letter-spacing: 2px; text-shadow: 0 0 10px rgba(255, 0, 127, 0.5); }}
+        .grid {{ display: grid; grid-template-columns: 1fr 1.5fr; gap: 20px; }}
+        .section-box {{ background: rgba(20, 20, 35, 0.9); padding: 20px; border-radius: 4px; border: 1px solid #333; }}
+        .word-title {{ font-size: 45px; color: #00d4ff; font-weight: bold; margin: 10px 0; text-shadow: 0 0 15px rgba(0, 212, 255, 0.4); }}
+        .word-desc {{ color: #bbb; line-height: 1.6; border-top: 1px solid #444; padding-top: 10px; }}
+        h3 {{ color: #ff007f; font-size: 14px; text-transform: uppercase; margin-bottom: 15px; opacity: 0.8; }}
+        a {{ text-decoration: none; font-weight: bold; transition: 0.3s; }}
+        .item-card-p a {{ color: #ff007f; }}
+        .item-card-b a {{ color: #00d4ff; }}
+        .item-card-p, .item-card-b {{ margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #222; }}
+        .item-card-p p, .item-card-b p {{ font-size: 13px; color: #999; margin: 5px 0 0 0; }}
+        @media (max-width: 900px) {{ .grid {{ grid-template-columns: 1fr; }} }}
     </style></head><body>
-        <div class="banner"><div class="banner-overlay"></div></div>
-        <div style="padding-left: 25px; margin-top: -30px; position: relative; z-index: 1;">
-            <h1 style="color: #ff79c6; font-style: italic; text-shadow: 0 0 10px #ff79c6;">TUYU_INTEL_SYSTEM // V14.0</h1>
+        <div class="header">
+            <h1>TUYU_INTEL_TERMINAL // V15.0</h1>
+            <small style="color: #666;">Marble_soda // Network Security Intel // osu!mania 11k pp</small>
         </div>
-        <div class="content">
-            <div class="panel">
-                <h3>Vocabulary Update</h3>
-                <div class="word-box">
-                    <div class="jp-word">{word}</div>
-                    <p style="margin-top:15px; font-size:16px; line-height:1.4;">{desc}</p>
-                </div>
+        <div class="grid">
+            <div class="section-box">
+                <h3>Daily Japanese补完</h3>
+                <div class="word-title">{word}</div>
+                <div class="word-desc">{desc}</div>
+                <br><br>
                 <h3>GitHub CVE Armory</h3>
-                {g_html if g_html else "Awaiting mission data..."}
+                {g_list if g_list else "入库中..."}
             </div>
-            <div class="panel">
+            <div class="section-box">
                 <h3>Global Threat Feed</h3>
-                {n_html if n_html else "No threats detected."}
+                {n_list if n_list else "暂无威胁"}
             </div>
         </div>
-        <footer style="text-align: center; padding: 20px; color: #44475a; font-size: 11px;">
-             Marble_soda // 2026-03-05 // osu!mania PP: 11,000+
-        </footer>
     </body></html>
     """
     with open("index.html", "w", encoding="utf-8") as f: f.write(html)
-    requests.get(f"https://api.day.app/{BARK_KEY}/指挥中心刷新完成/词汇: {word}")
+    requests.get(f"https://api.day.app/{BARK_KEY}/指挥中心已更新/今日词汇: {word}")
 
 if __name__ == "__main__":
     run()
