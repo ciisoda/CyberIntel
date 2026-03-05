@@ -1,27 +1,19 @@
-name: Daily Security Intel
+import os
+import requests
+from openai import OpenAI
 
-on:
-  workflow_dispatch: # 允许你手动点按钮测试
+# 1. 尝试获取钥匙
+API_KEY = os.getenv("DEEPSEEK_API_KEY")
+BARK_KEY = os.getenv("BARK_KEY")
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 检出代码
-        uses: actions/checkout@v3
+# 【增加自检】如果拿不到钥匙，直接打印出来并停止，方便看日志
+if not API_KEY or not BARK_KEY:
+    print(f"❌ 环境变量读取失败！")
+    print(f"DEEPSEEK_API_KEY 是否为空: {API_KEY is None}")
+    print(f"BARK_KEY 是否为空: {BARK_KEY is None}")
+    exit(1) # 强制停止，让 GitHub Actions 显示红叉并留下这段日志
 
-      - name: 安装 Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+client = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com")
+BARK_URL = f"https://api.day.app/{BARK_KEY}/"
 
-      - name: 安装依赖
-        run: pip install openai requests
-
-      - name: 运行情报员
-        # ============ 关键就在这里！============
-        env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          BARK_KEY: ${{ secrets.BARK_KEY }}
-        # ======================================
-        run: python master_intel.py
+# ... 后面保持不变 ...
