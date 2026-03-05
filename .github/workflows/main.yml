@@ -23,6 +23,6 @@ jobs:
       - name: 运行情报员
         env:
           # 从刚才填的保险箱里读取 Key
-          DEEPSEEK_API_KEY: ${{sk-7c5f0784703742bd923d64015035eedd}}
-          BARK_KEY: ${{ Eda3xELXUYRR8eeQ4gWam8}}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          BARK_KEY: ${{ secrets.BARK_KEY }}
         run: python master_intel.py
