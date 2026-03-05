@@ -1,42 +1,41 @@
 name: Daily Security Intel
 
 on:
-  workflow_dispatch: # 允许手动点击运行
+  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # 每天早上 8:00 (UTC 0) 自动运行
+    - cron: '0 0 * * *' # 每天早上 8 点自动运行
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 1. 检出代码
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: 2. 连通 Tailscale 隧道
+      - name: 1. 连接 Tailscale 隧道
         uses: tailscale/github-action@v2
         with:
           authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
 
-      - name: 3. 安装 Python 并在云端跑 AI
+      - name: 2. 配置 Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: 4. 安装依赖
-        run: pip install openai requests
-
-      - name: 5. 运行情报员并生成 HTML
+      - name: 3. 执行 AI 情报分析
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           BARK_KEY: ${{ secrets.BARK_KEY }}
-        run: python3 master_intel.py
+        run: |
+          pip install openai requests
+          python3 master_intel.py
 
-      - name: 6. 异地投送：通过隧道传回 NAS
+      - name: 4. 异地投送至 NAS
         uses: appleboy/scp-action@master
         with:
           host: 100.80.203.9
-          username: ${{ secrets.NAS_USER }}
+          username: github_bot
           password: ${{ secrets.NAS_PASSWORD }}
-          port: 22  # 如果你 NAS 的 SFTP 端口改了，这里也要改
-          source: "intel_report.html" # 确保你 Python 脚本生成的 HTML 文件名是这个
-          target: "/volume1/homes/jcliu1122/你的子文件夹路径/" # 🚩 这里一定要改成你 NAS 上的真实路径
+          port: 22
+          source: "index.html"
+          # 🚩 请根据你的真实管理员文件夹名修改下方路径
+          target: "/volume1/homes/Marble_soda/资料/新闻/"
