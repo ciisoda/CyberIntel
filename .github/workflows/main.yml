@@ -33,11 +33,9 @@ jobs:
         uses: appleboy/scp-action@master
         with:
           host: 100.80.203.9
-          # 自动读取你刚刚改好的 Marble_soda 账号
           username: ${{ secrets.NAS_USER }}
           password: ${{ secrets.NAS_PASSWORD }}
           port: 22
           source: "index.html"
-          # 直接投送到你自己的“家”里，管理员对自己家有绝对权限
+          # 🚩 删掉 rm: true，直接覆盖里面的 index.html
           target: "/volume1/homes/Marble_soda/资料/新闻/"
-          rm: true
