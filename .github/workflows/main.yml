@@ -29,13 +29,15 @@ jobs:
           pip install openai requests
           python3 master_intel.py
 
-      - name: 4. 异地投送至 NAS
+      - name: 4. 异地投送至管理员文件夹
         uses: appleboy/scp-action@master
         with:
           host: 100.80.203.9
-          username: github_bot
+          # 自动读取你刚刚改好的 Marble_soda 账号
+          username: ${{ secrets.NAS_USER }}
           password: ${{ secrets.NAS_PASSWORD }}
           port: 22
           source: "index.html"
-          # 🚩 确保这里的 Marble_soda 大小写和你 NAS 里一模一样
+          # 直接投送到你自己的“家”里，管理员对自己家有绝对权限
           target: "/volume1/homes/Marble_soda/资料/新闻/"
+          rm: true
