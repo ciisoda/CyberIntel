@@ -37,5 +37,5 @@ jobs:
           password: ${{ secrets.NAS_PASSWORD }}
           port: 22
           source: "index.html"
-          # 🚩 请根据你的真实管理员文件夹名修改下方路径
+          # 🚩 确保这里的 Marble_soda 大小写和你 NAS 里一模一样
           target: "/volume1/homes/Marble_soda/资料/新闻/"
