@@ -4,7 +4,7 @@ from openai import OpenAI
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-# ===== 1. 配置区 =====
+# ===== 1. 核心配置区 =====
 API_KEY = os.getenv("DEEPSEEK_API_KEY")
 BARK_KEY = os.getenv("BARK_KEY")
 client = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com")
@@ -57,42 +57,46 @@ def run():
     github_data = sync_github()
     news_data = crawl_solidot()
     
-    # 构建内容块
-    g_html = "".join([f"<div style='margin-bottom:15px;padding:12px;background:#1a1d2e;border-radius:8px;border-left:4px solid #ff79c6;'><a href='{g['url']}' target='_blank' style='color:#ff79c6;text-decoration:none;font-weight:bold;'>{g['name']}</a><br><small style='color:#8b949e;'>{g['desc']}</small></div>" for g in github_data])
-    n_html = "".join([f"<div style='margin-bottom:18px;'><a href='{n['url']}' target='_blank' style='color:#8be9fd;text-decoration:none;font-weight:bold;'>• {n['title']}</a><p style='font-size:13px;color:#bd93f9;margin-top:6px;line-height:1.4;'>{n['summary']}</p></div>" for n in news_data])
+    # 构造卡片内容
+    g_html = "".join([f"<div style='margin-bottom:15px;padding:12px;background:rgba(255,121,198,0.1);border-radius:8px;border:1px solid #ff79c6;'><a href='{g['url']}' target='_blank' style='color:#ff79c6;text-decoration:none;font-weight:bold;'>{g['name']}</a><br><small style='color:#bd93f9;'>{g['desc']}</small></div>" for g in github_data])
+    n_html = "".join([f"<div style='margin-bottom:18px;'><a href='{n['url']}' target='_blank' style='color:#8be9fd;text-decoration:none;font-weight:bold;'>• {n['title']}</a><p style='font-size:13px;color:#f8f8f2;margin-top:6px;opacity:0.8;'>{n['summary']}</p></div>" for n in news_data])
     
-    # 🚩 最终 HTML 模板 (已严格逃逸 CSS 大括号)
+    # 🚩 重要：CSS 全部大括号使用 {{}} 逃逸，确保不会触发 Python SyntaxError
     html = f"""
     <html><head><meta charset='utf-8'><meta http-equiv="refresh" content="600">
     <style>
-        body{{{{ background: #0b0e14; color: #e1e1e6; font-family: 'Segoe UI', sans-serif; padding: 25px; line-height: 1.5; }}}}
-        .main-title{{{{ color: #ff79c6; border-bottom: 2px solid #ff79c6; display: inline-block; padding-bottom: 5px; margin-bottom: 25px; font-style: italic; }}}}
-        .container{{{{ display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; }}}}
-        .panel{{{{ background: #111420; border: 1px solid #2d3143; padding: 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }}}}
-        .jp-card{{{{ background: linear-gradient(135deg, #282a36 0%, #44475a 100%); padding: 20px; border-radius: 10px; margin-bottom: 20px; position: relative; overflow: hidden; }}}}
-        .jp-word{{{{ font-size: 42px; font-weight: 900; color: #50fa7b; text-shadow: 2px 2px 10px rgba(80,250,123,0.3); }}}}
-        h3{{{{ color: #bd93f9; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; margin-bottom: 15px; }}}}
-        @media (max-width: 800px) {{{{ .container {{{{ grid-template-columns: 1fr; }}}} }}}}
+        body{{{{ background: #0b0e14; color: #f8f8f2; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }}}}
+        .banner{{{{ width: 100%; height: 250px; background: url('https://img.api.aa1.cn/2026/03/05/tuyu-aesthetic.jpg') center/cover; position: relative; border-bottom: 4px solid #ff79c6; }}}}
+        .banner-overlay{{{{ position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, #0b0e14); height: 100px; }}}}
+        .content{{{{ padding: 25px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 20px; }}}}
+        .panel{{{{ background: rgba(25, 29, 45, 0.7); backdrop-filter: blur(10px); border: 1px solid #2d3143; padding: 20px; border-radius: 15px; }}}}
+        .word-box{{{{ background: linear-gradient(135deg, #ff79c6 0%, #bd93f9 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 0 20px rgba(255,121,198,0.3); }}}}
+        .jp-word{{{{ font-size: 48px; font-weight: bold; color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.5); }}}}
+        h3{{{{ color: #ff79c6; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; border-left: 3px solid #ff79c6; padding-left: 10px; margin-bottom: 15px; }}}}
+        @media (max-width: 800px) {{{{ .content {{{{ grid-template-columns: 1fr; }}}} }}}}
     </style></head><body>
-        <h1 class="main-title">INTEL_TERMINAL // V13.0</h1>
-        <div class="container">
+        <div class="banner"><div class="banner-overlay"></div></div>
+        <div style="padding-left: 25px; margin-top: -30px; position: relative; z-index: 1;">
+            <h1 style="color: #ff79c6; font-style: italic; text-shadow: 0 0 10px #ff79c6;">TUYU_INTEL_SYSTEM // V14.0</h1>
+        </div>
+        <div class="content">
             <div class="panel">
                 <h3>Vocabulary Update</h3>
-                <div class="jp-card">
+                <div class="word-box">
                     <div class="jp-word">{word}</div>
-                    <p style="color:#f8f8f2; margin-top:10px; font-size:15px;">{desc}</p>
+                    <p style="margin-top:15px; font-size:16px; line-height:1.4;">{desc}</p>
                 </div>
-                <h3>GitHub Armory</h3>
-                {g_html if g_html else "Scanning for exploits..."}
+                <h3>GitHub CVE Armory</h3>
+                {g_html if g_html else "Awaiting mission data..."}
             </div>
             <div class="panel">
-                <h3>Security Feed</h3>
-                {n_html if n_html else "All systems clear."}
+                <h3>Global Threat Feed</h3>
+                {n_html if n_html else "No threats detected."}
             </div>
         </div>
-        <div style="margin-top:20px; font-size:10px; color:#44475a; text-align:center;">
-            Logged at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} // System: Marble_soda
-        </div>
+        <footer style="text-align: center; padding: 20px; color: #44475a; font-size: 11px;">
+             Marble_soda // 2026-03-05 // osu!mania PP: 11,000+
+        </footer>
     </body></html>
     """
     with open("index.html", "w", encoding="utf-8") as f: f.write(html)
