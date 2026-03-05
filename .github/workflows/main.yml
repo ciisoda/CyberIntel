@@ -25,13 +25,13 @@ jobs:
           pip install openai requests beautifulsoup4
           python3 master_intel.py
 
-      - name: 3. 异地投送至管理员文件夹
-        uses: appleboy/scp-action@master
-        with:
+          - name: 3. 异地投送至管理员文件夹
+          uses: appleboy/scp-action@master
+          with:
           host: 100.80.203.9
-          # 🚩 记得在 Secrets 里把 NAS_USER 改成 Marble_soda
           username: ${{ secrets.NAS_USER }}
           password: ${{ secrets.NAS_PASSWORD }}
           port: 22
           source: "index.html"
-          target: "/volume1/homes/Marble_soda/资料/新闻/"
+          # 🚩 去掉末尾多余的斜杠
+          target: "/volume1/homes/Marble_soda/资料/新闻"
