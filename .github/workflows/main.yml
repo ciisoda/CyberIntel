@@ -1,0 +1,28 @@
+name: Daily Security Intel
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天北京时间早上 8:00 自动运行
+  workflow_dispatch:   # 允许你手动点击按钮运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      - name: 安装 Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 安装依赖
+        run: pip install openai requests
+
+      - name: 运行情报员
+        env:
+          # 从刚才填的保险箱里读取 Key
+          DEEPSEEK_API_KEY: ${{sk-7c5f0784703742bd923d64015035eedd}}
+          BARK_KEY: ${{ Eda3xELXUYRR8eeQ4gWam8}}
+        run: python master_intel.py
