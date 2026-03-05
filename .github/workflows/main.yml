@@ -1,9 +1,9 @@
 name: Daily Security Intel
 
 on:
-  workflow_dispatch:
   schedule:
     - cron: '0 0 * * *' # 每天早上 8 点自动运行
+  workflow_dispatch:     # 也可以手动点击运行
 
 jobs:
   build:
@@ -11,31 +11,27 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: 1. 连接 Tailscale 隧道
+      - name: 1. 建立 Tailscale 隧道
         uses: tailscale/github-action@v2
         with:
           authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
 
-      - name: 2. 配置 Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: 3. 执行 AI 情报分析
+      - name: 2. 环境安装与 AI 运行
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           BARK_KEY: ${{ secrets.BARK_KEY }}
         run: |
-          pip install openai requests
+          # 🚩 关键：这里必须安装 beautifulsoup4
+          pip install openai requests beautifulsoup4
           python3 master_intel.py
 
-      - name: 4. 异地投送至管理员文件夹
+      - name: 3. 异地投送至管理员文件夹
         uses: appleboy/scp-action@master
         with:
           host: 100.80.203.9
+          # 🚩 记得在 Secrets 里把 NAS_USER 改成 Marble_soda
           username: ${{ secrets.NAS_USER }}
           password: ${{ secrets.NAS_PASSWORD }}
           port: 22
           source: "index.html"
-          # 🚩 删掉 rm: true，直接覆盖里面的 index.html
           target: "/volume1/homes/Marble_soda/资料/新闻/"
