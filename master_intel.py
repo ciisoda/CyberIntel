@@ -4,7 +4,7 @@ from openai import OpenAI
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-# ===== 1. 配置区 =====
+# ===== 1. 核心配置区 =====
 API_KEY = os.getenv("DEEPSEEK_API_KEY")
 BARK_KEY = os.getenv("BARK_KEY")
 client = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com")
@@ -12,13 +12,13 @@ client = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com")
 def log(msg):
     print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}")
 
-# ===== 2. AI 处理逻辑 (加入歌词生成) =====
+# ===== 2. AI 处理逻辑 (优化歌词解析) =====
 def get_ai_content(text, prompt_type="summary"):
     prompts = {
         "summary": f"翻译并总结这段网安内容，中文回答，严禁使用星号：{text}",
         "word": "选一个网安或音游相关的日语单词，回单词+假名，不要标点。",
         "desc": f"解释日语词 '{text}' 并给出一个关于音游或网安的例句，中文回答。",
-        "lyric": "作为TUYU(ツユ)的死忠粉，请随机提供一段该乐团的经典日语歌词（1-2句），给出歌名，并附带中文翻译。不要星号，格式：歌名 - 日语歌词 (中文翻译)"
+        "lyric": "作为TUYU(ツユ)的死忠粉，随机提供一段经典歌词。格式必须为：歌名 | 日语歌词 | 中文翻译。严禁星号。"
     }
     try:
         res = client.chat.completions.create(
@@ -27,7 +27,7 @@ def get_ai_content(text, prompt_type="summary"):
             stream=False
         )
         return res.choices[0].message.content.strip().replace("*", "")
-    except: return "AI 分析暂时离线"
+    except: return "未知曲目 | 无法获取歌词 | AI 离线中"
 
 def sync_github():
     feeds = []
@@ -57,7 +57,14 @@ def crawl_solidot():
 def run():
     word = get_ai_content(None, "word")
     desc = get_ai_content(word, "desc")
-    lyric = get_ai_content(None, "lyric") # 获取随机歌词
+    
+    # 歌词解析
+    lyric_raw = get_ai_content(None, "lyric")
+    parts = lyric_raw.split('|')
+    song_name = parts[0].strip() if len(parts) > 0 else "TUYU"
+    lyric_jp = parts[1].strip() if len(parts) > 1 else "歌词加载失败"
+    lyric_cn = parts[2].strip() if len(parts) > 2 else ""
+
     github_data = sync_github()
     news_data = crawl_solidot()
     
@@ -75,25 +82,32 @@ def run():
         .header {{ border-left: 5px solid #ff007f; padding-left: 15px; margin-bottom: 20px; }}
         .header h1 {{ color: #ff007f; margin: 0; font-size: 24px; letter-spacing: 2px; }}
         
-        /* 歌词栏样式 */
+        /* 增强版歌词盒样式 */
         .lyric-box {{ 
-            background: rgba(255, 0, 127, 0.1); 
-            border: 1px solid rgba(255, 0, 127, 0.3); 
-            padding: 15px; border-radius: 4px; 
+            background: rgba(20, 20, 35, 0.8); 
+            border: 1px solid rgba(255, 0, 127, 0.4); 
+            padding: 20px; border-radius: 8px; 
             margin-bottom: 25px; 
             text-align: center;
-            box-shadow: 0 0 15px rgba(255, 0, 127, 0.1);
+            position: relative;
         }}
-        .lyric-text {{ 
-            color: #ff007f; font-style: italic; font-size: 18px; 
-            text-shadow: 0 0 8px rgba(255, 0, 127, 0.4); 
+        .song-title {{
+            color: #ff007f; font-size: 11px; font-weight: bold;
+            text-transform: uppercase; letter-spacing: 2px;
+            margin-bottom: 10px; display: block; opacity: 0.8;
         }}
+        .lyric-jp {{ 
+            color: #f8f8f2; font-style: italic; font-size: 20px; 
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+            display: block; margin-bottom: 8px;
+        }}
+        .lyric-cn {{ color: #ff007f; font-size: 14px; opacity: 0.9; }}
 
         .grid {{ display: grid; grid-template-columns: 1fr 1.5fr; gap: 20px; }}
         .section-box {{ background: rgba(20, 20, 35, 0.9); padding: 20px; border-radius: 4px; border: 1px solid #333; }}
         .word-title {{ font-size: 40px; color: #00d4ff; font-weight: bold; margin: 10px 0; }}
         .word-desc {{ color: #bbb; line-height: 1.6; border-top: 1px solid #444; padding-top: 10px; }}
-        h3 {{ color: #ff007f; font-size: 12px; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }}
+        h3 {{ color: #ff007f; font-size: 12px; text-transform: uppercase; margin-bottom: 15px; }}
         
         a {{ text-decoration: none; font-weight: bold; transition: 0.3s; }}
         .item-card-p a {{ color: #ff007f; }}
@@ -104,12 +118,14 @@ def run():
         @media (max-width: 900px) {{ .grid {{ grid-template-columns: 1fr; }} }}
     </style></head><body>
         <div class="header">
-            <h1>TUYU_INTEL_TERMINAL // V16.0</h1>
-            <small style="color: #666;">User: Marble_soda // Mode: Die-hard TUYU Fan</small>
+            <h1>TUYU_INTEL_TERMINAL // V17.0</h1>
+            <small style="color: #666;">User: Marble_soda // OSU!MANIA 11,000PP // TUYU 死忠粉模式</small>
         </div>
 
         <div class="lyric-box">
-            <div class="lyric-text">“ {lyric} ”</div>
+            <span class="song-title">♪ Now Playing: {song_name}</span>
+            <span class="lyric-jp">{lyric_jp}</span>
+            <span class="lyric-cn">{lyric_cn}</span>
         </div>
 
         <div class="grid">
@@ -126,13 +142,13 @@ def run():
                 {n_list if n_list else "暂无威胁"}
             </div>
         </div>
-        <div style="text-align:center; margin-top:30px; color:#333; font-size:10px;">
-            DESIGNED FOR MARBLE_SODA // TUYU FOREVER
-        </div>
+        <footer style="text-align:center; margin-top:30px; color:#222; font-size:10px;">
+            INTEL SYNC COMPLETE // REFRESH EVERY 600S // TUYU FOREVER
+        </footer>
     </body></html>
     """
     with open("index.html", "w", encoding="utf-8") as f: f.write(html)
-    requests.get(f"https://api.day.app/{BARK_KEY}/指挥中心已更新/今日歌词: {lyric[:20]}...")
+    requests.get(f"https://api.day.app/{BARK_KEY}/情报中心已更新/♫ {song_name}")
 
 if __name__ == "__main__":
     run()
