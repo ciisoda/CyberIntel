@@ -1,4 +1,4 @@
-import os, requests, re, subprocess
+import os, requests, re, subprocess, random
 from openai import OpenAI
 from datetime import datetime
 from html import escape
@@ -7,9 +7,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 API_KEY = os.getenv("DEEPSEEK_API_KEY")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
-# 🚩 填入你的 Bark Key
-BARK_KEY = "Eda3xELXUYRR8eeQ4gWam8" 
-# 🚩 填入你的 GitHub 仓库（格式：用户名/仓库名）
+# 🚩 填入你的 Bark Key 和 GitHub 仓库
+BARK_KEY = "Eda3xELXUYRR8eeQ4gWam8"
 GH_REPO = "ciisoda/CyberIntel"
 
 client = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com", timeout=25.0)
@@ -31,11 +30,11 @@ def clean(text):
 
 def get_ai(prompt_type, ctx=""):
     prompts = {
-        "word": "选一个网安日语词，标注假名，只回词。",
-        "desc": f"简单解释'{ctx}'并给个例句。",
-        "japan": "三句总结日本IT动态。",
-        "lyric": f"格式:歌名|歌词|翻译。选一首:{list(ASSETS.keys())}",
-        "cve": f"评分|简述|建议。内容:{ctx}"
+        "word": "选一个网安日语词，标注假名，只回词。不要废话。",
+        "desc": f"简单解释'{ctx}'并给个例句。不要废话。",
+        "japan": "三句总结日本IT安全动态。不要废话。",
+        "lyric": f"提供一句TUYU歌曲《{ctx}》的日文歌词和中文翻译。格式严格为: 歌词|翻译 。切勿包含其他废话。",
+        "cve": f"提取内容格式严格为: 评分|一句话简述|一句话建议。内容:{ctx}"
     }
     try:
         res = client.chat.completions.create(model="deepseek-chat", messages=[{"role": "user", "content": prompts[prompt_type]}])
@@ -70,16 +69,20 @@ def git_sync():
     except Exception as e: print(f"Git Error: {e}")
 
 print(f"[{datetime.now()}] 正在连线获取情报...")
-lyric_raw = get_ai("lyric")
-parts = re.split(r"[|\n｜]", lyric_raw)
-l_parts = [p.strip() for p in parts if p.strip()]
-if len(l_parts) < 3: l_parts = ["くらべられっ子", "あの子になりたかった", "我曾想成为那个孩子"]
 
-mv_bg, cover = "mv_default.png", "cover_default.jpg"
-for k, v in ASSETS.items():
-    if k in l_parts[0] or l_parts[0] in k:
-        mv_bg, cover = v[0], v[1]
-        break
+# 🌟 核心修改：Python 亲自当 DJ 随机切歌和换壁纸
+chosen_song = random.choice(list(ASSETS.keys()))
+mv_bg, cover = ASSETS[chosen_song][0], ASSETS[chosen_song][1]
+
+# 告诉 AI 查这首歌的歌词
+lyric_raw = get_ai("lyric", chosen_song)
+parts = re.split(r"[|\n｜]", lyric_raw)
+parts = [p.strip() for p in parts if p.strip() and "歌" not in p and "译" not in p]
+
+if len(parts) >= 2:
+    l_parts = [chosen_song, parts[0], parts[1]]
+else:
+    l_parts = [chosen_song, "どんなに努力しても", "无论怎么努力"] # 备用歌词
 
 word = clean(get_ai("word"))
 desc = clean(get_ai("desc", word))
@@ -122,5 +125,5 @@ with open(os.path.join(BASE_DIR, "index.html"), "w", encoding="utf-8") as f:
     f.write(full_html)
 
 git_sync()
-send_bark("TUYU_CyberIntel", f"情报站已更新！今日关键词: {word}")
+send_bark("TUYU_CyberIntel", f"情报站更新！壁纸切到了: 《{chosen_song}》")
 print("全流程执行完毕！")
