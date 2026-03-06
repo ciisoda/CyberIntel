@@ -1,24 +1,13 @@
 import os, requests, urllib.parse, re, math
 from openai import OpenAI
 from datetime import datetime, date
-from functools import lru_cache
 
-# ===== 1. 环境初始化 =====
+# ===== 1. 初始化 =====
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 API_KEY = os.getenv("DEEPSEEK_API_KEY")
-BARK_KEY = os.getenv("BARK_KEY")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 client = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com")
 
-GITHUB_HEADERS = {
-    "Accept": "application/vnd.github+json",
-    "User-Agent": "marble-soda-intel-v34.1",
-    "Authorization": f"Bearer {GITHUB_TOKEN}" if GITHUB_TOKEN else None
-}
-
-def log(msg): print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}")
-
-# TUYU 资产库 (确保文件名与你文件夹里的一致)
 TUYU_ASSETS = {
     "くらべられっ子": {"bg": "mv_kurabe.png", "cover": "cover_kurabe.jpg"},
     "泥の分際で私だけの大切を奪おうだなんて": {"bg": "mv_doro.png", "cover": "cover_doro.jpg"},
@@ -28,56 +17,100 @@ TUYU_ASSETS = {
     "ロックな君とはお别れだ": {"bg": "mv_rock.png", "cover": "cover_rock.jpg"}
 }
 
-def clean_tags(text):
-    if not text: return ""
-    # 暴力清除所有可能导致 HTML 乱码的符号
-    return re.sub(r'[#*`>\-：:]', '', text).replace('评分', '').replace('研判', '').strip()
+def clean(t): return re.sub(r'[#*`>\-：:]', '', t).strip() if t else ""
 
-@lru_cache(maxsize=128)
-def get_ai_intel(text, intel_type="cve"):
+def get_ai(prompt_type, context=""):
     prompts = {
-        "cve": f"评分|总结|建议。{text}",
-        "japan": f"3句总结日本留学IT动态。{text}",
-        "word": "选网安日语词，回 单词+假名。",
-        "desc": f"解释 '{text}' 并给出一个短例句，用换行符分隔。",
-        "lyric": f"格式：歌名 | 日语 | 中文。{list(TUYU_ASSETS.keys())}"
+        "word": "选个网安或TUYU歌词里的日语单词+假名。",
+        "desc": f"详细解释{context}并给个例句，换行分隔。",
+        "japan": "三句总结日本IT/留学/签证最新动态。",
+        "lyric": f"格式：歌名 | 日语 | 中文。选一首：{list(TUYU_ASSETS.keys())}",
+        "cve": f"评分|简述|建议。内容：{context}"
     }
     try:
-        res = client.chat.completions.create(model="deepseek-chat", messages=[{"role": "user", "content": prompts[intel_type]}], stream=False)
+        res = client.chat.completions.create(model="deepseek-chat", messages=[{"role":"user","content":prompts[prompt_type]}])
         return res.choices[0].message.content.strip()
-    except: return "5.0 | Timeout | Retry"
+    except: return "Error | 数据获取失败"
 
-def sync_security():
-    results = []
-    try:
-        url = "https://api.github.com/search/repositories?q=CVE-2026+OR+Exploit&sort=updated"
-        res = requests.get(url, headers=GITHUB_HEADERS, timeout=15)
-        for repo in res.json().get('items', [])[:4]:
-            raw = get_ai_intel(repo['description'] or "No desc", "cve")
-            parts = (raw.split('|') + ["5.0", "分析中", "请检查"])[:3]
-            score_match = re.search(r"\d+(\.\d+)?", parts[0])
-            score = float(score_match.group()) if score_match else 5.0
-            heat = round(score + math.log(repo.get('stargazers_count', 0) + 1) * 0.6, 2)
-            results.append({"name": repo['full_name'], "url": repo['html_url'], "score": score, "summary": clean_tags(parts[1]), "advice": clean_tags(parts[2]), "heat": heat})
-    except: pass
-    return sorted(results, key=lambda x: x['heat'], reverse=True)
+# ===== 2. 逻辑执行 =====
+word = clean(get_ai("word"))
+desc = get_ai("desc", word)
+japan = get_ai("japan")
+lyric_raw = get_ai("lyric")
+l_parts = (lyric_raw.split('|') + ["TUYU", "...", "..."])[:3]
 
-def run():
-    log("🏁 启动 V34.1 物理修复版...")
-    word = clean_tags(get_ai_intel("Word", "word"))
-    desc = get_ai_intel(word, "desc")
-    lyric_raw = get_ai_intel("Lyric", "lyric")
-    lyric_parts = (lyric_raw.split('|') + ["TUYU", "...", "..."])[:3]
+mv_bg, cover = "mv_default.png", "cover_default.jpg"
+for k, v in TUYU_ASSETS.items():
+    if k in clean(l_parts[0]): mv_bg, cover = v["bg"], v["cover"]
+
+# CVE 抓取
+cve_html = ""
+try:
+    r = requests.get("https://api.github.com/search/repositories?q=CVE-2026&sort=updated", 
+                     headers={"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {})
+    for repo in r.json().get('items', [])[:4]:
+        intel = (get_ai("cve", repo['description']).split('|') + ["5.0","分析中","检查"])[:3]
+        cve_html += f"""
+        <div class='cve-card'>
+            <div style='display:flex;justify-content:space-between;'>
+                <a class='cve-link' href='{repo['html_url']}'>{repo['full_name']}</a>
+                <span class='badge'>{intel[0]}</span>
+            </div>
+            <p class='cve-sub'>{clean(intel[1])}</p>
+            <p class='cve-adv'>💡 {clean(intel[2])}</p>
+        </div>"""
+except: cve_html = "<p>GitHub API 限制中...</p>"
+
+# ===== 3. UI 物理布局 =====
+html = f"""
+<!DOCTYPE html><html><head><meta charset='utf-8'>
+<style>
+    :root {{ --pink: #ff007f; --blue: #00d4ff; --panel: rgba(15, 15, 25, 0.88); }}
+    body {{ 
+        margin:0; padding:20px; background:#05050a; color:#eee; font-family:sans-serif;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{mv_bg}') center/cover fixed;
+    }}
+    /* 顶部重构 */
+    .top-nav {{ 
+        display:flex; align-items:center; background:var(--panel); padding:20px; 
+        border-radius:15px; border:1px solid var(--pink); margin-bottom:20px; gap:20px;
+    }}
+    .main-grid {{ display:grid; grid-template-columns: 1fr 1.6fr; gap:20px; height: 75vh; }}
+    .left-col {{ display:flex; flex-direction:column; gap:20px; }}
+    .box {{ background:var(--panel); padding:20px; border-radius:15px; border:1px solid rgba(255,255,255,0.1); }}
     
-    mv_bg, album_cover = "mv_default.png", "cover_default.jpg"
-    for key, assets in TUYU_ASSETS.items():
-        if key in lyric_parts[0]:
-            mv_bg, album_cover = assets["bg"], assets["cover"]
-            break
-
-    sec_data = sync_security()
-    japan_intel = get_ai_intel("日本IT", "japan")
+    /* 核心修复：防止内容撑爆 */
+    .word-desc {{ max-height: 250px; overflow-y: auto; font-size:14px; line-height:1.6; white-space:pre-wrap; }}
+    .news-box {{ margin-top:auto; border-left:4px solid var(--pink); background:rgba(255,0,127,0.1); padding:15px; font-size:13px; }}
     
-    sec_html = "".join([f"""
-        <div class='item-card-p'>
-            <div style='display:flex; justify-content
+    .cve-card {{ margin-bottom:15px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.05); }}
+    .cve-link {{ color:var(--pink); font-weight:bold; text-decoration:none; font-size:15px; }}
+    .badge {{ background:var(--blue); color:#000; padding:2px 6px; border-radius:4px; font-size:10px; font-weight:bold; }}
+    .cve-adv {{ color:var(--blue); font-size:12px; margin-top:5px; }}
+</style></head><body>
+    <div class="top-nav">
+        <img src="{cover}" style="width:80px;height:80px;border-radius:10px;border:1px solid var(--pink);">
+        <div>
+            <div style="font-size:10px; color:var(--pink); letter-spacing:2px;">TUYU_INTEL // V35.0</div>
+            <div style="font-size:20px; font-weight:bold; margin:5px 0;">{clean(l_parts[1])}</div>
+            <div style="font-size:13px; color:var(--pink);">{clean(l_parts[2])}</div>
+        </div>
+    </div>
+    <div class="main-grid">
+        <div class="left-col">
+            <div class="box">
+                <div style="color:var(--blue); font-size:24px; font-weight:bold; margin-bottom:10px;">{word}</div>
+                <div class="word-desc">{clean(desc)}</div>
+            </div>
+            <div class="box news-box">
+                <b style="color:var(--pink);">🎌 Japan_Study_Log:</b><br>{clean(japan)}
+            </div>
+        </div>
+        <div class="box" style="overflow-y:auto;">
+            <div style="font-size:12px; color:var(--pink); margin-bottom:15px; letter-spacing:1px;">🔥 CVE_THREAT_FEED</div>
+            {cve_html}
+        </div>
+    </div>
+</body></html>
+"""
+with open(os.path.join(BASE_DIR, "index.html"), "w", encoding="utf-8") as f: f.write(html)
