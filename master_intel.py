@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 API_KEY = os.getenv("DEEPSEEK_API_KEY")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
-# 🚩 填入你的 Bark Key 和 GitHub 仓库
+# 🚩 你的 Bark Key 和 GitHub 仓库 (保持不变)
 BARK_KEY = "Eda3xELXUYRR8eeQ4gWam8"
 GH_REPO = "ciisoda/CyberIntel"
 
@@ -15,7 +15,7 @@ client = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com", timeout=25
 
 ASSETS = {
     "くらべられっ子": ["mv_kurabe.png", "cover_kurabe.jpg"],
-    "泥の分際で私だけの大切を夺おうだなんて": ["mv_doro.png", "cover_doro.jpg"],
+    "泥の分际で私だけの大切を夺おうだなんて": ["mv_doro.png", "cover_doro.jpg"],
     "终点へと向かう楽曲": ["mv_shuten.png", "cover_shuten.jpg"],
     "いつかオトナになれるといいね。": ["mv_otona.png", "cover_otona.jpg"],
     "过去に囚われている": ["mv_kako.png", "cover_kako.jpg"],
@@ -29,12 +29,17 @@ def clean(text):
     return escape(text).strip().replace("\n", "<br>")
 
 def get_ai(prompt_type, ctx=""):
+    # 🌟 核心优化：提升 AI 对 CVE 真实性的审计能力
     prompts = {
         "word": "选一个网安日语词，标注假名，只回词。不要废话。",
         "desc": f"简单解释'{ctx}'并给个例句。不要废话。",
         "japan": "三句总结日本IT安全动态。不要废话。",
         "lyric": f"提供一句TUYU歌曲《{ctx}》的日文歌词和中文翻译。格式严格为: 歌词|翻译 。切勿包含其他废话。",
-        "cve": f"提取内容格式严格为: 评分|一句话简述|一句话建议。内容:{ctx}"
+        "cve": f"""作为网安专家，审计该CVE仓库。
+        1. 评分: 参考NVD/MSRC。若内容存疑或明显是Bot拼接，评分设为0.0。
+        2. 描述: 准确指出漏洞类型(如RCE)和受影响的具体组件(区分Win11 UWP或旧版)。
+        3. 建议: 若有PoC，提醒复现环境隔离。
+        格式严格: 评分|描述|建议。内容:{ctx}"""
     }
     try:
         res = client.chat.completions.create(model="deepseek-chat", messages=[{"role": "user", "content": prompts[prompt_type]}])
@@ -55,34 +60,28 @@ def git_sync():
         subprocess.run(["git", "add", "."], check=True)
         status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
         if not status.stdout.strip():
-            print("Git Sync: 网页内容无变化，无需重复备份。")
+            print("Git Sync: 内容无变化。")
             return
         msg = f"NAS Auto Sync: {datetime.now().strftime('%Y-%m-%d %H:%M')}"
         subprocess.run(["git", "commit", "-m", msg], check=True)
         remote_url = f"https://{GITHUB_TOKEN}@github.com/{GH_REPO}.git"
         try:
             subprocess.run(["git", "push", remote_url, "main", "--force"], check=True, capture_output=True)
-            print("GitHub Sync Success (main 分支)")
-        except subprocess.CalledProcessError:
+            print("GitHub Sync Success (main)")
+        except:
             subprocess.run(["git", "push", remote_url, "master", "--force"], check=True)
-            print("GitHub Sync Success (master 分支)")
+            print("GitHub Sync Success (master)")
     except Exception as e: print(f"Git Error: {e}")
 
-print(f"[{datetime.now()}] 正在连线获取情报...")
+print(f"[{datetime.now()}] 正在过滤高价值情报...")
 
-# 🌟 核心修改：Python 亲自当 DJ 随机切歌和换壁纸
 chosen_song = random.choice(list(ASSETS.keys()))
 mv_bg, cover = ASSETS[chosen_song][0], ASSETS[chosen_song][1]
 
-# 告诉 AI 查这首歌的歌词
 lyric_raw = get_ai("lyric", chosen_song)
 parts = re.split(r"[|\n｜]", lyric_raw)
 parts = [p.strip() for p in parts if p.strip() and "歌" not in p and "译" not in p]
-
-if len(parts) >= 2:
-    l_parts = [chosen_song, parts[0], parts[1]]
-else:
-    l_parts = [chosen_song, "どんなに努力しても", "无论怎么努力"] # 备用歌词
+l_parts = [chosen_song, parts[0], parts[1]] if len(parts) >= 2 else [chosen_song, "どんなに努力しても", "无论怎么努力"]
 
 word = clean(get_ai("word"))
 desc = clean(get_ai("desc", word))
@@ -91,13 +90,32 @@ japan = clean(get_ai("japan"))
 cve_html = ""
 try:
     headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
-    r = requests.get("https://api.github.com/search/repositories?q=CVE-2026&sort=updated", headers=headers, timeout=10)
-    for repo in r.json().get("items", [])[:6]:
-        intel_raw = get_ai("cve", repo.get("description", ""))
-        intel = (re.split(r"[|/]", intel_raw) + ["5.0", "分析中", "建议检查"])[:3]
-        cve_html += f'<div class="cve-card"><div class="cve-top"><a class="cve-link" href="{repo["html_url"]}" target="_blank">{clean(repo["full_name"])}</a><span class="cve-tag">SC: {clean(intel[0])}</span></div><div class="cve-body">{clean(intel[1])}</div><div class="cve-hint">💡 {clean(intel[2])}</div></div>'
+    # 扩大搜索范围，寻找最新的 CVE 动向
+    r = requests.get("https://api.github.com/search/repositories?q=CVE-2026+OR+CVE-2025&sort=updated", headers=headers, timeout=10)
+    for repo in r.json().get("items", [])[:8]:
+        raw_desc = repo.get("description", "")
+        repo_name = repo["full_name"].lower()
+        
+        intel_raw = get_ai("cve", raw_desc)
+        intel = (re.split(r"[|/]", intel_raw) + ["0.0", "分析中", "请交叉核对信息"])[:3]
+        
+        # 🌟 猎人逻辑：识别潜在的实战工具
+        is_poc = "poc" in repo_name or "exploit" in repo_name
+        tag_style = "border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;" if is_poc else ""
+        poc_label = " [WEAPONIZED]" if is_poc else ""
+
+        cve_html += f'''
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="{repo["html_url"]}" target="_blank">{clean(repo["full_name"])}{poc_label}</a>
+                <span class="cve-tag" style="{tag_style}">SC: {clean(intel[0])}</span>
+            </div>
+            <div class="cve-body">{clean(intel[1])}</div>
+            <div class="cve-hint">📡 SOURCE: {clean(repo["owner"]["login"])} | 💡 {clean(intel[2])}</div>
+        </div>'''
 except: cve_html = "<p>Feed Offline</p>"
 
+# HTML 模板保持原本的 TUYU 霓虹风格
 full_html = f'''<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="600">
 <style>
 * {{ box-sizing: border-box; }}
@@ -125,5 +143,5 @@ with open(os.path.join(BASE_DIR, "index.html"), "w", encoding="utf-8") as f:
     f.write(full_html)
 
 git_sync()
-send_bark("TUYU_CyberIntel", f"情报站更新！壁纸切到了: 《{chosen_song}》")
-print("全流程执行完毕！")
+send_bark("TUYU_CyberIntel", f"情报已审计。当前壁纸: 《{chosen_song}》")
+print("自动化审计流程结束。")
