@@ -2,7 +2,7 @@
 <style>
 * { box-sizing: border-box; }
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
-body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_shuten.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
+body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_kako.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
 .glass { background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }
 .header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
 .header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
@@ -18,69 +18,69 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 .cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:8px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header"><img src="cover_shuten.jpg"><div><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">终点へと向かう楽曲</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">終点へと向かうこの道を</p><div style="font-size:11px;opacity:0.5;">朝着终点前进的这条道路</div></div></div>
-<div class="container"><div style="display:flex;flex-direction:column;gap:15px;"><div class="glass" style="flex:1.5;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">標的型攻撃（ひょうてきがたこうげき）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">標的型攻撃：特定の組織や個人を狙い、綿密な計画のもとに行われるサイバー攻撃。一般的な無差別攻撃と異なり、目的達成のために長期間にわたり情報収集や侵入を継続する。<br><br>例句：<br>当社は競合他社から重要な設計図を盗むことを目的とした標的型攻撃を受けたが、多層防御システムにより侵入を未然に防いだ。</div></div><div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1. 供应链攻击加剧：针对日本企业的第三方软件和服务攻击频发，政府推动供应链安全强化。<br>2. 零信任架构普及：企业加速引入零信任安全模型，应对远程办公和云迁移风险。<br>3. AI安全威胁应对：针对生成式AI的数据泄露与恶意使用风险，政府与企业加强监管与技术防护。</div></div></div><div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/obrunolima1910/CVE-2026-24061" target="_blank">obrunolima1910/CVE202624061</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body">描述内容存在严重问题：1. CVE编号“CVE202624061”不符合格式（年份超前）。2. “GNU inetutilstelnetd”组件存在，但“远程认证绕过获取root shell”的严重指控缺乏可信细节，疑似AI生成或恶意拼接的虚假漏洞描述。</div>
-            <div class="cve-hint">📡 SOURCE: obrunolima1910 | 💡 无有效PoC，该条目高度可疑，建议忽略并核查官方CVE数据库（如NVD）或软件供应商公告以获取准确信息。</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/salman5230/CVE-2025-59287" target="_blank">salman5230/CVE202559287</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body">描述内容为通用安全工具功能描述，未提及任何特定CVE编号、漏洞类型（如反序列化、RCE）或受影响的WSUS具体组件（如Windows Server版本、UWP应用等），疑似自动化生成或与漏洞审计无关。</div>
-            <div class="cve-hint">📡 SOURCE: salman5230 | 💡 无有效漏洞信息，无需PoC复现建议。请提供具体的CVE编号或漏洞详情以进行专业审计。</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/fa1sa1142/wpair-app" target="_blank">fa1sa1142/wpairapp</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body">该描述内容为通用安全工具广告，未提及任何具体漏洞细节、受影响组件或漏洞类型，与CVE202536911的漏洞披露无关，疑似Bot生成的拼接或误导性内容。</div>
-            <div class="cve-hint">📡 SOURCE: fa1sa1142 | 💡 无有效漏洞信息，无需复现建议。请核实CVE编号及来源的准确性。</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/kikiuuw/CVE-2025-68921" target="_blank">kikiuuw/CVE202568921</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body">描述内容为通用漏洞类型（本地权限提升）和模糊影响范围（许多游戏本），未明确指出Nahimic音频软件的具体漏洞机制（如驱动、服务）、精确受影响组件（如特定进程、DLL版本）或操作系统平台（如Windows 10</div>
-            <div class="cve-hint">📡 SOURCE: kikiuuw | 💡 11驱动兼容性）。信息疑似通用描述拼接，缺乏CVE202568921的技术细节。</div>
-        </div>
+<div class="glass header"><img src="cover_kako.jpg"><div><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">过去に囚われている</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">過去に囚われている</p><div style="font-size:11px;opacity:0.5;">被过去所囚禁</div></div></div>
+<div class="container"><div style="display:flex;flex-direction:column;gap:15px;"><div class="glass" style="flex:1.5;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">標的型攻撃（ひょうてきがたこうげき）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">標的型攻撃：特定の組織や個人を標的に絞ったサイバー攻撃。不特定多数を狙う攻撃とは異なり、入念な下調査を行った上で実行される。<br><br>例句：  <br>当社は競合企業から重要な技術情報を窃取することを目的とした標的型攻撃を受けたが、多層防御により被害を防いだ。</div></div><div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1. 政府强化关键基础设施网络安全法规，推动供应链安全审查。<br>2. 企业加大云安全与零信任架构投入，应对远程办公常态化风险。<br>3. 积极应对勒索软件与地缘政治网络威胁，加强公私协同防御体系。</div></div></div><div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/doyourcat/2025_2st-semester-of-1nd-year_opneCVex" target="_blank">doyourcat/2025_2stsemesterof1ndyear_opneCVex</a>
                 <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body">描述内容缺失或无法确认漏洞具体类型及受影响组件</div>
-            <div class="cve-hint">📡 SOURCE: doyourcat | 💡 建议：无有效信息，无需提供复现建议。</div>
+            <div class="cve-body">描述内容为空，无法识别漏洞类型、受影响组件及任何有效信息。</div>
+            <div class="cve-hint">📡 SOURCE: doyourcat | 💡 无有效内容，无需建议。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/sakthivel10q/CVE-2025-14847" target="_blank">sakthivel10q/CVE202514847</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
+                <a class="cve-link" href="https://github.com/DyniePro/CVE-2026-25643" target="_blank">DyniePro/CVE202625643</a>
+                <span class="cve-tag" style="">SC: 1.0</span>
             </div>
-            <div class="cve-body">描述内容与CVE编号（CVE202514847）及已知漏洞信息不符，疑似由AI或Bot根据通用漏洞描述模板错误拼接生成。当前无任何权威信源（如NVD、MongoDB安全公告）证实该CVE编号存在，且“通过Python脚本分析响应泄露堆内存”的描述缺乏具体组件、版本及技术细节，无法确认其真实性。</div>
-            <div class="cve-hint">📡 SOURCE: sakthivel10q | 💡 建议忽略此条信息，并优先参考MongoDB官方安全公告及NVD数据库进行漏洞核实。在任何情况下，均不应在未经验证的环境中运行来源不明的PoC脚本。</div>
+            <div class="cve-body">Frigate NVR ≤0.16.3存在配置缺陷，允许未经身份验证的攻击者远程执行命令（RCE），无需shell访问或输出捕获。</div>
+            <div class="cve-hint">📡 SOURCE: DyniePro | 💡 该漏洞PoC已公开，请在隔离的测试环境中复现，切勿在生产环境或联网设备上进行验证。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/pedrocruz2202/mongobleed-scanner" target="_blank">pedrocruz2202/mongobleedscanner</a>
+                <a class="cve-link" href="https://github.com/tianarsamm/CVE-2025-69985" target="_blank">tianarsamm/CVE202569985</a>
                 <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body">描述内容与CVE编号（CVE202514847）及声称的漏洞类型（MongoDB相关）存在严重不匹配。经查，CVE202514847为已分配编号，但公开信息表明其与Microsoft Windows组件相关，而非MongoDB。当前描述疑似由AI</div>
-            <div class="cve-hint">📡 SOURCE: pedrocruz2202 | 💡 Bot错误拼接或生成，将不相关的工具（MongoBleed）、漏洞编号和厂商产品混杂，可信度为零。</div>
+            <div class="cve-body">描述内容与CVE编号格式不符（CVE202569985为无效编号），且漏洞细节（如“</div>
+            <div class="cve-hint">📡 SOURCE: tianarsamm | 💡 api</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Asder10/React2Shell" target="_blank">Asder10/React2Shell</a>
+                <a class="cve-link" href="https://github.com/fartlover37/CVE-2026-2441-PoC" target="_blank">fartlover37/CVE20262441PoC [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
+            </div>
+            <div class="cve-body">描述内容存在明显事实性错误：CVE编号“CVE20262441”不符合现有编号规范（年份超前），且“Blink CSS引擎”的提法不准确，Blink是浏览器引擎，CSS是其处理的一个模块。该描述疑似由AI或Bot根据历史漏洞模式拼接生成，无真实可信的对应漏洞详情。</div>
+            <div class="cve-hint">📡 SOURCE: fartlover37 | 💡 无有效PoC，无需复现建议。请勿在真实环境中测试任何来源不明的所谓漏洞代码，并应从官方渠道（如NVD、Chrome Releases）核实漏洞信息。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/wutang700/STProcessMonitorBYOVD" target="_blank">wutang700/STProcessMonitorBYOVD</a>
                 <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body">描述内容与CVE编号（CVE202555182）不匹配，该编号为预留编号，无公开细节。提供的“Next.js and React”漏洞描述疑似AI生成或信息拼凑，缺乏具体漏洞类型（如RCE、SSRF等）和受影响组件的准确说明。</div>
-            <div class="cve-hint">📡 SOURCE: Asder10 | 💡 建议忽略此来源。对于任何PoC测试，必须在完全隔离的沙箱或虚拟环境中进行，切勿在生产或联网主机上操作。</div>
+            <div class="cve-body">描述内容存在明显错误：CVE202570795和CVE20260828为虚构的未来CVE编号，且“driverbased termination tools”描述模糊，未指明具体漏洞类型（如权限提升、内存损坏）及受影响的确切Windows组件或版本。</div>
+            <div class="cve-hint">📡 SOURCE: wutang700 | 💡 无有效PoC，内容疑似Bot拼接或虚假信息。无需复现建议，请参考官方NVD</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/hamzamalik3461/CVE-2026-20841" target="_blank">hamzamalik3461/CVE202620841</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body">描述内容与已知CVE或Windows安全机制不符，疑似AI生成或概念混淆。Windows记事本不支持Markdown渲染，且通过URL协议实现远程代码执行缺乏可信技术细节。</div>
+            <div class="cve-hint">📡 SOURCE: hamzamalik3461 | 💡 无有效PoC，无需复现建议。警惕非官方来源的漏洞信息，建议仅参考微软安全响应中心（MSRC）官方公告。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/404godd/CVE-2026-20841-PoC" target="_blank">404godd/CVE202620841PoC [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
+            </div>
+            <div class="cve-body">描述内容与已知CVE编号（CVE202620841）不匹配，且声称的漏洞目标（Windows Notepad版本低于11.2510）不符合微软产品命名规范（Notepad为系统内置组件，版本号通常随Windows系统更新，而非独立的大版本号如11.2510），疑似为AI生成或虚假信息。</div>
+            <div class="cve-hint">📡 SOURCE: 404godd | 💡 无有效PoC，无需复现建议。请核实CVE编号及漏洞描述的真实性，警惕信息来源。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/MAEN1-prog/CVE-2025-2304" target="_blank">MAEN1prog/CVE20252304</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body">描述内容与CVE编号（CVE20252304）不匹配，疑似AI生成或信息拼接。经查，Camaleon CMS相关漏洞历史记录中无此CVE编号，且“特权提升”描述缺乏具体组件（如后端控制器、API端点）和版本验证。</div>
+            <div class="cve-hint">📡 SOURCE: MAEN1prog | 💡 建议忽略此来源信息。如需测试Camaleon CMS安全性，应通过官方渠道获取已确认的CVE详情，并在隔离的沙箱环境中验证。</div>
         </div></div></div></div></body></html>
