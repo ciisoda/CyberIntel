@@ -18,55 +18,31 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 .cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:8px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header"><img src="cover_otona.jpg"><div><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">いつかオトナになれるといいね。</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">いつかオトナになれるといいね。</p><div style="font-size:11px;opacity:0.5;">总有一天能成为大人就好了呢。</div></div></div>
-<div class="container"><div style="display:flex;flex-direction:column;gap:15px;"><div class="glass" style="flex:1.5;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">標的型攻撃（ひょうてきがたこうげき）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">標的型攻撃とは、特定の組織や個人を狙い、綿密な計画のもとに行われるサイバー攻撃。情報窃取やシステム破壊が目的。<br><br>例：A社の開発部門を狙い、関係者を装った偽メールでマルウェアを送り込み、機密設計書を窃取した。</div></div><div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1. 政府强化供应链安全，推动国产化替代与法规合规。<br>2. 企业加大云与零信任投入，应对远程办公安全挑战。<br>3. 重点防御勒索软件与供应链攻击，提升关键基础设施防护。</div></div></div><div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
+<div class="glass header"><img src="cover_otona.jpg"><div><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">いつかオトナになれるといいね。</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">大人になるって怖いなって</p><div style="font-size:11px;opacity:0.5;">所谓长大成人真是可怕呢</div></div></div>
+<div class="container"><div style="display:flex;flex-direction:column;gap:15px;"><div class="glass" style="flex:1.5;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">サイバーセキュリティ</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">サイバーセキュリティ（网络安全）：指保护计算机系统、网络和数据免受数字攻击、损害或未授权访问的技术与实践。<br><br>例句：企業はサイバーセキュリティを強化するため、新しいファイアウォールを導入した。  <br>（企业为加强网络安全，引入了新的防火墙。）</div></div><div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1. 政府强化供应链安全，推动国产化替代与法规合规。<br>2. 企业加大云与零信任投入，应对远程办公安全挑战。<br>3. 应对勒索软件与APT攻击成焦点，关键基础设施防护升级。</div></div></div><div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Jessica74016/CVE-2025-8088" target="_blank">Jessica74016/CVE20258088</a>
+                <a class="cve-link" href="https://github.com/hijack1r/CVE_PushService" target="_blank">hijack1r/CVE_PushService</a>
                 <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body">内容存疑，疑似Bot拼接或概念混淆。CVE20258088编号不实（2025年编号尚未分配），且WinRAR路径遍历漏洞（CVE202338831）已知，与NTFS ADS无直接关联。描述中混合了不相关的“RomCom APT”和“Storm0978”（已知与Office漏洞相关），技术细节混乱。</div>
-            <div class="cve-hint">📡 SOURCE: Jessica74016 | 💡 无有效PoC，无需复现建议。当前信息不可信，请以官方NVD</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Zain3311/CVE-2025-49844" target="_blank">Zain3311/CVE202549844</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body">描述内容与已知漏洞模式不符，疑似AI生成或信息拼接。CVE202549844并非公开已知漏洞编号，且Redis Lua解释器无此UAF漏洞记录。</div>
-            <div class="cve-hint">📡 SOURCE: Zain3311 | 💡 建议忽略此来源信息，并优先参考Redis官方安全公告及NVD、CNVD等权威漏洞库进行核实。任何漏洞复现均应在完全隔离的测试环境中进行。</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/ksnnd32/redis_exploit" target="_blank">ksnnd32/redis_exploit [WEAPONIZED]</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
-            </div>
-            <div class="cve-body">描述内容为通用教育实验室广告，未指明具体漏洞类型（如RCE、权限提升等）及受影响Redis组件版本或系统环境。</div>
-            <div class="cve-hint">📡 SOURCE: ksnnd32 | 💡 无有效漏洞信息，无需PoC复现建议。</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank">siddu7575/CVE202561882CVE202561884</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body">描述内容与CVE编号格式不符（CVE202561882及CVE202561884在官方库中不存在），且文本疑似通用安全提示的机器拼接，无法确认具体漏洞类型及受影响组件。</div>
-            <div class="cve-hint">📡 SOURCE: siddu7575 | 💡 建议忽略此来源，并优先参考NVD、Oracle官方安全公告等权威渠道获取准确漏洞信息。</div>
+            <div class="cve-body">描述内容为工具推广，非具体漏洞信息，无法识别漏洞类型及受影响组件</div>
+            <div class="cve-hint">📡 SOURCE: hijack1r | 💡 无有效漏洞情报，无需PoC复现建议。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank">mihnasdsad/CVE202532463</a>
                 <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body">描述内容缺失或无法确认漏洞真实性</div>
-            <div class="cve-hint">📡 SOURCE: mihnasdsad | 💡 建议：无有效信息，请提供具体的CVE编号或漏洞详情以便分析。</div>
+            <div class="cve-body">描述内容缺失或无法确认漏洞真实性及具体细节。</div>
+            <div class="cve-hint">📡 SOURCE: mihnasdsad | 💡 建议：无有效信息，无需操作。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank">ashardev002/CVE202532463_chwoot</a>
                 <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body">描述内容与CVE编号不匹配，疑似AI生成或信息混淆。CVE202532463为虚构编号，sudo的chroot功能权限提升漏洞实际对应历史CVE（如CVE201914287等）。当前描述缺乏可信来源和具体组件版本信息。</div>
-            <div class="cve-hint">📡 SOURCE: ashardev002 | 💡 建议忽略此内容。若需研究sudo漏洞，请访问官方安全公告（https:</div>
+            <div class="cve-body">描述内容为通用性提示，未指明具体漏洞类型（如RCE、本地提权等）及受影响的确切sudo版本或操作系统组件。</div>
+            <div class="cve-hint">📡 SOURCE: ashardev002 | 💡 建议部分缺失具体PoC复现指导，仅提醒环境隔离属于通用安全实践，未提供针对该CVE的有效缓解或修复建议。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
@@ -74,13 +50,37 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
                 <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
             </div>
             <div class="cve-body">描述内容缺失或无法确认漏洞真实性及具体细节。</div>
-            <div class="cve-hint">📡 SOURCE: ammarm0010 | 💡 建议：无有效信息，无需操作。</div>
+            <div class="cve-hint">📡 SOURCE: ammarm0010 | 💡 建议：无有效信息，无需采取行动。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/sureshkumarsat/CVE-2025-31258-PoC" target="_blank">sureshkumarsat/CVE202531258PoC [WEAPONIZED]</a>
                 <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
             </div>
-            <div class="cve-body">描述内容与CVE编号（CVE202531258）不匹配，疑似为通用Bot拼接文本，且该CVE编号在权威漏洞库（NVD</div>
-            <div class="cve-hint">📡 SOURCE: sureshkumarsat | 💡 MSRC）中不存在或信息不实。</div>
+            <div class="cve-body">描述内容模糊且存在误导性，声称“部分沙箱逃逸”但未明确漏洞类型（如权限提升、信息泄露）及具体受影响组件（如Windows远程视图服务版本）。疑似由AI生成或信息拼凑，缺乏CVE官方描述的关键细节。</div>
+            <div class="cve-hint">📡 SOURCE: sureshkumarsat | 💡 无有效PoC，无需复现建议。若未来获得可信PoC，需在完全隔离的物理或虚拟环境中测试，避免影响主机系统。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/jm7knz/CVE-2025-54253-Exploit-Demo" target="_blank">jm7knz/CVE202554253ExploitDemo [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
+            </div>
+            <div class="cve-body">描述内容存在明显疑点，Adobe AEM Forms on JEE的漏洞编号通常遵循CVEXXXXXXXX格式，但“CVE202554253”为未来年份编号，且OGNL注入漏洞常见于Apache Struts等框架，与Adobe AEM Forms典型漏洞模式不符，疑似Bot生成或虚假信息。</div>
+            <div class="cve-hint">📡 SOURCE: jm7knz | 💡 无有效PoC，无需复现建议。请通过Adobe官方安全公告或NVD核实真实漏洞信息。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/hophtien/CVE-2025-54424" target="_blank">hophtien/CVE202554424</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body">描述存在矛盾且信息可疑：TLS客户端证书绕过通常导致认证绕过，而非直接RCE；声称通过伪造CN“panel_client”即可实现RCE缺乏技术细节，且“捆绑扫描利用工具”的描述不符合正规漏洞披露格式，疑似Bot生成或误导性内容。受影响版本范围过于模糊。</div>
+            <div class="cve-hint">📡 SOURCE: hophtien | 💡 无有效建议。注：此条目内容存疑，建议从官方渠道（如1Panel安全公告）核实信息，切勿轻信或尝试复现。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/yeremeu/CVE-2025-32463_chwoot" target="_blank">yeremeu/CVE202532463_chwoot</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body">描述内容与CVE编号（2025年）及组件（sudo）明显不符，疑似AI生成或信息拼接的虚假内容。</div>
+            <div class="cve-hint">📡 SOURCE: yeremeu | 💡 无有效PoC，无需复现建议。请勿信任或传播来源不明的漏洞信息，应通过NVD、sudo官方公告等权威渠道核实。</div>
         </div></div></div></div></body></html>
