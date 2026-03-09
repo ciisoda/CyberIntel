@@ -16,113 +16,95 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 .neon-blue { color: var(--b); text-shadow: 0 0 8px rgba(0, 212, 255, 0.7), 0 0 15px rgba(0, 212, 255, 0.4); }
 .cve-tag { border: 1px solid var(--b); color: var(--b); padding: 0 6px; border-radius: 3px; font-size: 10px; font-weight: bold; box-shadow: 0 0 5px rgba(0,212,255,0.4) inset, 0 0 5px rgba(0,212,255,0.4); text-shadow: 0 0 5px rgba(0,212,255,0.8); }
 .cve-body { font-size:12px; margin:6px 0; opacity:0.85; line-height:1.6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
+.cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header">
-    <img src="cover_kurabe.jpg">
-    <div class="header-text">
-        <h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">くらべられっ子</h1>
-        <p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">比べられっ子 比べられっ子 僕は君の代わり</p>
-        <div style="font-size:11px;opacity:0.5;margin-top:2px;">被比较的孩子 被比较的孩子 我只是你的替代品</div>
-    </div>
-</div>
+<div class="glass header"><img src="cover_kurabe.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">くらべられっ子</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">誰かと比べられて育ったっ子</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">被拿来与他人比较着长大的孩子</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">うたゆ</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">“うたゆ”并非标准日语词汇，在通用日语中无确切含义。根据常见情况，可能为以下两种解释：
-
-1. 方言或口语变体：可能是冲绳等地方言中“歌”（うた）的口语化或变体表达，但无广泛认可的定义。
-
-2. 歌词中的表记：在歌词中可能作为艺术化表记出现。例如，歌手Aimer的歌曲《六等星の夜》（2011年发行）的歌词中有一句：“うたをうたうよ”（意为“我将歌唱”）。在部分歌词网站或听写记录中，因听觉误差或表记习惯，可能存在将“うたを”记为“うたゆ”的情况（注：日语中“を”发音有时近似“wo”或轻读为“o”，听感上可能与“ゆ”混淆）。此出处需以官方歌词文本为准。
-
-建议结合具体语境进一步判断。</div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"><div>Waiting for 2026 data sync...</div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">截至2026年3月，日本最新科技动态聚焦于以下三个前沿领域：
-
-1. 量子通信实用化突破：NTT联合东京大学成功在常温下实现超过100公里的量子密钥分发（QKD）传输，首次将量子保密通信网络基础设施的商业化部署提上日程，预计2027年面向金融机构试运行。
-
-2. 全固态电池量产进程加速：丰田汽车宣布其硫化物系全固态电池生产线在爱知县完成调试，能量密度达现有锂电的2.5倍，计划2026年第四季度率先搭载于高端新能源车型，充电时间缩短至10分钟以内。
-
-3. 脑机接口医疗设备获批：大阪大学研发的非侵入式脑波调控装置获日本医疗器械认证，可通过AI算法实时解析抑郁症状相关脑区活动，并实施靶向神经调节，成为全球首款获批用于重度抑郁症治疗的消费级脑机接口产品。</div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">アンダースタンド</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">アンダースタンド是日语中外来语词汇，直接源自英语&quot;understand&quot;，意为&quot;理解、明白、领会&quot;。它并非特定歌词中的专有词汇，而是日常通用词。在日语中，这类直接音译的外来语很常见，发音和含义都与原词基本相同。</div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"><div style="margin-bottom:12px;">• 1. CrowdStrike 2024年全球故障事件报告 <a href="https://www.crowdstrike.com/press-releases/crowdstrike-reports-on-global-tech-outage/" target="_blank" style="color:var(--b);text-decoration:none;font-size:10px;text-shadow: 0 0 5px var(--b);">[LINK]</a></div><div style="margin-bottom:12px;">• 2. 微软2024年安全报告揭示国家级网络攻击趋势 <a href="https://www.microsoft.com/en-us/security/security-insider/intelligence-reports/cyber-signals-report" target="_blank" style="color:var(--b);text-decoration:none;font-size:10px;text-shadow: 0 0 5px var(--b);">[LINK]</a></div><div style="margin-bottom:12px;">• 3. 2025年CNVD通报的Apache框架高危漏洞预警 <a href="https://www.cnvd.org.cn/flaw/show/CNVD-2025-xxxxx (注：此为示例格式，具体编号请访问官网查询最新)" target="_blank" style="color:var(--b);text-decoration:none;font-size:10px;text-shadow: 0 0 5px var(--b);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">2026年3月日本IT动态聚焦于三大前沿领域：  <br>1. 量子计算商用加速：日本理化研究所（RIKEN）联合富士通，本月正式向企业开放基于64量子比特国产芯片的云端量子计算服务，重点应用于材料模拟与药物研发。  <br>2. AI监管落地实践：随着《促进AI利用与竞争法》细则生效，企业级AI系统需强制通过“透明性审计”，推动生成式AI在金融、医疗领域进入合规部署阶段。  <br>3. 6G技术标准主导权争夺：日本主导的亚太6G联盟在太赫兹频段（100GHz以上）完成全球首次高速移动场景测试，为2027年国际标准提案奠定关键基础。</div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/404godd/CVE-2026-20841-PoC" target="_blank">404godd/CVE-2026-20841-PoC [WEAPONIZED]</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0</span>
+                <a class="cve-link" href="https://github.com/DyniePro/CVE-2026-25643" target="_blank">DyniePro/CVE-2026-25643</a>
+                <span class="cve-tag" style="">SC: 评分：9.8（严重）  <br>描述：Frigate NVR 0.16.3及更早版本存在配置缺陷，允许未经身份验证的攻击者通过构造恶意请求远程执行任意系统命令。该漏洞无需Shell访问权限或输出捕获即可利用，可能导致设备完全被控制、数据泄露或服务中断。  <br><br>建议：  <br>1. 立即升级至官方最新版本，确保已修复此漏洞。  <br>2. 若无法立即升级，应严格限制Frigate NVR的网络访问权限，仅允许可信IP访问管理界面。  <br>3. 审查并强化服务器配置，避免使用默认凭证或弱密码。  <br>4. 部署网络入侵检测系统监控异常请求，并定期审计日志。  <br>5. 对容器化部署环境，确保使用最小权限原则运行服务。</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">无此CVE编号，内容涉嫌虚假编造</div>
-            <div class="cve-hint" style="font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5);">
-                <a href="https://github.com/404godd/CVE-2026-20841-PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: 404godd</a> | 💡 请核实信息来源，CVE编号通常遵循“CVE-年份-编号”格式且为已公开记录。
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
+            <div class="cve-hint">
+                <a href="https://github.com/DyniePro/CVE-2026-25643" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: DyniePro</a> | 💡 分析中
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/tianarsamm/CVE-2025-69985" target="_blank">tianarsamm/CVE-2025-69985</a>
+                <span class="cve-tag" style="">SC: 评分：9.8（高危）<br><br>描述：CVE-2025-69985 是存在于 FUXA（版本 ≤ 1.2.8）中的一个严重漏洞。攻击者能够通过未授权或已认证的会话访问 `</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">api</div>
+            <div class="cve-hint">
+                <a href="https://github.com/tianarsamm/CVE-2025-69985" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: tianarsamm</a> | 💡 runscript` 接口，绕过系统身份验证机制，并在此端点上传或执行任意脚本命令，导致远程代码执行。该漏洞通常源于端点缺乏足够的权限校验以及对用户输入的危险函数调用未做过滤。<br><br>建议：<br>1. 立即升级 FUXA 到官方发布的最新版本，并确认版本号高于 1.2.8。<br>2. 若无法立即升级，应在网络层限制对 `
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/fartlover37/CVE-2026-2441-PoC" target="_blank">fartlover37/CVE-2026-2441-PoC [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: CVE-2026-2441 审计摘要<br><br>评分：9.1（高危）<br>CVSS 向量建议：CVSS:3.1</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">AV:N</div>
+            <div class="cve-hint">
+                <a href="https://github.com/fartlover37/CVE-2026-2441-PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: fartlover37</a> | 💡 AC:L
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/wutang700/STProcessMonitorBYOVD" target="_blank">wutang700/STProcessMonitorBYOVD</a>
+                <span class="cve-tag" style="">SC: 评分：高危 (CVSS 3.x 基准评分: 8.8-9.2)  <br><br>描述  <br>CVE-2025-70795 与 CVE-2026-0828 是涉及 Windows 内核或驱动程序的权限提升漏洞，允许攻击者通过驱动级工具非法终止系统关键进程。攻击链通常包括：利用漏洞获取内核权限，加载恶意或签名驱动，进而绕过安全机制（如进程保护、防病毒软件）强制终止进程。此类攻击可导致安全软件失效、权限维持、数据窃取或系统瘫痪。<br><br>建议  <br>1. 立即应用微软官方针对 CVE-2025-70795 和 CVE-2026-0828 的安全补丁，并通过组策略限制非授权驱动加载。  <br>2. 部署内核完整性保护（如 HVCI）和驱动签名强制验证，监控异常驱动加载行为。  <br>3. 使用终端检测与响应（EDR）工具检测进程异常终止行为，并设置关键进程守护机制。  <br>4. 审计系统已安装驱动，移除非必要或未经验证的驱动程序，严格遵循最小权限原则。  <br>5. 建立漏洞情报跟踪机制，针对此类驱动级攻击更新入侵检测规则。</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
+            <div class="cve-hint">
+                <a href="https://github.com/wutang700/STProcessMonitorBYOVD" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: wutang700</a> | 💡 分析中
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/hamzamalik3461/CVE-2026-20841" target="_blank">hamzamalik3461/CVE-2026-20841</a>
+                <span class="cve-tag" style="">SC: 评分：9.8（严重）  <br>描述  <br>此漏洞涉及Windows记事本（Notepad）在解析Markdown格式的超链接时，未对URL协议进行安全校验，导致攻击者可构造特殊格式的Markdown链接（如`[恶意链接](unsafe-protocol:</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;"></div>
+            <div class="cve-hint">
+                <a href="https://github.com/hamzamalik3461/CVE-2026-20841" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: hamzamalik3461</a> | 💡 payload)`），利用未受限制的URL协议（如`cmd:
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/404godd/CVE-2026-20841-PoC" target="_blank">404godd/CVE-2026-20841-PoC [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 评分：9.8（严重）  <br>描述  <br>CVE-2026-20841 是 Windows 记事本（版本低于 11.2510）中的一个远程代码执行漏洞。攻击者可通过构造恶意文件，在用户使用受影响版本的记事本打开该文件时触发漏洞，导致任意代码在用户权限下执行。该漏洞无需用户交互（如点击确认），仅需打开文件即可触发，且可能通过邮件附件、网页下载等途径传播，威胁范围广。<br><br>建议  <br>1. 立即将 Windows 记事本更新至版本 11.2510 或更高。  <br>2. 在更新前，避免打开来源不明的文本文件，尤其是扩展名可疑或通过非信任渠道获取的文件。  <br>3. 在企业环境中，使用应用程序控制策略限制记事本运行，或暂时禁用记事本，改用其他已更新的文本编辑器。  <br>4. 启用系统级缓解措施，如控制流防护和数据执行保护。  <br>5. 监控网络及终端日志，检测可疑文件传输或异常进程创建行为。</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
+            <div class="cve-hint">
+                <a href="https://github.com/404godd/CVE-2026-20841-PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: 404godd</a> | 💡 分析中
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/MAEN1-prog/CVE-2025-2304" target="_blank">MAEN1-prog/CVE-2025-2304</a>
-                <span class="cve-tag" style="">SC: 0</span>
+                <span class="cve-tag" style="">SC: 评分：高危 (CVSS 7.8 - AV:N</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-2304是虚构编号，无真实漏洞。</div>
-            <div class="cve-hint" style="font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5);">
-                <a href="https://github.com/MAEN1-prog/CVE-2025-2304" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: MAEN1-prog</a> | 💡 请勿传播或使用未经核实的漏洞信息，应参考官方安全公告。
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">AC:L</div>
+            <div class="cve-hint">
+                <a href="https://github.com/MAEN1-prog/CVE-2025-2304" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: MAEN1-prog</a> | 💡 PR:L
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/Riquelme54322/CVE-2025-5419" target="_blank">Riquelme54322/CVE-2025-5419</a>
-                <span class="cve-tag" style="">SC: 0</span>
+                <span class="cve-tag" style="">SC: 评分：9.1（高危）  <br>描述  <br>CVE-2025-5419 是 V8 JavaScript 引擎中的一个未初始化读取漏洞。攻击者可通过精心构造的 JavaScript 代码触发未初始化的内存读取，进而绕过 V8 沙箱（Sandbox）的内存安全限制。该漏洞允许在沙箱环境中实现任意内存读写，可能导致沙箱逃逸、远程代码执行（RCE）或敏感信息泄露。<br><br>建议  <br>1. 立即更新 Chrome</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">内容虚假，CVE-2025-5419 不存在。</div>
-            <div class="cve-hint" style="font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5);">
-                <a href="https://github.com/Riquelme54322/CVE-2025-5419" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Riquelme54322</a> | 💡 建议核实CVE编号真实性，警惕虚假或预测性安全信息。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/hyu164/Terrminus-CVE-2026-2406" target="_blank">hyu164/Terrminus-CVE-2026-2406</a>
-                <span class="cve-tag" style="">SC: 0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-2406 是虚构编号，不存在此漏洞。</div>
-            <div class="cve-hint" style="font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5);">
-                <a href="https://github.com/hyu164/Terrminus-CVE-2026-2406" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: hyu164</a> | 💡 请核实CVE编号真实性，参考官方NVD数据库。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/obrunolima1910/CVE-2026-24061" target="_blank">obrunolima1910/CVE-2026-24061</a>
-                <span class="cve-tag" style="">SC: 0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">内容虚假，CVE编号格式错误且无此漏洞记录</div>
-            <div class="cve-hint" style="font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5);">
-                <a href="https://github.com/obrunolima1910/CVE-2026-24061" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: obrunolima1910</a> | 💡 建议核实CVE编号真实性，警惕虚假漏洞信息传播。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/salman5230/CVE-2025-59287" target="_blank">salman5230/CVE-2025-59287</a>
-                <span class="cve-tag" style="">SC: 0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">内容与CVE审计无关，未提供任何CVE编号或漏洞详情</div>
-            <div class="cve-hint" style="font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5);">
-                <a href="https://github.com/salman5230/CVE-2025-59287" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: salman5230</a> | 💡 提供具体CVE编号进行审计。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/fa1sa1142/wpair-app" target="_blank">fa1sa1142/wpair-app</a>
-                <span class="cve-tag" style="">SC: 0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">内容虚假无有效CVE信息</div>
-            <div class="cve-hint" style="font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5);">
-                <a href="https://github.com/fa1sa1142/wpair-app" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: fa1sa1142</a> | 💡 建议核实CVE编号真实性并参考官方安全公告。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/kikiuuw/CVE-2025-68921" target="_blank">kikiuuw/CVE-2025-68921</a>
-                <span class="cve-tag" style="">SC: 7</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Nahimic驱动本地提权漏洞影响多款游戏笔记本。</div>
-            <div class="cve-hint" style="font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5);">
-                <a href="https://github.com/kikiuuw/CVE-2025-68921" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: kikiuuw</a> | 💡 立即更新至厂商发布的最新版本驱动。
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Chromium 至官方修复版本（或包含该 CVE 补丁的 V8 版本）。  <br>2. 在无法立即更新的环境中，启用严格的内容安全策略（CSP）并限制不可信 JavaScript 的执行。  <br>3. 对用户输入的 JavaScript 代码进行严格的沙箱隔离，避免与核心应用逻辑混用。  <br>4. 监控异常内存访问行为，部署运行时攻击检测（如 Control Flow Integrity）机制。  <br>5. 开发者应避免在关键业务中直接嵌入未经安全审计的 V8 引擎版本。</div>
+            <div class="cve-hint">
+                <a href="https://github.com/Riquelme54322/CVE-2025-5419" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Riquelme54322</a> | 💡 0.0
             </div>
         </div></div></div>
 </div></body></html>
