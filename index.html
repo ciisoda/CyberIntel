@@ -1,95 +1,106 @@
 <!DOCTYPE html><html><head><meta charset="utf-8">
 <style>
 * { box-sizing: border-box; }
-:root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.6); }
+:root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
 body { 
-    margin:0; padding:15px; background:#05050a; color:#fff; font-family: sans-serif; 
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('mv_shuten.png') no-repeat center center fixed; 
-    background-size: cover; height:100vh; overflow:hidden; 
+    margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; 
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_kako.png'); 
+    background-size:cover; background-position:center; background-attachment:fixed; 
+    height:100vh; overflow:hidden; 
 }
-.glass { background: var(--bg); backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 15px; display:flex; flex-direction:column; overflow:hidden; }
-.header { height:85px; display:flex; align-items:center; gap:15px; margin-bottom:15px; border: 1px solid var(--p); }
-.header img { width:55px; height:55px; border-radius:6px; border:1px solid var(--p); }
-.container { display:grid; grid-template-columns:1fr 1.6fr; gap:15px; height:calc(100vh - 135px); }
-.scroll { overflow-y:auto; scrollbar-width:none; }
+.glass { 
+    background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); 
+    border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; 
+    display:flex; flex-direction:column; overflow:hidden;
+}
+.header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
+.header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
+.container { display:grid; grid-template-columns:1fr 1.6fr; gap:15px; height:calc(100vh - 160px); }
+.scroll { overflow-y:auto; scrollbar-width:none; flex:1; }
 .scroll::-webkit-scrollbar { display:none; }
-.cve-card { margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.05); }
-.cve-top { display:flex; justify-content:space-between; }
-.cve-link { font-weight:bold; text-decoration:none; font-size:13px; }
-.cve-tag { border: 1px solid; padding: 0 4px; border-radius: 3px; font-size: 10px; }
-.cve-body { font-size:11.5px; margin:4px 0; opacity:0.8; line-height:1.4; }
-.label { font-size:9px; color:var(--p); letter-spacing:1px; margin-bottom:6px; font-weight:bold; }
+.cve-card { margin-bottom:15px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.08); }
+.cve-top { display:flex; justify-content:space-between; align-items:center; }
+.cve-link { color:var(--p); font-weight:bold; text-decoration:none; font-size:14px; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
+.neon-blue { color: var(--b); text-shadow: 0 0 8px rgba(0, 212, 255, 0.7), 0 0 15px rgba(0, 212, 255, 0.4); }
+.cve-tag { 
+    border: 1px solid var(--b); color: var(--b); padding: 0 6px; border-radius: 3px; font-size: 10px; font-weight: bold; 
+    box-shadow: 0 0 5px rgba(0,212,255,0.4) inset, 0 0 5px rgba(0,212,255,0.4); text-shadow: 0 0 5px rgba(0,212,255,0.8); 
+}
+.cve-body { font-size:12px; margin:6px 0; opacity:0.85; line-height:1.6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
+.cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
+.label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:8px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header"><img src="cover_shuten.jpg"><div><h1 style="font-size:16px;margin:0;">終点へと向かう楽曲は 僕の心を揺さぶるんだ</h1><p style="font-size:12px;color:var(--p);margin:2px 0;"></p><div style="font-size:9px;opacity:0.4;">驶向终点的乐曲 正撼动我的心灵</div></div></div>
+<div class="glass header"><img src="cover_kako.jpg"><div><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">過去に囚われている</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">被过去所囚困</p><div style="font-size:11px;opacity:0.5;">过去に囚われている</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="height:32%;"><span class="label">VOCAL_INTEL</span><div style="color:var(--b);font-size:18px;font-weight:bold;">標的型攻撃（ひょうてきがたこうげき）</div><div class="scroll" style="font-size:11px;">標的型攻撃（Targeted Attack）   是指针对特定组织或个人，经过周密策划的网络攻击。与无差别攻击不同，攻击者会事先收集目标信息（如系统漏洞、员工习惯等），利用定制化的手段（如鱼叉式网络钓鱼、恶意软件等）实施精准打击，通常以窃取机密信息、破坏系统或勒索为目的。  例句：    当社は先月、競合企業の機密データを狙った標的型攻撃を受け、内部ネットワークが一時的に停止した。    （本公司上月遭遇了针对竞争对手机密数据的定向攻击，内部网络一度瘫痪。）  特点总结：   1. 针对性：锁定特定目标（如企业、政府机构）。   2. 隐蔽性：利用社交工程等手段，难以被常规防御发现。   3. 持续性：可能长期潜伏，分阶段窃取信息。    此类攻击常见于商业间谍、国家级网络战等场景，需通过员工安全意识培训、多层次安全防护等措施应对。</div></div>
-        <div class="glass" style="height:32%;border-left:3px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11px;line-height:1.5;color:#99f1ff;">1. 日元汇率持续走低，逼近历史低位区间。 2. 全球半导体行业复苏，AI芯片需求强劲。 3. 今日顶级Hacker标题：新型供应链攻击席卷开源生态。</div></div>
-        <div class="glass" style="height:32%;border-left:3px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11px;line-height:1.5;">1. 强化关键基础设施防护：日本政府修订《关键信息基础设施保护方针》，强制要求能源、金融等14个关键行业实施网络攻击模拟演练，并推动与美澳等国的跨境安全协作。   2. 应对供应链与AI安全挑战：针对软件供应链攻击（如2024年大规模开源漏洞事件）和生成式AI滥用风险，经济产业省发布《AI安全指南》，要求企业建立AI系统全生命周期安全管理框架。   3. 推动零信任与人才培育：日本IT企业加速零信任架构落地，同时政府启动“网络安全万人培养计划”，通过实战演练与资格认证缓解年均超20万人的安全人才缺口。</div></div>
+        <div class="glass" style="height:32%;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">サイバーセキュリティ</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">サイバーセキュリティ（网络安全）：指保护计算机系统、网络和数据免受数字攻击、损害或未授权访问的技术与措施。<br><br>例句：  <br>金融機関はサイバーセキュリティを強化し、顧客データの漏洩を防いだ。  <br>（金融机构加强网络安全，防止了客户数据泄露。）</div></div>
+        <div class="glass" style="height:32%;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11px;line-height:1.5;color:#99f1ff;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1. 日元汇率：低位震荡，逼近160关口，干预风险上升。<br>2. 半导体行情：AI需求强劲，存储价格复苏，设备投资回暖。<br>3. 顶级Hacker标题：零日漏洞交易暗市活跃，关键基础设施与AI模型成新靶点。</div></div>
+        <div class="glass" style="height:32%;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1. 供应链攻击加剧：针对日本企业的第三方软件和服务攻击频发，政府推动供应链安全强化。<br>2. 零信任架构普及：企业加速引入零信任网络，应对远程办公和云迁移带来的安全挑战。<br>3. AI安全威胁应对：针对生成式AI的数据泄露和恶意使用风险，出台监管框架并加强防御技术研发。</div></div>
     </div>
     <div class="glass"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" style="color:#00d4ff" href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank">mihnasdsad/CVE202532463</a>
-                <span class="cve-tag" style="border-color:#00d4ff;color:#00d4ff">SC: 0</span>
+                <a class="cve-link" href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank">mihnasdsad/CVE202532463</a>
+                <span class="cve-tag">SC: 0</span>
             </div>
-            <div class="cve-body">提供的CVE内容为空，无法进行有效审计。</div>
-            <div class="cve-hint">📡 mihnasdsad | 💡 请提供具体的CVE编号或漏洞详情，例如“CVE202412345”或漏洞描述、受影响的软件及版本等信息，以便进行审计分析。</div>
+            <div class="cve-body">提供的内容为空，无法进行有效的CVE审计分析。</div>
+            <div class="cve-hint">📡 SOURCE: mihnasdsad | 💡 请提供具体的CVE编号或漏洞详情，例如CVE2024XXXX及其相关描述、影响范围、技术细节等，以便进行专业评估。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" style="color:#ff007f" href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank">ammarm0010/CVE202549144_PoC</a>
-                <span class="cve-tag" style="border-color:#ff007f;color:#ff007f">SC: 0</span>
+                <a class="cve-link" href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank">ammarm0010/CVE202549144_PoC</a>
+                <span class="cve-tag">SC: 0</span>
             </div>
-            <div class="cve-body">提供的CVE内容为“None”，无法进行有效审计。</div>
-            <div class="cve-hint">📡 ammarm0010 | 💡 请提供具体的CVE编号或漏洞详情，例如CVE2024XXXX及其描述信息，以便进行审计分析。</div>
+            <div class="cve-body">提供的内容为空，无法进行有效的CVE审计分析。</div>
+            <div class="cve-hint">📡 SOURCE: ammarm0010 | 💡 请提供具体的CVE编号或漏洞详情，例如CVE2024XXXX的完整描述、受影响组件、漏洞类型及利用方式等关键信息，以便进行专业审计。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" style="color:#00d4ff" href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank">ashardev002/CVE202532463_chwoot</a>
-                <span class="cve-tag" style="border-color:#00d4ff;color:#00d4ff">SC: 0</span>
+                <a class="cve-link" href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank">ashardev002/CVE202532463_chwoot</a>
+                <span class="cve-tag">SC: 0</span>
             </div>
-            <div class="cve-body">提供的CVE编号&quot;CVE202532463&quot;在公开的漏洞数据库中不存在（截至当前知识截止日期）。sudo的chroot功能历史上曾出现过漏洞（如CVE201914287等），但无法验证此特定编号的真实性。</div>
-            <div class="cve-hint">📡 ashardev002 | 💡 请核实CVE编号的正确性，并仅从官方渠道（如NVD、供应商安全公告）获取漏洞信息。若需审计真实漏洞，请提供已验证的CVE编号及相关技术细节。</div>
+            <div class="cve-body">内容虚假</div>
+            <div class="cve-hint">📡 SOURCE: ashardev002 | 💡 CVE编号格式错误，不存在CVE202532463。sudo的chroot功能相关漏洞历史记录中无此编号，疑似虚构。建议核实CVE编号真实性，参考MITRE官方数据库或已公开的sudo漏洞（如CVE20213156）。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" style="color:#ff007f" href="https://github.com/sureshkumarsat/CVE-2025-31258-PoC" target="_blank">sureshkumarsat/CVE202531258PoC</a>
-                <span class="cve-tag" style="border-color:#ff007f;color:#ff007f">SC: 0</span>
+                <a class="cve-link" href="https://github.com/sureshkumarsat/CVE-2025-31258-PoC" target="_blank">sureshkumarsat/CVE202531258PoC</a>
+                <span class="cve-tag">SC: 0</span>
             </div>
-            <div class="cve-body">该CVE编号（CVE202531258）不存在于公开漏洞数据库中，且“RemoteViewServices”并非已知的Android组件或常见漏洞载体。提供的描述缺乏技术细节和可信来源，具有典型的虚假漏洞或教学示例特征。</div>
-            <div class="cve-hint">📡 sureshkumarsat | 💡 建议通过权威漏洞数据库（如NVD、MITRE）验证CVE编号真实性，警惕以“1day”“PoC练习”为噱头的未经验证信息。在真实安全评估中，应依据官方补丁公告和可信技术分析进行审计。</div>
+            <div class="cve-body">内容虚假，CVE编号格式错误且无公开记录</div>
+            <div class="cve-hint">📡 SOURCE: sureshkumarsat | 💡 建议核实CVE编号真实性（2025年编号尚未分配），仅使用官方渠道（如NVD、厂商公告）获取漏洞信息进行安全研究。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" style="color:#00d4ff" href="https://github.com/drkim-dev/CVE-2026-30862" target="_blank">drkimdev/CVE202630862</a>
-                <span class="cve-tag" style="border-color:#00d4ff;color:#00d4ff">SC: 0</span>
+                <a class="cve-link" href="https://github.com/drkim-dev/CVE-2026-30862" target="_blank">drkimdev/CVE202630862</a>
+                <span class="cve-tag">SC: 0</span>
             </div>
-            <div class="cve-body">该CVE编号（CVE202630862）不符合现有编号规则（年份编号通常不超过当年），且无任何官方漏洞数据库记录，疑似伪造</div>
-            <div class="cve-hint">📡 drkimdev | 💡 建议忽略此条目，并核查漏洞信息来源的可靠性。如需审计Appsmith安全，应参考官方安全公告及已确认的CVE记录（如CVE2023XXXX系列）。</div>
+            <div class="cve-body">虚假CVE编号，内容无事实依据</div>
+            <div class="cve-hint">📡 SOURCE: drkimdev | 💡 请核实信息来源，CVE编号格式及年份明显错误（2026年不存在），且描述混杂不相关漏洞类型（XSS与权限提升逻辑矛盾），建议参考官方CVE数据库或厂商安全公告获取真实信息。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" style="color:#ff007f" href="https://github.com/jm7knz/CVE-2025-54253-Exploit-Demo" target="_blank">jm7knz/CVE202554253ExploitDemo</a>
-                <span class="cve-tag" style="border-color:#ff007f;color:#ff007f">SC: 0</span>
+                <a class="cve-link" href="https://github.com/jm7knz/CVE-2025-54253-Exploit-Demo" target="_blank">jm7knz/CVE202554253ExploitDemo</a>
+                <span class="cve-tag">SC: 0</span>
             </div>
-            <div class="cve-body">该CVE编号（CVE202554253）不符合命名规范（年份后仅5位数字），且Adobe官方未发布相关安全公告。OGNL注入漏洞在历史AEM漏洞中曾出现（如CVE202220456），但本条目缺乏可信来源和有效验证。</div>
-            <div class="cve-hint">📡 jm7knz | 💡 请通过Adobe官方安全公告（https:</div>
+            <div class="cve-body">该CVE编号（CVE202554253）为虚构编号，截至当前日期（2024年7月）不存在公开记录的Adobe AEM Forms相关漏洞。OGNL注入是已知攻击向量，但此处提供的具体漏洞信息缺乏可信来源验证。</div>
+            <div class="cve-hint">📡 SOURCE: jm7knz | 💡 建议：1. 忽略此虚假漏洞信息，避免测试或传播未经验证的PoC代码。2. 关注Adobe官方安全公告（APSB系列）获取真实漏洞信息。3. 若需审计AEM安全，应遵循官方加固指南并实施输入验证、最小权限原则及OGNL表达式过滤等通用防护措施。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" style="color:#00d4ff" href="https://github.com/hophtien/CVE-2025-54424" target="_blank">hophtien/CVE202554424</a>
-                <span class="cve-tag" style="border-color:#00d4ff;color:#00d4ff">SC: 0</span>
+                <a class="cve-link" href="https://github.com/hophtien/CVE-2025-54424" target="_blank">hophtien/CVE202554424</a>
+                <span class="cve-tag">SC: 0</span>
             </div>
-            <div class="cve-body">该CVE编号（CVE202554424）不符合MITRE官方命名规范（年份编号不超过5位），且未在NVD、CNVD等权威漏洞库中收录。描述中提到的“1Panel TLS客户端证书绕过RCE”缺乏技术细节和可信来源，其声称的利用工具和固定CN值（&#x27;panel_client&#x27;）具有典型虚假漏洞特征。</div>
-            <div class="cve-hint">📡 hophtien | 💡 建议通过官方渠道（如厂商安全公告、NVD、CNVD）核实漏洞信息，警惕来源不明的漏洞预警。对于1Panel用户，建议持续关注项目官方安全更新（https:</div>
+            <div class="cve-body">内容虚假</div>
+            <div class="cve-hint">📡 SOURCE: hophtien | 💡 CVE编号格式不符合MITRE标准（应为CVEYYYYNNNNN），且无任何官方来源证实该漏洞存在。描述中的技术细节（如伪造CN &#x27;panel_client&#x27;）与常见漏洞模式不符，提及的“捆绑扫描利用工具”更增加了伪造嫌疑。建议通过NVD、CNVD、厂商安全公告等权威渠道核实漏洞信息，避免传播未经确认的安全威胁。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" style="color:#00d4ff" href="https://github.com/yeremeu/CVE-2025-32463_chwoot" target="_blank">yeremeu/CVE202532463_chwoot</a>
-                <span class="cve-tag" style="border-color:#00d4ff;color:#00d4ff">SC: 0</span>
+                <a class="cve-link" href="https://github.com/yeremeu/CVE-2025-32463_chwoot" target="_blank">yeremeu/CVE202532463_chwoot</a>
+                <span class="cve-tag">SC: 0</span>
             </div>
-            <div class="cve-body">CVE202532463 是一个不存在的编号，目前没有任何官方安全公告或可信来源证实该漏洞。sudo 的 chroot 功能在过去曾存在相关漏洞（如 CVE201914287），但“CVE202532463”无有效信息，可能为虚构或误解。</div>
-            <div class="cve-hint">📡 yeremeu | 💡 建议：1. 仅从官方渠道（如 NVD、供应商安全公告）获取 CVE 信息；2. 警惕未经验证的漏洞描述或 PoC，可能包含误导或恶意代码；3. 定期更新 sudo 至最新版本以防御已知漏洞。</div>
+            <div class="cve-body">内容虚假</div>
+            <div class="cve-hint">📡 SOURCE: yeremeu | 💡 CVE编号不存在。CVE202532463在公开漏洞数据库中无有效记录，提及的“sudo的chroot功能漏洞”及所谓PoC缺乏可信来源。建议：1. 核实CVE编号真实性（如通过NVD、MITRE等权威平台）；2. 警惕伪造漏洞信息，可能包含恶意代码或误导性攻击；3. 关注官方安全公告（如sudo项目官网）获取真实漏洞信息。</div>
         </div></div></div>
 </div></body></html>
