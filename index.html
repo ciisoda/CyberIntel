@@ -4,7 +4,7 @@
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
 body { 
     margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; 
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_kako.png'); 
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_rock.png'); 
     background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; 
 }
 .glass { 
@@ -34,11 +34,11 @@ body {
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:8px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
 <div class="glass header">
-    <img src="cover_kako.jpg">
+    <img src="cover_rock.jpg">
     <div>
-        <h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">过去に囚われている</h1>
-        <p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">過去に囚われている</p>
-        <div style="font-size:11px;opacity:0.5;">被过去所囚禁</div>
+        <h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">ロックな君とはお别れだ</h1>
+        <p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">ロックな君とはお別れだ</p>
+        <div style="font-size:11px;opacity:0.5;">和摇滚的你告别吧</div>
     </div>
 </div>
 <div class="container">
@@ -46,15 +46,15 @@ body {
         <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;">
             <span class="label">VOCAL_INTEL</span>
             <div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">標的型攻撃（ひょうてきがたこうげき）</div>
-            <div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">標的型攻撃：特定の組織や個人を狙い、綿密な計画のもとに行われるサイバー攻撃。不特定多数を対象とする攻撃とは異なる。<br><br>例句：  <br>当社は標的型攻撃を受け、機密データが窃取された可能性がある。</div>
+            <div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">標的型攻撃：特定の組織や個人を狙い、綿密な計画のもとに行われるサイバー攻撃。不特定多数を対象とする攻撃とは異なり、目的達成のために長期間にわたり情報収集や侵入を続ける。<br><br>例句：<br>当社は競合企業から標的型攻撃を受け、開発中の製品データが窃取された。</div>
         </div>
         <div class="glass" style="flex:1;border-left:4px solid var(--b);">
             <span class="label">MARKET_RECON</span>
-            <div class="scroll" style="font-size:11.5px;line-height:1.6;color:#99f1ff;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1. 日元汇率：低位震荡，逼近160关口，干预风险上升。<br>2. 半导体行情：AI需求强劲，存储芯片价格回升，行业周期上行。<br>3. 今日顶级Hacker标题：微软源代码遭大规模泄露？疑似内部凭证在暗网兜售。</div>
+            <div class="scroll" style="font-size:11.5px;line-height:1.6;color:#99f1ff;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1. 日元汇率：低位震荡，逼近160关口，干预风险上升。<br>2. 半导体行情：AI需求强劲，存储芯片价格复苏，设备投资回暖。<br>3. 今日顶级Hacker标题：零点击漏洞链攻破移动基带，数十亿设备潜在风险。</div>
         </div>
         <div class="glass" style="flex:1;border-left:4px solid var(--p);">
             <span class="label">JAPAN_FEED</span>
-            <div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1. 政府强化供应链安全，推动国产化替代。<br>2. 企业加大云安全与零信任架构投入。<br>3. 应对勒索软件与地缘网络攻击成优先课题。</div>
+            <div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1. 政府强化供应链安全，推动国产化替代。<br>2. 企业加大云安全与零信任架构投入。<br>3. 应对勒索软件与工控系统攻击成焦点。</div>
         </div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;">
@@ -62,67 +62,67 @@ body {
         <div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
+                <a class="cve-link" href="https://github.com/Zain3311/CVE-2025-49844" target="_blank">Zain3311/CVE202549844</a>
+                <span class="cve-tag" style="">SC: 5.8</span>
+            </div>
+            <div class="cve-body">该描述涉及Redis Lua解释器UAF漏洞的利用，声称可执行任意shellcode并获取持久后门访问权限，但缺乏技术细节和验证信息。</div>
+            <div class="cve-hint">📡 SOURCE: Zain3311 | 💡 建议补充漏洞触发条件、影响版本、利用步骤及缓解措施，并验证漏洞真实性。作为网安专家，应优先通过官方渠道获取漏洞信息，避免传播未经验证的利用代码。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/ksnnd32/redis_exploit" target="_blank">ksnnd32/redis_exploit</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 5.0</span>
+            </div>
+            <div class="cve-body">教育性实验环境，非实际漏洞利用代码</div>
+            <div class="cve-hint">📡 SOURCE: ksnnd32 | 💡 建议明确标注“仅用于授权测试环境”，并添加安全使用指南与法律免责声明</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank">siddu7575/CVE202561882CVE202561884</a>
+                <span class="cve-tag" style="">SC: 5.5</span>
+            </div>
+            <div class="cve-body">该仓库描述提及CVE202561882与CVE202561884两个Oracle EBS漏洞，声称存在远程代码执行风险，但缺乏技术细节、影响版本、验证脚本或补丁信息，仅为概括性预警。</div>
+            <div class="cve-hint">📡 SOURCE: siddu7575 | 💡 建议补充具体受影响版本、漏洞触发条件、PoC验证方法及官方补丁编号；若为研究性仓库，应添加免责声明并避免直接发布攻击载荷；同时标注信息来源与更新时间以增强可信度。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
                 <a class="cve-link" href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank">mihnasdsad/CVE202532463</a>
                 <span class="cve-tag" style="">SC: 0</span>
             </div>
-            <div class="cve-body">未提供任何有效内容或CVE相关信息，无法进行安全审计。</div>
-            <div class="cve-hint">📡 SOURCE: mihnasdsad | 💡 请提供具体的CVE编号、漏洞描述、代码或相关技术文档，以便进行专业审计分析。</div>
+            <div class="cve-body">输入内容为空，无法进行CVE仓库安全审计。</div>
+            <div class="cve-hint">📡 SOURCE: mihnasdsad | 💡 请提供具体的CVE编号、漏洞描述、代码仓库链接或相关技术细节，以便进行专业安全评估。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank">ammarm0010/CVE202549144_PoC</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0</span>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 5.0</span>
             </div>
-            <div class="cve-body">输入内容为空，无法进行CVE仓库审计</div>
-            <div class="cve-hint">📡 SOURCE: ammarm0010 | 💡 请提供具体的CVE编号、漏洞描述、代码片段或仓库链接等有效信息，以便进行专业的安全审计分析。</div>
+            <div class="cve-body">提供的CVE仓库内容为&quot;None&quot;，无法进行任何实质性安全审计。缺乏漏洞描述、代码、版本信息等关键数据，无法评估漏洞严重性、影响范围或利用可能性。</div>
+            <div class="cve-hint">📡 SOURCE: ammarm0010 | 💡 请提供具体的CVE编号、漏洞详情或代码仓库链接。若为测试请求，建议补充示例数据；若实际审计对象为空，需确认数据源有效性并重新获取信息。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank">ashardev002/CVE202532463_chwoot</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
+                <span class="cve-tag" style="">SC: 7.5</span>
             </div>
-            <div class="cve-body">CVE202532463是sudo中chroot功能的一个权限提升漏洞。攻击者可通过特定参数绕过chroot限制，在受影响的sudo配置下执行任意命令，从而获得root权限。该PoC环境完整复现了漏洞利用链，包含漏洞触发条件、利用步骤和清理脚本，具有高度可重现性。</div>
-            <div class="cve-hint">📡 SOURCE: ashardev002 | 💡 1. 立即升级sudo至已修复版本（如1.9.15p5或更高）。2. 审计sudoers配置，限制chroot功能使用范围。3. 实施最小权限原则，避免普通用户获得chroot权限。4. 在生产环境部署前，应在隔离测试环境中验证补丁有效性。5. 监控系统日志中可疑的sudo调用行为。</div>
+            <div class="cve-body">CVE202532463是sudo中chroot功能的一个权限提升漏洞。攻击者可通过特定参数组合，在sudo的chroot环境中绕过预期限制，获取提升的权限或访问受限文件。该PoC环境最小化且可复现，有效展示了漏洞触发条件。</div>
+            <div class="cve-hint">📡 SOURCE: ashardev002 | 💡 建议立即更新sudo至已修复版本；在补丁应用前，可通过sudoers配置限制chroot参数使用或禁用非必要chroot功能；审计所有使用sudo chroot的脚本；实施最小权限原则，仅授予必要命令的sudo权限。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/sureshkumarsat/CVE-2025-31258-PoC" target="_blank">sureshkumarsat/CVE202531258PoC</a>
                 <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 5.0</span>
             </div>
-            <div class="cve-body">该仓库提供针对CVE202531258的概念验证，演示通过RemoteViewServices实现部分沙箱逃逸的技术细节。作为网络安全教育资料，其内容具有明确的攻防研究价值，但需警惕潜在滥用风险。</div>
-            <div class="cve-hint">📡 SOURCE: sureshkumarsat | 💡 建议：1. 严格限制在隔离测试环境中使用 2. 添加明显的道德黑客警告声明 3. 配套提供相应的防护缓解方案 4. 验证代码不包含实际漏洞利用载荷 5. 建议使用者具备合法的渗透测试授权</div>
+            <div class="cve-body">该仓库提供针对CVE202531258的概念验证代码，演示通过RemoteViewServices实现部分沙箱逃逸的技术细节。此类材料具有明确的双重用途性质：既可用于防御性安全研究（如漏洞验证、IDS规则开发），也可能被恶意攻击者直接利用。</div>
+            <div class="cve-hint">📡 SOURCE: sureshkumarsat | 💡 建议：1. 严格限制访问范围，仅对授权研究人员开放 2. 添加明确的法律警示和合规使用声明 3. 配套提供缓解措施检测方案 4. 建议与漏洞修复时间线同步下架PoC 5. 记录所有访问日志用于审计追踪</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/drkim-dev/CVE-2026-30862" target="_blank">drkimdev/CVE202630862</a>
-                <span class="cve-tag" style="">SC: 7.5</span>
+                <span class="cve-tag" style="">SC: 5.5</span>
             </div>
-            <div class="cve-body">Appsmith中存在存储型XSS漏洞，允许低权限用户通过恶意构造的JavaScript代码在管理员上下文中执行，可能导致权限提升或数据泄露。</div>
-            <div class="cve-hint">📡 SOURCE: drkimdev | 💡 建议立即升级至已修复版本，对用户输入实施严格的内容安全策略（CSP），并对所有用户输入字段进行服务器端过滤和编码输出。</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/jm7knz/CVE-2025-54253-Exploit-Demo" target="_blank">jm7knz/CVE202554253ExploitDemo</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 9.5</span>
-            </div>
-            <div class="cve-body">高危OGNL注入导致远程代码执行</div>
-            <div class="cve-hint">📡 SOURCE: jm7knz | 💡 立即应用Adobe官方补丁，严格过滤用户输入，禁用不必要的OGNL功能，实施网络隔离与最小权限原则。</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/hophtien/CVE-2025-54424" target="_blank">hophtien/CVE202554424</a>
-                <span class="cve-tag" style="">SC: 7.5</span>
-            </div>
-            <div class="cve-body">1Panel管理面板存在TLS客户端证书验证绕过漏洞，攻击者可伪造CN为&#x27;panel_client&#x27;的客户端证书绕过身份验证，结合捆绑的扫描利用工具可能导致远程代码执行。</div>
-            <div class="cve-hint">📡 SOURCE: hophtien | 💡 1. 立即升级至v2.0.5以上已修复版本；2. 强化TLS客户端证书验证逻辑，严格校验证书链完整性与签发机构；3. 实施证书吊销列表（CRL）或OCSP检查；4. 建议在网络层增加双向认证的独立WAF防护；5. 审计所有使用&#x27;panel_client&#x27;标识的现有证书并立即撤销可疑证书。</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/yeremeu/CVE-2025-32463_chwoot" target="_blank">yeremeu/CVE202532463_chwoot</a>
-                <span class="cve-tag" style="">SC: 7.5</span>
-            </div>
-            <div class="cve-body">CVE202532463是sudo中chroot功能的一个安全绕过漏洞。攻击者可通过精心构造的参数，在特定配置下利用sudo的chroot功能逃逸受限环境，访问或修改本应受保护的文件系统路径，可能导致权限提升或敏感信息泄露。该漏洞影响未正确实施chroot边界检查的sudo版本。</div>
-            <div class="cve-hint">📡 SOURCE: yeremeu | 💡 建议立即升级sudo至已修复版本；审查sudoers配置，避免不必要的chroot授权；实施最小权限原则，严格限制可chroot的目录范围；监控系统日志中异常的sudo使用行为。对于关键系统，考虑使用容器或命名空间等更强隔离机制替代传统chroot。</div>
+            <div class="cve-body">反射型XSS漏洞，允许低权限用户通过恶意构造的URL参数注入脚本，可能导致权限提升风险</div>
+            <div class="cve-hint">📡 SOURCE: drkimdev | 💡 1. 对用户输入进行严格过滤与编码输出 2. 实施CSP策略 3. 升级至已修复版本</div>
         </div></div>
     </div>
 </div></body></html>
