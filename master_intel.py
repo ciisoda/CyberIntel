@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 API_KEY = os.getenv("DEEPSEEK_API_KEY")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
-# 🚩 你的 Bark Key 和 GitHub 仓库 (保持不变)
+# 🚩 配置区
 BARK_KEY = "Eda3xELXUYRR8eeQ4gWam8"
 GH_REPO = "ciisoda/CyberIntel"
 
@@ -15,7 +15,7 @@ client = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com", timeout=25
 
 ASSETS = {
     "くらべられっ子": ["mv_kurabe.png", "cover_kurabe.jpg"],
-    "泥の分际で私だけの大切を夺おうだなんて": ["mv_doro.png", "cover_doro.jpg"],
+    "泥の分际で私だけ的大切を夺おうだなんて": ["mv_doro.png", "cover_doro.jpg"],
     "终点へと向かう楽曲": ["mv_shuten.png", "cover_shuten.jpg"],
     "いつかオトナになれるといいね。": ["mv_otona.png", "cover_otona.jpg"],
     "过去に囚われている": ["mv_kako.png", "cover_kako.jpg"],
@@ -29,26 +29,23 @@ def clean(text):
     return escape(text).strip().replace("\n", "<br>")
 
 def get_ai(prompt_type, ctx=""):
-    # 🌟 核心优化：提升 AI 对 CVE 真实性的审计能力
+    # 🌟 核心增强：加入 Tech & Financial News 审计逻辑
     prompts = {
         "word": "选一个网安日语词，标注假名，只回词。不要废话。",
         "desc": f"简单解释'{ctx}'并给个例句。不要废话。",
         "japan": "三句总结日本IT安全动态。不要废话。",
-        "lyric": f"提供一句TUYU歌曲《{ctx}》的日文歌词和中文翻译。格式严格为: 歌词|翻译 。切勿包含其他废话。",
-        "cve": f"""作为网安专家，审计该CVE仓库。
-        1. 评分: 参考NVD/MSRC。若内容存疑或明显是Bot拼接，评分设为0.0。
-        2. 描述: 准确指出漏洞类型(如RCE)和受影响的具体组件(区分Win11 UWP或旧版)。
-        3. 建议: 若有PoC，提醒复现环境隔离。
-        格式严格: 评分|描述|建议。内容:{ctx}"""
+        "lyric": f"提供一句TUYU歌曲《{ctx}》的日文歌词和中文翻译。格式严格为: 歌词|翻译 。",
+        "news": "作为猎人，总结当下的:1.日元汇率趋势 2.半导体或大宗行情 3.今日顶级Hacker新闻标题。分三行，极简。",
+        "cve": f"审计CVE仓库。评分|描述(Win11/UWP等)|建议。内容:{ctx}"
     }
     try:
         res = client.chat.completions.create(model="deepseek-chat", messages=[{"role": "user", "content": prompts[prompt_type]}])
         return res.choices[0].message.content.strip()
-    except: return ""
+    except: return "Intelligence Lost in Matrix..."
 
 def send_bark(title, content):
     if BARK_KEY == "你的_BARK_KEY_在这里": return
-    url = f"https://api.day.app/{BARK_KEY}/{title}/{content}?group=CyberIntel&icon=https://raw.githubusercontent.com/tuyu/assets/main/icon.png"
+    url = f"https://api.day.app/{BARK_KEY}/{title}/{content}?group=CyberIntel"
     try: requests.get(url, timeout=5)
     except: pass
 
@@ -56,92 +53,84 @@ def git_sync():
     if not GITHUB_TOKEN or GH_REPO == "ciisoda/你的仓库名": return
     try:
         os.chdir(BASE_DIR)
-        subprocess.run(["git", "config", "--global", "--add", "safe.directory", BASE_DIR], check=False)
         subprocess.run(["git", "add", "."], check=True)
         status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
-        if not status.stdout.strip():
-            print("Git Sync: 内容无变化。")
-            return
-        msg = f"NAS Auto Sync: {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+        if not status.stdout.strip(): return
+        msg = f"Recon Sync: {datetime.now().strftime('%Y-%m-%d %H:%M')}"
         subprocess.run(["git", "commit", "-m", msg], check=True)
         remote_url = f"https://{GITHUB_TOKEN}@github.com/{GH_REPO}.git"
-        try:
-            subprocess.run(["git", "push", remote_url, "main", "--force"], check=True, capture_output=True)
-            print("GitHub Sync Success (main)")
-        except:
-            subprocess.run(["git", "push", remote_url, "master", "--force"], check=True)
-            print("GitHub Sync Success (master)")
+        subprocess.run(["git", "push", remote_url, "main", "--force"], check=True, capture_output=True)
     except Exception as e: print(f"Git Error: {e}")
 
-print(f"[{datetime.now()}] 正在过滤高价值情报...")
+# --- 开始生成 ---
+print(f"[{datetime.now()}] 启动前 0.001% 级别的多维审计...")
 
 chosen_song = random.choice(list(ASSETS.keys()))
 mv_bg, cover = ASSETS[chosen_song][0], ASSETS[chosen_song][1]
 
+# 抓取所有情报
 lyric_raw = get_ai("lyric", chosen_song)
-parts = re.split(r"[|\n｜]", lyric_raw)
-parts = [p.strip() for p in parts if p.strip() and "歌" not in p and "译" not in p]
-l_parts = [chosen_song, parts[0], parts[1]] if len(parts) >= 2 else [chosen_song, "どんなに努力しても", "无论怎么努力"]
+l_parts = (re.split(r"[|\n｜]", lyric_raw) + [chosen_song, "努力は報われない", "努力不一定有回报"])[:3]
 
 word = clean(get_ai("word"))
 desc = clean(get_ai("desc", word))
 japan = clean(get_ai("japan"))
+news_feed = clean(get_ai("news")) # 🆕 新增的新闻板块数据
 
 cve_html = ""
 try:
     headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
-    # 扩大搜索范围，寻找最新的 CVE 动向
     r = requests.get("https://api.github.com/search/repositories?q=CVE-2026+OR+CVE-2025&sort=updated", headers=headers, timeout=10)
     for repo in r.json().get("items", [])[:8]:
-        raw_desc = repo.get("description", "")
-        repo_name = repo["full_name"].lower()
+        intel = (re.split(r"[|/]", get_ai("cve", repo.get("description", ""))) + ["0.0", "分析中", "请交叉核对"])[:3]
+        is_poc = any(x in repo["full_name"].lower() for x in ["poc", "exploit", "bypass"])
+        tag_style = "border: 1px solid #ff007f; color: #ff007f;" if is_poc else ""
         
-        intel_raw = get_ai("cve", raw_desc)
-        intel = (re.split(r"[|/]", intel_raw) + ["0.0", "分析中", "请交叉核对信息"])[:3]
-        
-        # 🌟 猎人逻辑：识别潜在的实战工具
-        is_poc = "poc" in repo_name or "exploit" in repo_name
-        tag_style = "border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;" if is_poc else ""
-        poc_label = " [WEAPONIZED]" if is_poc else ""
-
         cve_html += f'''
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="{repo["html_url"]}" target="_blank">{clean(repo["full_name"])}{poc_label}</a>
+                <a class="cve-link" href="{repo["html_url"]}" target="_blank">{clean(repo["full_name"])}</a>
                 <span class="cve-tag" style="{tag_style}">SC: {clean(intel[0])}</span>
             </div>
             <div class="cve-body">{clean(intel[1])}</div>
-            <div class="cve-hint">📡 SOURCE: {clean(repo["owner"]["login"])} | 💡 {clean(intel[2])}</div>
+            <div class="cve-hint">📡 {clean(repo["owner"]["login"])} | 💡 {clean(intel[2])}</div>
         </div>'''
-except: cve_html = "<p>Feed Offline</p>"
+except: cve_html = "<p>External Feed Blocked.</p>"
 
-# HTML 模板保持原本的 TUYU 霓虹风格
-full_html = f'''<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="600">
+# HTML 模板：微调布局以兼容新板块
+full_html = f'''<!DOCTYPE html><html><head><meta charset="utf-8">
 <style>
 * {{ box-sizing: border-box; }}
-:root {{ --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }}
-body {{ margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('{mv_bg}'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }}
-.glass {{ background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }}
-.header {{ height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }}
-.header img {{ width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }}
-.container {{ display:grid; grid-template-columns:1fr 1.6fr; gap:15px; height:calc(100vh - 160px); }}
-.scroll {{ overflow-y:auto; flex:1; scrollbar-width:none; }}
+:root {{ --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.55); }}
+body {{ margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('{mv_bg}'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }}
+.glass {{ background: var(--bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 15px; display:flex; flex-direction:column; }}
+.header {{ height:90px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid var(--p); }}
+.header img {{ width:65px; height:65px; border-radius:8px; border:1.5px solid var(--p); }}
+.container {{ display:grid; grid-template-columns:1fr 1.6fr; gap:15px; height:calc(100vh - 150px); }}
+.scroll {{ overflow-y:auto; scrollbar-width:none; }}
 .scroll::-webkit-scrollbar {{ display:none; }}
-.cve-card {{ margin-bottom:15px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.08); }}
+.cve-card {{ margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.05); }}
 .cve-top {{ display:flex; justify-content:space-between; align-items:center; }}
-.cve-link {{ color:var(--p); font-weight:bold; text-decoration:none; font-size:14px; text-shadow: 0 0 5px rgba(255,0,127,0.4); }}
-.neon-blue {{ color: var(--b); text-shadow: 0 0 8px rgba(0, 212, 255, 0.7), 0 0 15px rgba(0, 212, 255, 0.4); }}
-.cve-tag {{ border: 1px solid var(--b); color: var(--b); padding: 0 6px; border-radius: 3px; font-size: 10px; font-weight: bold; box-shadow: 0 0 5px rgba(0,212,255,0.4) inset, 0 0 5px rgba(0,212,255,0.4); text-shadow: 0 0 5px rgba(0,212,255,0.8); }}
-.cve-body {{ font-size:12px; margin:6px 0; opacity:0.85; line-height:1.6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }}
-.cve-hint {{ font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }}
-.label {{ font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:8px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }}
+.cve-link {{ color:var(--p); font-weight:bold; text-decoration:none; font-size:13px; }}
+.cve-tag {{ border: 1px solid var(--b); color: var(--b); padding: 0 5px; border-radius: 3px; font-size: 10px; }}
+.cve-body {{ font-size:12px; margin:5px 0; opacity:0.8; line-height:1.4; }}
+.cve-hint {{ font-size:10px; color:var(--b); opacity:0.7; }}
+.label {{ font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:8px; font-weight:bold; }}
+.neon-text {{ text-shadow: 0 0 8px var(--b); color: var(--b); }}
 </style></head><body>
-<div class="glass header"><img src="{cover}"><div><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">{clean(l_parts[0])}</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">{clean(l_parts[1])}</p><div style="font-size:11px;opacity:0.5;">{clean(l_parts[2])}</div></div></div>
-<div class="container"><div style="display:flex;flex-direction:column;gap:15px;"><div class="glass" style="flex:1.5;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">{word}</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">{desc}</div></div><div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">{japan}</div></div></div><div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">{cve_html}</div></div></div></body></html>'''
+<div class="glass header"><img src="{cover}"><div><h1 style="font-size:18px;margin:0;">{clean(l_parts[0])}</h1><p style="font-size:13px;color:var(--p);margin:3px 0;">{clean(l_parts[1])}</p><div style="font-size:10px;opacity:0.4;">{clean(l_parts[2])}</div></div></div>
+<div class="container">
+    <div style="display:flex;flex-direction:column;gap:15px;">
+        <div class="glass" style="height:32%;"><span class="label">VOCAL_INTEL</span><div class="neon-text" style="font-size:22px;font-weight:bold;margin-bottom:5px;">{word}</div><div class="scroll" style="font-size:12px;">{desc}</div></div>
+        <div class="glass" style="height:32%;border-left:3px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:12px;line-height:1.5;color:#99f1ff;">{news_feed}</div></div>
+        <div class="glass" style="height:32%;border-left:3px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12px;line-height:1.5;">{japan}</div></div>
+    </div>
+    <div class="glass"><span class="label">CVE_MONITOR</span><div class="scroll">{cve_html}</div></div>
+</div></body></html>'''
 
 with open(os.path.join(BASE_DIR, "index.html"), "w", encoding="utf-8") as f:
     f.write(full_html)
 
 git_sync()
-send_bark("TUYU_CyberIntel", f"情报已审计。当前壁纸: 《{chosen_song}》")
-print("自动化审计流程结束。")
+send_bark("MasterIntel_Updated", f"Tech & Financial 板块已上线。当前：{chosen_song}")
+print("多维审计完成，GitHub 已同步。")
