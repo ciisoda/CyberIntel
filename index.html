@@ -2,102 +2,99 @@
 <style>
 * { box-sizing: border-box; }
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
-body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_kako.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
+body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_otona.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
 .glass { background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }
-/* 🌟 还原你最满意的 100px Header 侧向对齐 */
 .header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
 .header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
 .header-text { display:flex; flex-direction:column; justify-content:center; }
-
 .container { display:grid; grid-template-columns:1fr 1.6fr; gap:15px; height:calc(100vh - 160px); }
 .scroll { overflow-y:auto; flex:1; scrollbar-width:none; }
 .scroll::-webkit-scrollbar { display:none; }
-
 .cve-card { margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.08); }
 .cve-top { display:flex; justify-content:space-between; align-items:center; }
 .cve-link { color:var(--p); font-weight:bold; text-decoration:none; font-size:14px; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 .neon-blue { color: var(--b); text-shadow: 0 0 8px rgba(0, 212, 255, 0.7), 0 0 15px rgba(0, 212, 255, 0.4); }
 .cve-tag { border: 1px solid var(--b); color: var(--b); padding: 0 6px; border-radius: 3px; font-size: 10px; font-weight: bold; box-shadow: 0 0 5px rgba(0,212,255,0.4) inset, 0 0 5px rgba(0,212,255,0.4); text-shadow: 0 0 5px rgba(0,212,255,0.8); }
-.cve-body { font-size:12px; margin:6px 0; opacity:0.85; line-height:1.8; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
+.cve-body { font-size:12px; margin:6px 0; opacity:0.85; line-height:1.6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
 <div class="glass header">
-    <img src="cover_kako.jpg">
+    <img src="cover_otona.jpg">
     <div class="header-text">
-        <h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">过去に囚われている</h1>
-        <p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">過去に囚われている 僕らは</p>
-        <div style="font-size:11px;opacity:0.5;">被过去囚禁着的 我们</div>
+        <h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">いつかオトナになれるといいね。</h1>
+        <p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">いつか大人になれるといいね。</p>
+        <div style="font-size:11px;opacity:0.5;">要是有一天能长大成人就好了呢。</div>
     </div>
 </div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">ゆめうつつ</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">词语解释：<br>“ゆめうつつ”是日语复合词，由“ゆめ（夢）”和“うつつ（現）”组成，字面意思为“梦与现实”。它表达一种介于梦境与清醒之间的朦胧状态，即分不清是梦还是现实，常用于描述精神恍惚、沉浸幻想或深刻思念时的情境。<br><br>歌词出处：<br>该词语在多首歌曲中出现，较著名的是日本歌手“滨崎步”演唱的歌曲《Dreamed a Dream》（原为音乐剧《悲惨世界》名曲，日文版填词）。其日文版歌词中包含“ゆめうつつ”一词，用以描绘主人公芳汀在苦难中徘徊于梦幻与残酷现实之间的心境。<br><br>注意：此词语属于日常日语词汇，并非专属于某首歌词。</div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.6;color:#99f1ff;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"><div>No Valid Recon Found Today.</div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">截至2026年3月，日本IT领域的最新动态聚焦于以下三点：  <br>1. 量子计算实用化加速：日本理化研究所与产业界合作，首次在金融风险模拟领域实现量子-经典混合计算的实际部署，将特定计算任务效率提升百倍。  <br>2. AI监管框架落地：日本政府正式实施《生成式AI透明化法案》，强制要求企业公开训练数据来源与版权合规证明，引发全球科技公司合规调整。  <br>3. 6G技术标准主导权争夺：日本联合欧盟在6G核心频谱（100GHz以上）达成技术同盟，推动太赫兹通信芯片的联合研发，以应对中美技术竞争。  <br><br>（注：以上信息基于2026年3月的前沿技术趋势与政策动向模拟，实际进展请以实时资讯为准。）</div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">絶望（ぜつぼう）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">絶望（ぜつぼう）是一个日语名词，意为“绝望”，指完全失去希望、陷入毫无出路的状态。<br><br>在歌词中使用该词的例子很多，例如：<br>1. 歌曲《絶望ビリー》由DECO27创作，初音未来演唱，歌词中包含“絶望”一词。<br>2. 动漫《魔法少女小圆》的主题曲《コネクト》由ClariS演唱，其中也有“絶望”相关的歌词。<br><br>请注意，以上仅为歌词中出现的例子，并非该词的定义。</div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.6;color:#99f1ff;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"><div>No Verified Recon Today.</div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:12.5px;line-height:1.6;text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"></div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/KvzinNcpx7/CVE-2025-9074_DAEMON_KILLER" target="_blank">KvzinNcpx7/CVE-2025-9074_DAEMON_KILLER</a>
-                <span class="cve-tag" style="">SC: 评分：9.5</span>
+                <a class="cve-link" href="https://github.com/sakthivel10q/CVE-2025-14847" target="_blank">sakthivel10q/CVE-2025-14847</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.8; margin-top:8px;">10（高危）  <br>描述：CVE-2025-9074 涉及容器逃逸漏洞，攻击者可能通过恶意API调用突破Docker隔离环境，获取宿主机权限。  <br>建议：立即更新容器运行时至安全版本；限制容器权限（如使用只读根文件系统、禁用特权模式）；加强API访问控制与网络隔离。</div>
-            <div class="cve-hint" style="margin-top:5px; opacity:0.6;">💡 0.0</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px;">描述内容与CVE-2025-14847官方记录不符，疑似为AI生成的误导性或虚构信息。MongoDB官方无此漏洞记录，且描述中的“泄露敏感堆内存”缺乏具体组件、版本和漏洞类型（如信息泄露）的准确技术细节。</div>
+            <div class="cve-hint" style="margin-top:4px; opacity:0.6;">📡 SOURCE: sakthivel10q | 💡 请勿在非隔离环境中测试或运行来源不明的脚本。如需验证漏洞，请务必参考MongoDB官方安全公告及NVD标准条目，并在完全隔离的沙箱环境中进行。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/pedrocruz2202/mongobleed-scanner" target="_blank">pedrocruz2202/mongobleed-scanner</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px;">描述内容为推广扫描工具，未提供CVE-2025-14847的具体漏洞类型、受影响组件或技术细节，疑似Bot生成的营销文本。</div>
+            <div class="cve-hint" style="margin-top:4px; opacity:0.6;">📡 SOURCE: pedrocruz2202 | 💡 建议忽略此非技术性内容，在隔离的测试环境中通过官方安全公告（如MongoDB安全通告）获取准确的漏洞信息并进行验证。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/Asder10/React2Shell" target="_blank">Asder10/React2Shell</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px;">描述内容仅为测试框架宣传，未提供任何具体漏洞类型（如RCE、XSS等）及受影响组件（如Next.js</div>
+            <div class="cve-hint" style="margin-top:4px; opacity:0.6;">📡 SOURCE: Asder10 | 💡 React的具体版本或模块）信息，疑似Bot拼接或广告文本。</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/KvzinNcpx7/CVE-2025-9074_DAEMON_KILLER" target="_blank">KvzinNcpx7/CVE-2025-9074_DAEMON_KILLER</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px;">内容疑似为AI或营销文案拼接，未提供可信的漏洞类型、受影响组件及技术细节，无法确认CVE-2025-9074的真实性</div>
+            <div class="cve-hint" style="margin-top:4px; opacity:0.6;">📡 SOURCE: KvzinNcpx7 | 💡 请勿在非隔离环境中测试任何未经验证的漏洞信息，建议通过官方NVD、厂商公告等权威渠道核实后再进行安全研究。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/yogeshkumar09/CVE-2025-55184_Testing" target="_blank">yogeshkumar09/CVE-2025-55184_Testing</a>
-                <span class="cve-tag" style="">SC: 评分：高危（7.5</span>
+                <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.8; margin-top:8px;">10）  <br>描述：React Server Components 中因未受控的服务器端渲染递归可能导致拒绝服务（DoS），攻击者可构造恶意请求耗尽服务器资源。  <br>建议：升级至 React 安全版本；实施渲染深度限制；对用户输入进行严格验证与过滤。</div>
-            <div class="cve-hint" style="margin-top:5px; opacity:0.6;">💡 0.0</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px;">描述内容仅为通用安全测试建议，未明确指出具体漏洞类型（如DoS）及受影响的React Server Components具体版本或组件。</div>
+            <div class="cve-hint" style="margin-top:4px; opacity:0.6;">📡 SOURCE: yogeshkumar09 | 💡 请核实CVE-2025-55184的官方描述，在隔离的测试环境中验证漏洞细节，避免在生产环境直接测试。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/captain4554/CVE-2025-55182-Scanner" target="_blank">captain4554/CVE-2025-55182-Scanner</a>
-                <span class="cve-tag" style="">SC: 评分：7.5</span>
+                <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.8; margin-top:8px;">10（中高危）  <br>描述：CVE-2025-55182 涉及 Next.js</div>
-            <div class="cve-hint" style="margin-top:5px; opacity:0.6;">💡 Waku 框架的安全漏洞，可能导致信息泄露或远程代码执行。该扫描工具结合静态与动态分析，覆盖较全面。  <br>建议：1. 立即更新至官方安全版本；2. 使用该工具进行深度扫描并修复所有关联依赖；3. 部署WAF规则拦截恶意请求；4. 审计服务端渲染与API路由配置。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px;">描述内容为通用安全工具宣传，与特定CVE漏洞（CVE-2025-55182）的技术细节、漏洞类型及受影响组件无关，疑似自动化拼接或误导性内容。</div>
+            <div class="cve-hint" style="margin-top:4px; opacity:0.6;">📡 SOURCE: captain4554 | 💡 请勿在非隔离环境中执行来源不明的扫描工具，该仓库内容未提供可验证的CVE相关代码或补丁信息，建议通过官方渠道获取漏洞详情。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/freiwi/CVE-2025-8110" target="_blank">freiwi/CVE-2025-8110</a>
-                <span class="cve-tag" style="">SC: 评分：高危（8.5）<br><br>描述：Gogs 0.13.3及更早版本的PutContents API存在符号链接处理不当漏洞，攻击者可利用此漏洞构造恶意符号链接，导致任意文件覆盖或本地代码执行。<br><br>建议：立即升级至Gogs 0.13.4或更高版本。临时缓解措施包括：严格限制仓库操作权限，对用户提交的文件路径进行符号链接解析检查，并实施文件系统访问沙箱隔离。</span>
+                <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.8; margin-top:8px;">0.0</div>
-            <div class="cve-hint" style="margin-top:5px; opacity:0.6;">💡 分析中</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px;">描述内容与CVE标准漏洞类型不符，疑似由自动化工具生成。提供的“符号链接处理不当”描述过于笼统，未明确受影响的具体组件（如前端、后端或特定模块），且“暴露本地代码执行风险”的结论缺乏技术细节支撑，不符合专业漏洞披露规范。</div>
+            <div class="cve-hint" style="margin-top:4px; opacity:0.6;">📡 SOURCE: freiwi | 💡 请勿在非隔离环境中测试任何未经权威机构（如NVD、MITRE）确认的漏洞描述。建议通过官方渠道核实CVE详细信息，并仅在受控的沙箱环境中进行安全研究。</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/vick333-peniel/ReactExploitGUI" target="_blank">vick333-peniel/ReactExploitGUI</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 评分：高危 (9.0)  <br>描述：CVE-2025-55182 存在远程代码执行漏洞，攻击者可通过GUI工具实现漏洞检测、命令执行及反向Shell连接，危害极大。  <br>建议：立即隔离受影响系统，应用官方补丁；部署网络监控与入侵检测规则；强化访问控制与最小权限原则。</span>
+                <a class="cve-link" href="https://github.com/vick333-peniel/ReactExploitGUI" target="_blank">vick333-peniel/ReactExploitGUI [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.8; margin-top:8px;">0.0</div>
-            <div class="cve-hint" style="margin-top:5px; opacity:0.6;">💡 分析中</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Saied25/fix-react2shell-next" target="_blank">Saied25/fix-react2shell-next</a>
-                <span class="cve-tag" style="">SC: 评分：高危  <br>描述：CVE-2025-66478 影响 Next.js 及 React RSC 应用，可能导致服务器端代码执行或数据泄露。  <br>建议：立即运行官方提供的修复命令升级依赖，并全面检查服务器端组件（RSC）的输入验证与渲染逻辑。</span>
-            </div>
-            <div class="cve-body" style="line-height:1.8; margin-top:8px;">0.0</div>
-            <div class="cve-hint" style="margin-top:5px; opacity:0.6;">💡 分析中</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/ahmed-dev-op/CVE-2025-55182" target="_blank">ahmed-dev-op/CVE-2025-55182</a>
-                <span class="cve-tag" style="">SC: 评分：9.8（高危）<br>描述：CVE-2025-55182是React Server Components与Next.js应用中的远程代码执行漏洞。攻击者可通过特制请求在服务器端注入并执行任意代码，完全控制受影响系统。<br>建议：1. 立即升级Next.js至官方安全版本。2. 审查所有服务器组件输入验证。3. 部署WAF规则拦截异常RSC请求。4. 隔离测试环境，禁止暴露公网。</span>
-            </div>
-            <div class="cve-body" style="line-height:1.8; margin-top:8px;">0.0</div>
-            <div class="cve-hint" style="margin-top:5px; opacity:0.6;">💡 分析中</div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/iksanwkk/CVE-2025-55182-exp" target="_blank">iksanwkk/CVE-2025-55182-exp</a>
-                <span class="cve-tag" style="">SC: 9.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.8; margin-top:8px;">通过原型污染实现RCE，影响Next.js服务端组件，可导致远程代码执行。</div>
-            <div class="cve-hint" style="margin-top:5px; opacity:0.6;">💡 立即升级Next.js至安全版本；审查服务端组件输入验证；部署原型污染防护库。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px;">该描述声称是一个针对CVE-2025-55182的GUI漏洞利用工具，但CVE-2025-55182并非公开、有效的CVE编号（截至当前知识截止日期），其内容疑似由机器拼接或伪造，缺乏可信的漏洞类型和受影响组件信息。</div>
+            <div class="cve-hint" style="margin-top:4px; opacity:0.6;">📡 SOURCE: vick333-peniel | 💡 请勿在任何环境中运行或测试来源不明、描述可疑的所谓“漏洞利用工具”，此类文件极可能包含恶意代码。如需研究漏洞，请务必在完全隔离、无网络连接的物理隔离环境中进行，并仅从官方或极度可信的技术渠道获取信息与工具。</div>
         </div></div></div>
 </div></body></html>
