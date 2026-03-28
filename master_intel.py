@@ -3,17 +3,16 @@ from openai import OpenAI
 from datetime import datetime
 from html import escape
 
-# --- 基础配置 ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 API_KEY = os.getenv("DEEPSEEK_API_KEY")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+
+# 🚩 你的 Bark Key 和 GitHub 仓库 (保持不变)
 BARK_KEY = "Eda3xELXUYRR8eeQ4gWam8"
 GH_REPO = "ciisoda/CyberIntel"
 
-# 初始化 Client (增加 60s 超时防止 DeepSeek 思考太久)
-client = None
-if API_KEY:
-    client = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com", timeout=60.0)
+# 增加超时时间并给默认占位符，防止初始化崩溃
+client = OpenAI(api_key=API_KEY or "dummy_key", base_url="https://api.deepseek.com", timeout=60.0)
 
 ASSETS = {
     "くらべられっ子": ["mv_kurabe.png", "cover_kurabe.jpg"],
@@ -24,36 +23,10 @@ ASSETS = {
     "ロックな君とはお别れだ": ["mv_rock.png", "cover_rock.jpg"]
 }
 
-# --- 严格遵循原版的工具函数 ---
-
 def clean(text):
     if not text: return ""
     text = str(text).replace('*', '').replace('#', '').replace('「', '').replace('」', '')
     return escape(text).strip().replace("\n", "<br>")
-
-def render_links(raw_text, color):
-    out = ""
-    for line in raw_text.split('\n'):
-        if '|' in line:
-            t, u = line.split('|', 1)
-            out += f'<div style="margin-bottom:12px;">• {clean(t)} <a href="{u.strip()}" target="_blank" style="color:{color};font-size:10px;text-decoration:none;text-shadow:0 0 5px {color};">[LINK]</a></div>'
-    return out if out else "<div>Data Syncing...</div>"
-
-def get_ai(prompt_type, ctx=""):
-    if not client: return ""
-    prompts = {
-        "word": "选一个网安日语词，标注假名，只回词。不要废话。",
-        "desc": f"简单解释'{ctx}'并给个例句。不要废话。",
-        "lyric": f"提供一句TUYU歌曲《{ctx}》的日文歌词和中文翻译。格式严格为: 歌词|翻译 。",
-        "cve": f"作为网安专家，审计该CVE仓库。评分|描述|建议。内容:{ctx}"
-    }
-    try:
-        res = client.chat.completions.create(model="deepseek-chat", messages=[{"role": "user", "content": prompts[prompt_type]}])
-        return res.choices[0].message.content.strip()
-    except:
-        # 即使欠费也保证 UI 有内容
-        fallbacks = {"word": "ゼロデイ", "desc": "未修正の脆弱性への攻撃。", "lyric": "世界は美しくなんかない|世界才不是那么美丽", "cve": "9.8|关键内核溢出|需环境隔离"}
-        return fallbacks.get(prompt_type, "")
 
 def get_real_rss(url):
     try:
@@ -61,32 +34,64 @@ def get_real_rss(url):
         items = re.findall(r'<item>.*?<title>(.*?)</title>.*?<link>(.*?)</link>', r.text, re.S)
         news_data = []
         for t, l in items[:3]:
-            # AI 极简总结标题
+            print(f"   [抓取新闻] 正在用 AI 总结: {t[:10]}...", end="", flush=True)
             try:
                 summary = client.chat.completions.create(
                     model="deepseek-chat",
                     messages=[{"role": "user", "content": f"将此标题翻译并改写为10字内网安情报风格: {t}"}]
                 ).choices[0].message.content.strip()
-            except: summary = t[:15]
+                print(" ✅")
+            except:
+                summary = t[:15] + "..."
+                print(" ❌(超时或欠费，使用原标题)")
             news_data.append(f"{clean(summary)}|{l}")
         return "\n".join(news_data)
     except: return "Intel Feed Offline|#"
 
+def get_ai(prompt_type, ctx=""):
+    prompts = {
+        "word": "选一个网安日语词，标注假名，只回词。不要废话。",
+        "desc": f"简单解释'{ctx}'并给个例句。不要废话。",
+        "lyric": f"提供一句TUYU歌曲《{ctx}》的日文歌词和中文翻译。格式严格为: 歌词|翻译 。",
+        "cve": f"""你是一个没有感情的网安API接口。
+严格按照此格式输出：评分|漏洞简述|修复建议。
+绝不允许出现“好的”、“根据”、“作为专家”等任何解释性废话！如果没数据就输出 0.0|暂无详情|请人工核对。
+内容:{ctx}"""
+    }
+    print(f"   [AI请求] 正在生成 {prompt_type} ...", end="", flush=True)
+    try:
+        res = client.chat.completions.create(model="deepseek-chat", messages=[{"role": "user", "content": prompts[prompt_type]}])
+        print(" ✅")
+        return res.choices[0].message.content.strip()
+    except Exception as e:
+        print(f" ❌(兜底数据)")
+        fallbacks = {
+            "word": "エクスプロイト",
+            "desc": "利用漏洞进行攻击的代码或程序。",
+            "lyric": "世界は美しくなんかない|世界才不是那么美丽",
+            "cve": "9.8|核心组件远程代码执行漏洞|建议立即隔离复现环境"
+        }
+        return fallbacks.get(prompt_type, "")
+
+def send_bark(title, content):
+    if not BARK_KEY or BARK_KEY == "你的_BARK_KEY_在这里": return
+    url = f"https://api.day.app/{BARK_KEY}/{title}/{content}?group=CyberIntel&icon=https://raw.githubusercontent.com/tuyu/assets/main/icon.png"
+    try: requests.get(url, timeout=5)
+    except: pass
+
 def git_sync():
-    if not GITHUB_TOKEN: return
+    if not GITHUB_TOKEN or GH_REPO == "ciisoda/你的仓库名": return
     try:
         os.chdir(BASE_DIR)
-        if os.path.exists(".git/index.lock"): os.remove(".git/index.lock")
         subprocess.run(["git", "add", "."], check=True)
         msg = f"NAS Auto Sync: {datetime.now().strftime('%Y-%m-%d %H:%M')}"
         subprocess.run(["git", "commit", "-m", msg], check=True)
         remote_url = f"https://{GITHUB_TOKEN}@github.com/{GH_REPO}.git"
-        print(f"正在推送到 GitHub...")
-        # 移除 capture_output 以免看起来像卡死
+        print("   [Git] 正在推送到 GitHub... (可能需要几秒钟)")
         subprocess.run(["git", "push", remote_url, "main", "--force"], check=True)
     except Exception as e: print(f"Git Error: {e}")
 
-# --- 1. 执行流程 ---
+# --- 执行流程 ---
 print(f"[{datetime.now()}] 正在启动 2026 深度情报审计...")
 chosen_song = random.choice(list(ASSETS.keys()))
 mv_bg, cover = ASSETS[chosen_song][0], ASSETS[chosen_song][1]
@@ -97,16 +102,38 @@ lyric_raw = get_ai("lyric", chosen_song)
 parts = (re.split(r"[|\n｜]", lyric_raw) + ["どんなに努力しても", "无论怎么努力"])[:2]
 l_parts = [chosen_song, parts[0], parts[1]]
 
+def render_links(raw_text, color):
+    out = ""
+    for line in raw_text.split('\n'):
+        if '|' in line:
+            t, u = line.split('|', 1)
+            out += f'<div style="margin-bottom:12px;">• {clean(t)} <a href="{u.strip()}" target="_blank" style="color:{color};font-size:10px;text-decoration:none;text-shadow:0 0 5px {color};">[LINK]</a></div>'
+    return out if out else "<div>Data Syncing...</div>"
+
+print("   [抓取] 正在获取黑客新闻源...")
 market_html = render_links(get_real_rss("https://feeds.feedburner.com/TheHackersNews"), "var(--b)")
+print("   [抓取] 正在获取日本 IT 新闻源...")
 japan_html = render_links(get_real_rss("https://news.yahoo.co.jp/rss/categories/it.xml"), "var(--p)")
 
 cve_html = ""
 try:
     headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
+    print("   [抓取] 正在搜寻最新 CVE 仓库...")
     r = requests.get("https://api.github.com/search/repositories?q=CVE-2026+OR+CVE-2025&sort=updated", headers=headers, timeout=10)
     for repo in r.json().get("items", [])[:8]:
         ai_res = get_ai("cve", repo.get("description", ""))
-        intel = (re.split(r"[|/｜]", ai_res) + ["0.0", "分析中", "请交叉核对"])[:3]
+        
+        # 🛡️ 核心防御：防止 AI 废话撑爆你的 UI
+        if "|" not in ai_res and "｜" not in ai_res:
+            intel = ["N/A", "AI未返回标准格式", "建议点击SOURCE核对"]
+        else:
+            intel = (re.split(r"[|｜]", ai_res) + ["0.0", "分析中", "请交叉核对"])[:3]
+
+        # 🛡️ 二次防御：切断超长分数
+        sc_score = clean(intel[0])
+        if len(sc_score) > 10:
+            sc_score = "Err"
+
         is_poc = any(x in repo["full_name"].lower() for x in ["poc", "exploit", "bypass"])
         tag_style = "border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;" if is_poc else ""
         
@@ -114,7 +141,7 @@ try:
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="{repo["html_url"]}" target="_blank">{clean(repo["full_name"])}{" [WEAPONIZED]" if is_poc else ""}</a>
-                <span class="cve-tag" style="{tag_style}">SC: {clean(intel[0])}</span>
+                <span class="cve-tag" style="{tag_style}">SC: {sc_score}</span>
             </div>
             <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">{clean(intel[1])}</div>
             <div class="cve-hint">
@@ -123,7 +150,7 @@ try:
         </div>'''
 except: cve_html = "<p>External Feed Offline</p>"
 
-# --- 2. 严格还原原版 HTML 模板 ---
+# --- 严格还原的 HTML 模板 ---
 full_html = f'''<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="600">
 <style>
 * {{ box-sizing: border-box; }}
@@ -155,9 +182,9 @@ body {{ margin:0; padding:20px; background:#05050a; color:#fff; font-family: san
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">{cve_html}</div></div>
 </div></body></html>'''
 
-# --- 3. 写入与同步 ---
 with open(os.path.join(BASE_DIR, "index.html"), "w", encoding="utf-8") as f:
     f.write(full_html)
 
 git_sync()
+send_bark("TUYU_CyberIntel", f"2026 任务审计完成。当前歌曲：《{chosen_song}》")
 print("自动化流程圆满结束。")

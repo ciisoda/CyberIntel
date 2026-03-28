@@ -1,1 +1,33 @@
 === 任务开始时间: Sat Mar 28 22:00:01 CST 2026 ===
+[main 13950ca] NAS Auto Sync: 2026-03-28 22:03
+ 2 files changed, 38 insertions(+), 43 deletions(-)
+remote: error: GH013: Repository rule violations found for refs/heads/main.        
+remote: 
+remote: - GITHUB PUSH PROTECTION        
+remote:   —————————————————————————————————————————        
+remote:     Resolve the following violations before pushing again        
+remote: 
+remote:     - Push cannot contain secrets        
+remote: 
+remote:             
+remote:      (?) Learn how to resolve a blocked push        
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push        
+remote:             
+remote:             
+remote:       —— GitHub Personal Access Token ——————————————————————        
+remote:        locations:        
+remote:          - commit: 3f274406ea4a1376255763a5d6ef2a45db486f01        
+remote:            path: output.log:5        
+remote:             
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.        
+remote:        https://github.com/ciisoda/CyberIntel/security/secret-scanning/unblock-secret/3BZpoFZKfSBAhrJG3ZW4jrhty5A        
+remote:             
+remote: 
+remote: 
+To https://github.com/ciisoda/CyberIntel.git
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/ciisoda/CyberIntel.git'
+[2026-03-28 22:00:03.013648] 正在启动 2026 深度情报审计...
+正在推送到 GitHub...
+Git Error: Command '['git', 'push', 'https://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@github.com/ciisoda/CyberIntel.git', 'main', '--force']' returned non-zero exit status 1.
+自动化流程圆满结束。
