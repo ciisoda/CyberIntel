@@ -2,109 +2,74 @@
 <style>
 * { box-sizing: border-box; }
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
-body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_kurabe.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
+body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_rock.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
 .glass { background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }
 .header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
 .header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
-.header-text { display:flex; flex-direction:column; justify-content:center; }
 .container { display:grid; grid-template-columns:1fr 1.6fr; gap:15px; height:calc(100vh - 160px); }
 .scroll { overflow-y:auto; flex:1; scrollbar-width:none; }
 .scroll::-webkit-scrollbar { display:none; }
 .cve-card { margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.08); }
 .cve-top { display:flex; justify-content:space-between; align-items:center; }
 .cve-link { color:var(--p); font-weight:bold; text-decoration:none; font-size:14px; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
-.neon-blue { color: var(--b); text-shadow: 0 0 8px rgba(0, 212, 255, 0.7), 0 0 15px rgba(0, 212, 255, 0.4); }
-.cve-tag { border: 1px solid var(--b); color: var(--b); padding: 0 6px; border-radius: 3px; font-size: 10px; font-weight: bold; box-shadow: 0 0 5px rgba(0,212,255,0.4) inset, 0 0 5px rgba(0,212,255,0.4); text-shadow: 0 0 5px rgba(0,212,255,0.8); }
-.cve-body { font-size:12px; margin:6px 0; opacity:0.85; line-height:1.6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
-.cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
-.label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
+.neon-blue { color: var(--b); text-shadow: 0 0 8px rgba(0, 212, 255, 0.7); }
+.cve-tag { border: 1px solid var(--b); color: var(--b); padding: 0 6px; border-radius: 3px; font-size: 10px; font-weight: bold; }
+.label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; }
 </style></head><body>
-<div class="glass header"><img src="cover_kurabe.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">くらべられっ子</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;"></p><div style="font-size:11px;opacity:0.5;margin-top:2px;">どんなに努力しても</div></div></div>
+<div class="glass header"><img src="cover_rock.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;">ロックな君とはお别れだ</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;">世界は美しくなんかない</p><div style="font-size:11px;opacity:0.5;">世界才不是那么美丽</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;"></div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;"><div style="margin-bottom:12px;">• Intel Feed Offline <a href="#" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• Intel Feed Offline <a href="#" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">エクスプロイト (Exploit)</div><div class="scroll">利用系统漏洞进行攻击的程序或代码。</div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;"><div style="margin-bottom:12px;">• Citrix NetScaler Under Active Recon... <a href="https://thehackernews.com/2026/03/citrix-netscaler-under-active-recon-for.html" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div><div style="margin-bottom:12px;">• CISA Adds CVE-2025-53521 to KEV Aft... <a href="https://thehackernews.com/2026/03/cisa-adds-cve-2025-53521-to-kev-after.html" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div><div style="margin-bottom:12px;">• TA446 Deploys DarkSword iOS Exploit... <a href="https://thehackernews.com/2026/03/ta446-deploys-leaked-darksword-ios.html" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;"><div style="margin-bottom:12px;">• X Pro、プレミアムプランから除外で実質“大幅値上げ”　Xは代替... <a href="https://news.yahoo.co.jp/articles/97d4e885e9c609281d94f9d8cfbee488e136a24c?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• GIZMARTの商品、リアルで触ってきた。ほぼ製品版のNape Pro... <a href="https://news.yahoo.co.jp/articles/1da26d55178238f867bfb63bf623ee032de8d529?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 従業員が次々辞める有害な職場の残念すぎる共通点(TechTarge... <a href="https://news.yahoo.co.jp/articles/c627839be6d8fd1b0d4579e9634a42bd745bbaff?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Zain3311/CVE-2025-49844" target="_blank">Zain3311/CVE-2025-49844</a>
-                <span class="cve-tag" style="">SC: </span>
+                <a class="cve-link" href="https://github.com/0xBlackash/CVE-2026-20079" target="_blank">0xBlackash/CVE-2026-20079</a>
+                <span class="cve-tag" style="">SC: 9.8</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
-            <div class="cve-hint">
-                <a href="https://github.com/Zain3311/CVE-2025-49844" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Zain3311</a> | 💡 分析中
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/ksnnd32/redis_exploit" target="_blank">ksnnd32/redis_exploit [WEAPONIZED]</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: </span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
-            <div class="cve-hint">
-                <a href="https://github.com/ksnnd32/redis_exploit" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ksnnd32</a> | 💡 分析中
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank">siddu7575/CVE-2025-61882-CVE-2025-61884</a>
-                <span class="cve-tag" style="">SC: </span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
-            <div class="cve-hint">
-                <a href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: siddu7575</a> | 💡 分析中
-            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">关键内核溢出漏洞发现</div>
+            <div class="cve-hint">📡 SOURCE: 0xBlackash | 💡 需立即隔离测试</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/dinhvaren/cve-2026-33937" target="_blank">dinhvaren/cve-2026-33937</a>
-                <span class="cve-tag" style="">SC: </span>
+                <span class="cve-tag" style="">SC: 9.8</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
-            <div class="cve-hint">
-                <a href="https://github.com/dinhvaren/cve-2026-33937" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: dinhvaren</a> | 💡 分析中
-            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">关键内核溢出漏洞发现</div>
+            <div class="cve-hint">📡 SOURCE: dinhvaren | 💡 需立即隔离测试</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/0xBlackash/CVE-2026-20079" target="_blank">0xBlackash/CVE-2026-20079</a>
-                <span class="cve-tag" style="">SC: </span>
+                <a class="cve-link" href="https://github.com/Zain3311/CVE-2025-49844" target="_blank">Zain3311/CVE-2025-49844</a>
+                <span class="cve-tag" style="">SC: 9.8</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
-            <div class="cve-hint">
-                <a href="https://github.com/0xBlackash/CVE-2026-20079" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: 0xBlackash</a> | 💡 分析中
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">关键内核溢出漏洞发现</div>
+            <div class="cve-hint">📡 SOURCE: Zain3311 | 💡 需立即隔离测试</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/ksnnd32/redis_exploit" target="_blank">ksnnd32/redis_exploit [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 9.8</span>
             </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">关键内核溢出漏洞发现</div>
+            <div class="cve-hint">📡 SOURCE: ksnnd32 | 💡 需立即隔离测试</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank">siddu7575/CVE-2025-61882-CVE-2025-61884</a>
+                <span class="cve-tag" style="">SC: 9.8</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">关键内核溢出漏洞发现</div>
+            <div class="cve-hint">📡 SOURCE: siddu7575 | 💡 需立即隔离测试</div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank">mihnasdsad/CVE-2025-32463</a>
-                <span class="cve-tag" style="">SC: </span>
+                <span class="cve-tag" style="">SC: 9.8</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
-            <div class="cve-hint">
-                <a href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: mihnasdsad</a> | 💡 分析中
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank">ashardev002/CVE-2025-32463_chwoot</a>
-                <span class="cve-tag" style="">SC: </span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
-            <div class="cve-hint">
-                <a href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ashardev002</a> | 💡 分析中
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank">ammarm0010/CVE-2025-49144_PoC [WEAPONIZED]</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: </span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">0.0</div>
-            <div class="cve-hint">
-                <a href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ammarm0010</a> | 💡 分析中
-            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">关键内核溢出漏洞发现</div>
+            <div class="cve-hint">📡 SOURCE: mihnasdsad | 💡 需立即隔离测试</div>
         </div></div></div>
 </div></body></html>
