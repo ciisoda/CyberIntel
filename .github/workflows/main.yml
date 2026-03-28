@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4  # 升级到 v4，解决 Node 20 警告
 
       - name: 1. 建立隧道
         uses: tailscale/github-action@v2
@@ -24,7 +24,8 @@ jobs:
           pip install openai requests beautifulsoup4
           python3 master_intel.py
 
-      - name: 3. 投送至 NAS
+      - name: 3. 投送至 NAS (带容错)
+        continue-on-error: true  # 核心：即使这步连不上 NAS，也继续往下走，不报红叉
         uses: appleboy/scp-action@master
         with:
           host: 100.80.203.9
@@ -33,3 +34,9 @@ jobs:
           port: 22
           source: "index.html"
           target: "/volume1/homes/Marble_soda/资料/新闻/"
+
+      - name: 4. 备份存储 (如果 NAS 投送失败)
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-intel-backup
+          path: index.html
