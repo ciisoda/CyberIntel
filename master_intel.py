@@ -49,8 +49,12 @@ def get_real_rss(url):
     except: return "Intel Feed Offline|#"
 
 def get_ai(prompt_type, ctx=""):
+    # 🌟 随机盲盒：打破 AI 的词汇复读机限制
+    domains = ["恶意软件", "密码学", "渗透测试", "社会工程学", "零信任架构", "红蓝对抗", "暗网情报", "网络取证"]
+    rnd_domain = random.choice(domains)
+    
     prompts = {
-        "word": "选一个网安日语词，标注假名，只回词。不要废话。",
+        "word": f"作为网安专家，在【{rnd_domain}】领域随机选一个极度冷门的日语专业词汇，标注假名，只回词。绝不要输出 ゼロデイ 或 エクスプロイト。",
         "desc": f"简单解释'{ctx}'并给个例句。不要废话。",
         "lyric": f"提供一句TUYU歌曲《{ctx}》的日文歌词和中文翻译。格式严格为: 歌词|翻译 。",
         "cve": f"""你是一个没有感情的网安API接口。
@@ -116,11 +120,18 @@ print("   [抓取] 正在获取日本 IT 新闻源...")
 japan_html = render_links(get_real_rss("https://news.yahoo.co.jp/rss/categories/it.xml"), "var(--p)")
 
 cve_html = ""
+top_cve_name = "Unknown"  # 🌟 用于记忆判断的变量
+
 try:
     headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
     print("   [抓取] 正在搜寻最新 CVE 仓库...")
     r = requests.get("https://api.github.com/search/repositories?q=CVE-2026+OR+CVE-2025&sort=updated", headers=headers, timeout=10)
-    for repo in r.json().get("items", [])[:8]:
+    
+    items = r.json().get("items", [])
+    if items:
+        top_cve_name = items[0]["full_name"]  # 记录最新的头条CVE名称
+        
+    for repo in items[:8]:
         ai_res = get_ai("cve", repo.get("description", ""))
         
         # 🛡️ 核心防御：防止 AI 废话撑爆你的 UI
@@ -186,5 +197,20 @@ with open(os.path.join(BASE_DIR, "index.html"), "w", encoding="utf-8") as f:
     f.write(full_html)
 
 git_sync()
-send_bark("TUYU_CyberIntel", f"2026 任务审计完成。当前歌曲：《{chosen_song}》")
+
+# 🌟 智能防打扰：读取本地记忆文件
+memory_file = os.path.join(BASE_DIR, ".last_cve_memory.txt")
+last_cve = ""
+if os.path.exists(memory_file):
+    with open(memory_file, "r", encoding="utf-8") as f:
+        last_cve = f.read().strip()
+
+# 🌟 智能通知逻辑：只有第一条漏洞变了，才弹窗！
+if top_cve_name != "Unknown" and top_cve_name != last_cve:
+    send_bark("TUYU_CyberIntel", f"🚨 新情报更新: 发现 {clean(top_cve_name)}。当前歌曲:《{chosen_song}》")
+    with open(memory_file, "w", encoding="utf-8") as f:
+        f.write(top_cve_name)
+else:
+    print("   [通知] 情报无重大更新，已静默拦截 Bark 打扰。")
+
 print("自动化流程圆满结束。")
