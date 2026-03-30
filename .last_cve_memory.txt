@@ -1,1 +1,1 @@
-vognik/CVE-2026-26980
+gumbita/cve-2025-5548-freefloat-ftp-walkthrough
