@@ -22,89 +22,89 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 <div class="glass header"><img src="cover_rock.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">ロックな君とはお别れだ</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">ロックな君とはお別れだ</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">要和摇滚的你告别了</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">ゴミパケット (ごみぱけっと)</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">解释：网络术语，指无用或恶意数据包，消耗带宽/资源。<br><br>例句：DDoS攻撃でサーバーに大量のゴミパケットが送られた。  <br>（DDoS攻击向服务器发送了大量垃圾数据包。）</div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">バッファオーバーフロー (ばっふぁおーばーふろー)</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">解释：  <br>プログラムが予定されたメモリ領域（バッファ）を超えてデータを書き込む脆弱性。メモリ破壊や任意コード実行につながる。<br><br>例句：  <br>strcpy関数で長すぎる入力を処理すると、バッファオーバーフローが発生する危険がある。</div></div>
         <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;"><div style="margin-bottom:12px;">• Intel Feed Offline <a href="#" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• 山崎玄关收纳盘：告别出门寻物困扰 <a href="https://news.yahoo.co.jp/articles/658f4a540f2b4ea07e832da915728260b3945adc?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• Outlook经典版再曝邮件投递漏洞 <a href="https://news.yahoo.co.jp/articles/1c1b787d4a21eac6828b1ef7b855a03771639343?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 2026洗衣机安全报告：日立第二，榜首涉零日风险 <a href="https://news.yahoo.co.jp/articles/2089db99757f045ef74b7a437b897c752a7d59be?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• 【网安情报】Win11预览补丁漏洞 微软紧急修复 <a href="https://news.yahoo.co.jp/articles/07f8a94ec568ac55d66c40497494cc1a8ebe046c?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• KDDI子会社2461亿日元虚假交易：七年漏洞与内部手法 <a href="https://news.yahoo.co.jp/articles/5f875a841dd73302280f8c8092b260d0439baaa7?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• IIJmio促销延期 部分机型除外 <a href="https://news.yahoo.co.jp/articles/4a88d2131f420b543bcc414b4fe8da2f68df917a?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/greycat-amc/CVE-2025-5548" target="_blank">greycat-amc/CVE-2025-5548</a>
+                <span class="cve-tag" style="">SC: 7.5</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">栈溢出漏洞可导致任意代码执行</div>
+            <div class="cve-hint">
+                <a href="https://github.com/greycat-amc/CVE-2025-5548" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: greycat-amc</a> | 💡 更新至补丁版本，实施输入验证与边界检查
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/Zain3311/CVE-2025-49844" target="_blank">Zain3311/CVE-2025-49844</a>
+                <span class="cve-tag" style="">SC: 9.8</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Redis Lua解释器存在UAF漏洞，可导致任意代码执行和持久后门植入</div>
+            <div class="cve-hint">
+                <a href="https://github.com/Zain3311/CVE-2025-49844" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Zain3311</a> | 💡 立即升级Redis至安全版本，禁用非必要Lua脚本执行，限制网络访问并监控异常进程
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/ksnnd32/redis_exploit" target="_blank">ksnnd32/redis_exploit [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/ksnnd32/redis_exploit" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ksnnd32</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank">siddu7575/CVE-2025-61882-CVE-2025-61884</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: siddu7575</a> | 💡 请人工核对
+            </div>
+        </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/kagancapar/CVE-2026-5201" target="_blank">kagancapar/CVE-2026-5201</a>
                 <span class="cve-tag" style="">SC: 7.5</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">GDK-Pixbuf JPEG解析器存在堆缓冲区溢出漏洞，攻击者可构造恶意JPEG文件导致内存破坏或代码执行</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">GDK-Pixbuf JPEG解析器堆缓冲区溢出漏洞</div>
             <div class="cve-hint">
-                <a href="https://github.com/kagancapar/CVE-2026-5201" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: kagancapar</a> | 💡 升级GDK-Pixbuf至修复版本，避免处理不可信JPEG文件
+                <a href="https://github.com/kagancapar/CVE-2026-5201" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: kagancapar</a> | 💡 升级GDK-Pixbuf至修复版本，避免处理不可信JPEG文件。
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/greycat-amc/CVE-2025-5548" target="_blank">greycat-amc/CVE-2025-5548</a>
+                <a class="cve-link" href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank">mihnasdsad/CVE-2025-32463</a>
                 <span class="cve-tag" style="">SC: 0.0</span>
             </div>
             <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
             <div class="cve-hint">
-                <a href="https://github.com/greycat-amc/CVE-2025-5548" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: greycat-amc</a> | 💡 请人工核对
+                <a href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: mihnasdsad</a> | 💡 请人工核对
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/0xHackshat/axios-lab-utils" target="_blank">0xHackshat/axios-lab-utils</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
+                <a class="cve-link" href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank">ashardev002/CVE-2025-32463_chwoot</a>
+                <span class="cve-tag" style="">SC: 8.5</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">sudo chroot功能存在权限提升漏洞(CVE-2025-32463)，攻击者可在特定配置下突破chroot限制执行特权命令</div>
+            <div class="cve-hint">
+                <a href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ashardev002</a> | 💡 升级sudo至已修复版本；严格审核/etc/sudoers中chroot相关规则，避免授予不必要的权限；限制用户可执行的命令范围。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank">ammarm0010/CVE-2025-49144_PoC [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
             </div>
             <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
             <div class="cve-hint">
-                <a href="https://github.com/0xHackshat/axios-lab-utils" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: 0xHackshat</a> | 💡 请人工核对
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank">Recorded-texteditor120/CVE-2026-31802</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">npm tar包在解压符号链接时存在路径遍历漏洞，攻击者可构造恶意压缩包导致任意文件覆盖</div>
-            <div class="cve-hint">
-                <a href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Recorded-texteditor120</a> | 💡 升级tar到安全版本；解压前验证压缩包来源；使用--no-chown等安全参数限制解压行为
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/tracyliving606/RegPwn" target="_blank">tracyliving606/RegPwn</a>
-                <span class="cve-tag" style="">SC: 9.8</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-24291漏洞可导致Windows本地权限提升，影响多个客户端与服务器版本。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/tracyliving606/RegPwn" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: tracyliving606</a> | 💡 立即应用微软官方安全补丁，在补丁部署前严格限制本地用户访问并监控可疑的提权活动。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank">showy-headteacher114/cve-2025-66398</a>
-                <span class="cve-tag" style="">SC: 9.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Signal K Server CVE-2025-66398存在未授权攻击者可注入后门并实现远程代码执行的高危漏洞</div>
-            <div class="cve-hint">
-                <a href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: showy-headteacher114</a> | 💡 立即升级Signal K Server至已修复的安全版本；在升级前，若必须运行，应将其置于严格的内网隔离环境，禁止暴露于公网或不可信网络。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud" target="_blank">megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud</a>
-                <span class="cve-tag" style="">SC: 7.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Google Cloud Vertex AI Python SDK 1.98.0至1.130.9版本存在未授权存储型XSS漏洞，攻击者可注入恶意脚本，在用户访问受影响页面时执行。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: megafart1</a> | 💡 立即将SDK升级至1.130.9以上版本；对用户输入进行严格的过滤和转义；实施内容安全策略（CSP）。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/DyniePro/CVE-2026-25643" target="_blank">DyniePro/CVE-2026-25643</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Frigate NVR ≤0.16.3存在配置缺陷，允许未经身份验证的攻击者远程执行命令，无需shell访问或输出捕获。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/DyniePro/CVE-2026-25643" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: DyniePro</a> | 💡 立即升级至官方最新版本；检查并加固配置文件权限；限制网络访问，仅允许可信IP连接；实施最小权限原则运行服务。
+                <a href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ammarm0010</a> | 💡 请人工核对
             </div>
         </div></div></div>
 </div></body></html>

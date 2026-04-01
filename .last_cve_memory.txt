@@ -1,1 +1,1 @@
-Zedocun/SharePoint-ToolShell-CVE-2025-53770-Incident-Analysis
+kagancapar/CVE-2026-5201
