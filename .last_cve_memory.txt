@@ -1,1 +1,1 @@
-Galeax/CVE2CAPEC
+greycat-amc/CVE-2025-5548
