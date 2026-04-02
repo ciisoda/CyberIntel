@@ -1,1 +1,1 @@
-SecurityLayer404/CVE-2025-24054-24071---Metasploit-Module
+hijack1r/CVE_PushService
