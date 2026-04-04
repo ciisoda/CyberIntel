@@ -1,1 +1,1 @@
-Twinson333/cve-2026-33032-scanner
+hijack1r/CVE_PushService
