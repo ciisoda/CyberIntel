@@ -1,1 +1,1 @@
-redyank/CVE-2026-35492
+sakthivel10q/CVE-2025-14847
