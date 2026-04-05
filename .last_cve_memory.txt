@@ -1,1 +1,1 @@
-Smarttfoxx/CVE-2026-29923
+JohannesLks/CVE-2026-23398
