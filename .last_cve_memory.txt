@@ -1,1 +1,1 @@
-0xBlackash/CVE-2026-2699
+Lechansky/CVE-2026-5733
