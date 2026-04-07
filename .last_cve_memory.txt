@@ -1,1 +1,1 @@
-jm7knz/CVE-2025-54253-Exploit-Demo
+juccoblak/CVE-2025-6554
