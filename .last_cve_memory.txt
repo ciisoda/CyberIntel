@@ -1,1 +1,1 @@
-hijack1r/CVE_PushService
+VABISMO/cve-2026-25994_PJSIP
