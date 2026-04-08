@@ -1,1 +1,1 @@
-MAEN1-prog/CVE-2025-2304
+hophtien/CVE-2025-54424
