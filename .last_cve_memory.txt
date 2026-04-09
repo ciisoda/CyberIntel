@@ -1,1 +1,1 @@
-0xBlackash/CVE-2026-34724
+yeremeu/CVE-2025-32463_chwoot
