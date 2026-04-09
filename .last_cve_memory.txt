@@ -1,1 +1,1 @@
-fartlover37/CVE-2026-2441-PoC
+0xBlackash/CVE-2026-34724
