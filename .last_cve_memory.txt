@@ -1,1 +1,1 @@
-0xBlackash/CVE-2026-5173
+WostGit/CVE-2026-2796
