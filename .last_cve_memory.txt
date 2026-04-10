@@ -1,1 +1,1 @@
-kaxm23/rust-cve-2025-55182-scanner
+athenasec16/CVE-2026-29923
