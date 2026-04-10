@@ -1,1 +1,1 @@
-mihnasdsad/CVE-2025-32463
+kaxm23/rust-cve-2025-55182-scanner
