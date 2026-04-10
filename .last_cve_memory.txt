@@ -1,1 +1,1 @@
-CipherX1802/CVE-2025-69821-Beat-XP-Vega-Smartwatch-Security-Assessment
+Sif-0x01/security-advisories
