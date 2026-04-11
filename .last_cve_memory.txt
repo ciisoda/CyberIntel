@@ -1,1 +1,1 @@
-Galeax/CVE2CAPEC
+obrunolima1910/CVE-2026-24061
