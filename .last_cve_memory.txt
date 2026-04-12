@@ -1,1 +1,1 @@
-oscar-mine/CVE-2026-23980-Exploit
+jwsly12/CVE-2025-58434-59528-htb-ctf
