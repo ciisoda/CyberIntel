@@ -1,1 +1,1 @@
-tianarsamm/CVE-2025-69985
+0xBlackash/CVE-2026-39987
