@@ -1,1 +1,1 @@
-KvzinNcpx7/CVE-2025-9074_DAEMON_KILLER
+Batosay1337Lab/cve-2026-31900-lab
