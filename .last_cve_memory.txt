@@ -1,1 +1,1 @@
-hyu164/Terrminus-CVE-2026-2406
+UsifAraby/CVE-2025-59528-POC
