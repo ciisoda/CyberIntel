@@ -1,1 +1,1 @@
-UsifAraby/CVE-2025-59528-POC
+freiwi/CVE-2025-8110
