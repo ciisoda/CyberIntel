@@ -1,1 +1,1 @@
-keraattin/CVE-2026-34197
+MAEN1-prog/CVE-2025-2304
