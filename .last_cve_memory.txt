@@ -1,1 +1,1 @@
-canpilayda/n8n-RCE-CVE-2025-68613
+Zain3311/CVE-2025-49844
