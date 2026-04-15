@@ -1,1 +1,1 @@
-keraattin/CVE-2026-35031
+yeremeu/CVE-2025-32463_chwoot
