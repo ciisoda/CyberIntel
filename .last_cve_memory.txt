@@ -1,1 +1,1 @@
-Astaruf/CVE-2026-40487
+juccoblak/CVE-2025-6554
