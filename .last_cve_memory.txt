@@ -1,1 +1,1 @@
-daptheHuman/cve-2026-40176-cve-2026-40261
+Zain3311/CVE-2025-49844
