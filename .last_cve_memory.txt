@@ -1,1 +1,1 @@
-DyniePro/CVE-2026-25643
+Nxploited/CVE-2025-15521
