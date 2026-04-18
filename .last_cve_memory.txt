@@ -1,1 +1,1 @@
-0xBlackash/CVE-2026-39808
+juccoblak/CVE-2025-6554
