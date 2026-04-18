@@ -1,1 +1,1 @@
-DyniePro/CVE-2026-25643
+dinosn/ghost-cve-2026-26980
