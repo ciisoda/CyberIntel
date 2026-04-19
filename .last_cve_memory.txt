@@ -1,1 +1,1 @@
-honney336/CVE-2025-58434_CVE-2025-59528
+adibirzu/openclaw-security-monitor
