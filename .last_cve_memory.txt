@@ -1,1 +1,1 @@
-Galeax/CVE2CAPEC
+jm7knz/CVE-2025-54253-Exploit-Demo
