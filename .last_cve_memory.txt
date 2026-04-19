@@ -1,1 +1,1 @@
-adibirzu/openclaw-security-monitor
+obrunolima1910/CVE-2026-24061
