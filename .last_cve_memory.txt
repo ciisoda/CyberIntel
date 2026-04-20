@@ -1,1 +1,1 @@
-FOLKS-iwd/CVE-2026-2600-POC
+Letlaka/redsun-bluehammer-undefend-detection-pack
