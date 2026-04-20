@@ -1,1 +1,1 @@
-404godd/CVE-2026-20841-PoC
+Galeax/CVE2CAPEC
