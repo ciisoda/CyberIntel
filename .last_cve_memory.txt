@@ -1,1 +1,1 @@
-John-Jung/CVE-2026-26903-PoC
+Penguinsecq/CVE-2026-6355
