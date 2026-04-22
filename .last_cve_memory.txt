@@ -1,1 +1,1 @@
-Penguinsecq/CVE-2026-6355
+Galeax/CVE2CAPEC
