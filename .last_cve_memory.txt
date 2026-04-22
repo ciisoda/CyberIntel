@@ -1,1 +1,1 @@
-Risma2025/CVE-2026-24061-GNU-InetUtils-telnetd-Authentication-Bypass-Vulnerability
+hijack1r/CVE_PushService
