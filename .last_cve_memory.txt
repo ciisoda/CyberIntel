@@ -1,1 +1,1 @@
-Astaruf/CVE-2026-41653
+0xBlackash/CVE-2026-21962
