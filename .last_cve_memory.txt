@@ -1,1 +1,1 @@
-Galeax/CVE2CAPEC
+captain4554/CVE-2025-55182-Scanner
