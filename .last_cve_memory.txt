@@ -1,1 +1,1 @@
-Galeax/CVE2CAPEC
+Markusino488/cve-2025-8088
