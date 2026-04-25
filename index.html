@@ -2,7 +2,7 @@
 <style>
 * { box-sizing: border-box; }
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
-body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_shuten.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
+body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_otona.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
 .glass { background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }
 .header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
 .header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
@@ -19,32 +19,82 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 .cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header"><img src="cover_shuten.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">終点の先が在るとするならば。</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">終点の先が在るとするならば、僕は君と生きていたい。</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">如果终点之后存在未来，我想与你一同活下去。</div></div></div>
+<div class="glass header"><img src="cover_otona.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">いつかオトナになれるといいね。</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">いつかオトナになれるといいね。</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">希望总有一天能成为大人呢。</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">キーロガー</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">キーロガー（keylogger）是一种能记录键盘输入（如密码、聊天内容）的恶意软件或硬件，用于窃取个人信息。<br><br>例句：  <br>社員のPCにキーロガーが仕込まれ、パスワードが流出した。  <br>（员工的电脑中被植入了键盘记录器，导致密码泄露。）</div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">クロスサイトリクエストフォージェリ（くろすさいとりくえすとふぉーじぇり）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">跨站请求伪造（CSRF）：攻击者诱导用户在已登录的网站上执行非自愿的操作（如转账、改密码），利用用户的登录状态伪造请求。<br><br>例句：用户打开攻击者邮件中的图片链接时，自动向银行网站发送了转账请求，这就是CSRF攻击。</div></div>
         <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;"><div style="margin-bottom:12px;">• Intel Feed Offline <a href="#" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• Pixel10与a价差4.9万日元 <a href="https://news.yahoo.co.jp/articles/4998f128c04a41790ce247ed8bc6cacc938ae2a7?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 网安情报：日拟严管手机残值，苹果反弹 <a href="https://news.yahoo.co.jp/articles/fb31c357f1bd7afd19261d2464c02d620a28f86e?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 草加皮革6企短片曝光 <a href="https://news.yahoo.co.jp/articles/21fedfc0bdfd87cd642763ed9314dcb59ae32193?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• はてな遭诈11亿，现金17亿称无恙 <a href="https://news.yahoo.co.jp/articles/6dc2b89180353da79f5c4bca416d0c8d5a692b19?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 耳机祭：铁三角三放试听ATH-ADX7000 <a href="https://news.yahoo.co.jp/articles/f88cef8924a377a7c378c750b60fbb46125ad602?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• OpenClaw 漏洞扩散，非孤例。 <a href="https://news.yahoo.co.jp/articles/27c041ea5665e0f151d597746bf56ca182ad545b?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank">Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF</a>
-                <span class="cve-tag" style="">SC: 4.5</span>
+                <a class="cve-link" href="https://github.com/Penguinsecq/CVE-2026-6355" target="_blank">Penguinsecq/CVE-2026-6355</a>
+                <span class="cve-tag" style="">SC: 9.7</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">iOS XNU AIO kevent存在use-after-free、内核崩溃及double-free漏洞，攻击者可能利用沙箱漏洞提权或导致系统拒绝服务</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-XXXX-XXXX1: [具体漏洞名称，如SQL注入、RCE] 影响[组件名/版本]，攻击者可利用[具体攻击向量如特制请求]实现[具体危害如获取敏感数据]。</div>
             <div class="cve-hint">
-                <a href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Sonisi5085</a> | 💡 建议更新至修复该漏洞的iOS版本，并限制不可信代码在沙箱中的执行权限，同时加强AIO kevent内存管理检查。
+                <a href="https://github.com/Penguinsecq/CVE-2026-6355" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Penguinsecq</a> | 💡 1. 升级受影响组件至安全版本；2. 实施输入验证与输出编码；3. 启用WAF规则拦截攻击载荷；4. 遵循最小权限原则限制数据库用户权限。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/sivaadityacoder/CVE-2025-67146-CVE-2025-67147" target="_blank">sivaadityacoder/CVE-2025-67146-CVE-2025-67147</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/sivaadityacoder/CVE-2025-67146-CVE-2025-67147" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: sivaadityacoder</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/sivaadityacoder/CVE-2026-22038" target="_blank">sivaadityacoder/CVE-2026-22038</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/sivaadityacoder/CVE-2026-22038" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: sivaadityacoder</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/sivaadityacoder/CVE-2025-68621" target="_blank">sivaadityacoder/CVE-2025-68621</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/sivaadityacoder/CVE-2025-68621" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: sivaadityacoder</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/hijack1r/CVE_PushService" target="_blank">hijack1r/CVE_PushService</a>
+                <span class="cve-tag" style="">SC: 3.5</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该工具本身作为漏洞情报推送工具，存在因设计缺陷导致情报内容被篡改或伪造的风险，例如未对情报来源进行严格校验，可能推送恶意内容或漏洞利用代码</div>
+            <div class="cve-hint">
+                <a href="https://github.com/hijack1r/CVE_PushService" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: hijack1r</a> | 💡 建议对情报数据源实施数字签名验证，确保推送内容完整性；部署内容过滤与沙箱分析机制，隔离外部情报；同时限制工具对本地系统的执行权限，防止情报自动触发恶意操作。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank">Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF</a>
+                <span class="cve-tag" style="">SC: 7.5</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">iOS内核沙箱中存在XNU AIO kevent释放后使用漏洞，可导致内核崩溃及双重释放，影响系统安全性</div>
+            <div class="cve-hint">
+                <a href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Sonisi5085</a> | 💡 建议更新系统至最新版本以修复该漏洞，并进行内存管理审计，确保异步I/O事件回调中的对象生命周期得到正确管控，避免释放后引用。
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/Learningdisordercapital35/CVE_2025_24257----NOT-MINE" target="_blank">Learningdisordercapital35/CVE_2025_24257----NOT-MINE</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
+                <span class="cve-tag" style="">SC: 7.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该漏洞为CVE-2025-24257，涉及IOGPUFamily内核扩展中的堆越界读写（OOB），攻击者可通过恶意应用触发内核崩溃或信息泄露，公开PoC显示利用方式包括构造特定IOGPU命令缓冲区导致堆内存越界访问。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-24257是IOGPUFamily内核组件中的堆越界读写漏洞，PoC利用可触发内核恐慌，导致系统崩溃或权限提升</div>
             <div class="cve-hint">
-                <a href="https://github.com/Learningdisordercapital35/CVE_2025_24257----NOT-MINE" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Learningdisordercapital35</a> | 💡 建议立即更新至Apple官方发布的安全修复版本（如iOS 18.0/macOS 15.0以上），并启用内核完整性保护（KIP）及地址空间布局随机化（KASLR）；限制未签名内核扩展加载，监控系统日志中异常GPU崩溃记录。
+                <a href="https://github.com/Learningdisordercapital35/CVE_2025_24257----NOT-MINE" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Learningdisordercapital35</a> | 💡 升级至修复该CVE的iOS/macOS安全更新版本，启用KASLR并限制GPU内存分配权限，未修复前避免运行不可信的图形渲染负载。
             </div>
         </div>
         <div class="cve-card">
@@ -55,56 +105,6 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
             <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
             <div class="cve-hint">
                 <a href="https://github.com/Jumpthereness578/CVE-2026-2991" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Jumpthereness578</a> | 💡 请人工核对
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank">Recorded-texteditor120/CVE-2026-31802</a>
-                <span class="cve-tag" style="">SC: 7.6</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-31802路径遍历漏洞存在于npm tar包中，攻击者可通过构造包含恶意符号链接的压缩包，在解压时覆盖任意文件</div>
-            <div class="cve-hint">
-                <a href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Recorded-texteditor120</a> | 💡 升级tar包至修复版本；解压前严格校验路径合法性，禁止符号链接指向外部目录；使用容器化隔离解压操作。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/tracyliving606/RegPwn" target="_blank">tracyliving606/RegPwn</a>
-                <span class="cve-tag" style="">SC: 7.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-24291本地提权利用代码可在多版本Windows客户端与服务器上执行，存在已验证的攻击风险</div>
-            <div class="cve-hint">
-                <a href="https://github.com/tracyliving606/RegPwn" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: tracyliving606</a> | 💡 立即应用微软官方安全更新，限制本地用户权限并启用Windows Defender攻击防护，同时监控异常进程提权行为。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank">showy-headteacher114/cve-2025-66398</a>
-                <span class="cve-tag" style="">SC: 9.8</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Signal K Server CVE-2025-66398存在未授权后门注入与远程代码执行漏洞，攻击者可利用该接口注入恶意代码实现完全控制。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: showy-headteacher114</a> | 💡 1.立即升级至官方修复版本；2.限制对Signal K Server的网络访问仅允许可信IP；3.启用身份验证并审查日志排查异常行为；4.部署Web应用防火墙拦截恶意请求。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud" target="_blank">megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud</a>
-                <span class="cve-tag" style="">SC: 9.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Google Cloud Vertex AI Python SDK 1.98.0至1.130.9版本存在未认证存储型XSS漏洞，攻击者可通过构造恶意提示词(prompt)在模型响应中注入任意JavaScript代码，该代码在Web界面(如Vertex AI Studio)渲染时会未经转义执行，影响用户会话及数据安全</div>
-            <div class="cve-hint">
-                <a href="https://github.com/megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: megafart1</a> | 💡 立即升级至1.131.0及以上版本；在服务端对所有模型输出实施严格的HTML/JS内容转义与过滤；对Web前端执行Content Security Policy(CSP)策略限制脚本执行来源
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/DyniePro/CVE-2026-25643" target="_blank">DyniePro/CVE-2026-25643</a>
-                <span class="cve-tag" style="">SC: 7.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Frigate NVR ≤0.16.3 存在配置缺陷导致的远程命令执行漏洞，攻击者可未经shell访问或输出捕获直接执行任意命令。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/DyniePro/CVE-2026-25643" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: DyniePro</a> | 💡 升级至0.16.3以上版本，限制API与配置接口的访问权限，并校验所有用户输入配置项。
             </div>
         </div></div></div>
 </div></body></html>
