@@ -1,1 +1,1 @@
-captain4554/CVE-2025-55182-Scanner
+yeremeu/CVE-2025-32463_chwoot
