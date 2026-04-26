@@ -2,7 +2,7 @@
 <style>
 * { box-sizing: border-box; }
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
-body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_shuten.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
+body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_doro.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
 .glass { background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }
 .header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
 .header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
@@ -19,22 +19,82 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 .cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header"><img src="cover_shuten.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">終点の先が在るとするならば。</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">終点の先が在るとするならば、それは君のいない世界だ。</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">如果要说终点之后还有什么，那就是没有你的世界。</div></div></div>
+<div class="glass header"><img src="cover_doro.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">泥の分际で私だけ的大切を夺おうだなんて</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">泥の分际で私だけの大切を夺おうだなんて</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">不过是一介烂泥，竟想夺走只属于我的珍宝</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">フォーマットストリング攻撃（フォーマットストリングこうげき）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">格式化字符串攻击是一种利用程序未正确限制用户输入作为格式化字符串参数（如 `printf` 的格式说明符）的安全漏洞。攻击者通过输入 `%s`、`%x`、`%n` 等格式符，可读取或写入内存，导致信息泄露或代码执行。<br><br>例句（C语言示例）：  <br>```c<br>printf(user_input);  // 危险用法<br>// 输入: &quot;%x %x %x&quot; 可泄露栈上数据<br>// 输入: &quot;%n&quot; 可向任意内存地址写入值<br>```</div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">スピアフィッシング詐称語彙（スピアフィッシングさしょうごい）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">スピアフィッシング詐称語彙：指在鱼叉式网络钓鱼攻击中，攻击者伪冒成可信联系人（如同事、银行）时使用的特定词汇（如“紧急”“密码重置”“转账确认”），以诱骗受害者点击恶意链接或泄露信息。  <br><br>例句：  <br>スピアフィッシング詐称語彙の『緊急確認』という言葉にだまされて、偽のログインページにパスワードを入力してしまった。  <br>（被鱼叉式钓鱼中的虚假词汇“紧急确认”欺骗，在伪造的登录页输入了密码。）</div></div>
         <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;"><div style="margin-bottom:12px;">• Intel Feed Offline <a href="#" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• SpaceX推自研GPU，剑指4500兆AI市场 <a href="https://news.yahoo.co.jp/articles/020dd755ab433f7a98f6714bf521667c5d9da4f3?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• &amp;quot;夏亚专车奥里斯II仅300台，可动模型太戳宅心&amp;quot; <a href="https://news.yahoo.co.jp/articles/cf1a378cdbb7d6547c4921e9639bb2e6bbd1f31e?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• NotebookLM漫画生成威胁 <a href="https://news.yahoo.co.jp/articles/a6e53959015b509f0d35904acf140b1a52d72bba?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• x402加入Linux基金会，22企推动代理支付标准化 <a href="https://news.yahoo.co.jp/articles/1f134f2c5a10c11cf8d77caf0e5d239a892e8f96?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 苹果设备变身全天候心睡监测站 <a href="https://news.yahoo.co.jp/articles/1d83cdbcd98df8040933f16db584e305b8b91552?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 3万日元防水安卓机再现 <a href="https://news.yahoo.co.jp/articles/da1f153e7103357d0af096a49e8ba38b0dae3a21?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/hijack1r/CVE_PushService" target="_blank">hijack1r/CVE_PushService</a>
-                <span class="cve-tag" style="">SC: 1.5</span>
+                <a class="cve-link" href="https://github.com/Zain3311/CVE-2025-49844" target="_blank">Zain3311/CVE-2025-49844</a>
+                <span class="cve-tag" style="">SC: 9.8</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">漏洞情报推送API缺少身份验证机制，可能导致未授权访问并泄露实时漏洞数据</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-49844 Redis Lua沙箱逃逸致远程代码执行漏洞，攻击者可利用释放后重用（UAF）触发任意shellcode执行并植入持久后门。</div>
             <div class="cve-hint">
-                <a href="https://github.com/hijack1r/CVE_PushService" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: hijack1r</a> | 💡 建议对API端点启用强制身份校验，如JWT或OAuth2.0令牌，并限制IP白名单访问。
+                <a href="https://github.com/Zain3311/CVE-2025-49844" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Zain3311</a> | 💡 立即升级Redis至修补版本；若无法升级，禁用EVAL/EVALSHA命令或配置Lua沙箱严格限制；排查并清除可疑持久化数据。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/ksnnd32/redis_exploit" target="_blank">ksnnd32/redis_exploit [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 7.5</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-49844 (RediShell) 是一个存在于Redis中的严重漏洞，未经身份验证的远程攻击者可通过特制请求利用该漏洞执行任意系统命令，导致服务器完全被控。</div>
+            <div class="cve-hint">
+                <a href="https://github.com/ksnnd32/redis_exploit" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ksnnd32</a> | 💡 请立即升级Redis至最新安全版本，如果无法升级，应限制Redis监听地址为本地回环（127.0.0.1），启用requirepass强密码认证，并配置防火墙仅允许可信IP访问。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank">siddu7575/CVE-2025-61882-CVE-2025-61884</a>
+                <span class="cve-tag" style="">SC: 9.8</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Oracle E-Business Suite存在两个高危远程代码执行漏洞（CVE-2025-61882与CVE-2025-61884），攻击者无需认证即可通过未授权网络请求触发，导致系统完全受损。</div>
+            <div class="cve-hint">
+                <a href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: siddu7575</a> | 💡 立即升级Oracle E-Business Suite至官方发布的最新安全补丁；对受影响版本实施网络访问控制，仅允许可信IP及端口通信；对相关应用进行入侵检测与日志审计。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank">mihnasdsad/CVE-2025-32463</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: mihnasdsad</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank">ashardev002/CVE-2025-32463_chwoot</a>
+                <span class="cve-tag" style="">SC: 7.8</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-32463是一个存在于sudo的chroot功能中的权限提升漏洞，攻击者可通过特制的chroot环境绕过安全限制，从而提升至root权限。</div>
+            <div class="cve-hint">
+                <a href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ashardev002</a> | 💡 建议立即升级sudo至修复版本，并严格限制用户对sudo chroot相关命令的使用权限，同时审计并移除不可信的chroot路径配置。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank">ammarm0010/CVE-2025-49144_PoC [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ammarm0010</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/sureshkumarsat/CVE-2025-31258-PoC" target="_blank">sureshkumarsat/CVE-2025-31258-PoC [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 7.8</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-31258为Android组件RemoteViewServices中的沙箱逃逸漏洞，PoC利用该组件实现了partial沙箱绕过，攻击者可借此提升权限或执行越权操作</div>
+            <div class="cve-hint">
+                <a href="https://github.com/sureshkumarsat/CVE-2025-31258-PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: sureshkumarsat</a> | 💡 升级Android系统补丁至修复版本；严格限制RemoteViewServices的调用权限；对跨进程通信进行白名单校验和权限审计。
             </div>
         </div>
         <div class="cve-card">
@@ -45,66 +105,6 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
             <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
             <div class="cve-hint">
                 <a href="https://github.com/cazzysoci/cve-breeze-2026" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: cazzysoci</a> | 💡 请人工核对
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank">Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF</a>
-                <span class="cve-tag" style="">SC: 7.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">iOS沙箱环境下XNU AIO kevent存在释放后使用(UAF)、内核崩溃及双重释放漏洞，可导致任意代码执行或权限提升</div>
-            <div class="cve-hint">
-                <a href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Sonisi5085</a> | 💡 建议升级至最新iOS版本，避免使用未受信任的第三方应用，并在安全研究环境中进行测试验证。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Learningdisordercapital35/CVE_2025_24257----NOT-MINE" target="_blank">Learningdisordercapital35/CVE_2025_24257----NOT-MINE</a>
-                <span class="cve-tag" style="">SC: 9.2</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-24257 是 Apple IOGPUFamily 内核扩展中的堆越界读写漏洞，PoC 通过构造畸形 GPU 命令触发 IOGPUCommandQueue 对象中内核堆缓冲区溢出，导致内核内存损坏和系统崩溃。修复需更新至 Apple 官方安全更新版本。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/Learningdisordercapital35/CVE_2025_24257----NOT-MINE" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Learningdisordercapital35</a> | 💡 升级至 iOS 18.4、macOS 15.4 等官方补丁版本，或禁用第三方 GPU 驱动卸载 IOGPUFamily 扩展（不推荐生产环境）。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Jumpthereness578/CVE-2026-2991" target="_blank">Jumpthereness578/CVE-2026-2991</a>
-                <span class="cve-tag" style="">SC: 9.8</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-2991 存在于 KiviCare 4.1.2 及更早版本的病人社交登录 REST 端点中，攻击者可利用 PoC 绕过认证机制，直接获取未授权访问权限，可能导致敏感患者数据泄露或系统接管。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/Jumpthereness578/CVE-2026-2991" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Jumpthereness578</a> | 💡 立即升级 KiviCare 至修复版本；在社交登录回调端点实施严格的身份令牌校验与签名验证；禁用或移除未使用的社交登录接口；增加对异常登录行为的监控与限流。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank">Recorded-texteditor120/CVE-2026-31802</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-31802是npm tar包中因符号链接提取路径验证不严导致的路径穿越漏洞，攻击者可通过恶意构造的tar包在解压时覆盖任意系统文件</div>
-            <div class="cve-hint">
-                <a href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Recorded-texteditor120</a> | 💡 升级npm tar包至安全版本；解压时禁用符号链接或严格校验解压路径是否在目标目录范围内，并使用safe-fs等白名单机制
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/tracyliving606/RegPwn" target="_blank">tracyliving606/RegPwn</a>
-                <span class="cve-tag" style="">SC: 8.0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该内容描述了针对CVE-2026-24291的Windows本地提权利用代码，攻击者可借此在客户端和服务器上获取系统最高权限，属于高危漏洞利用行为。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/tracyliving606/RegPwn" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: tracyliving606</a> | 💡 立即禁用受影响Windows版本中可被利用的服务或组件，部署最新安全补丁，限制本地用户执行权限并启用审计日志以检测异常提权行为。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank">showy-headteacher114/cve-2025-66398</a>
-                <span class="cve-tag" style="">SC: 9.8</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Signal K Server CVE-2025-66398允许未授权攻击者通过漏洞注入后门并实现远程代码执行，直接威胁系统完整性与数据安全</div>
-            <div class="cve-hint">
-                <a href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: showy-headteacher114</a> | 💡 立即升级至官方修复版本，禁用不必要的外部访问接口，实施严格的输入验证与沙箱隔离机制。
             </div>
         </div></div></div>
 </div></body></html>
