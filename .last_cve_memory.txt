@@ -1,1 +1,1 @@
-MichaelAdamGroberman/CVE-2026-28766
+VadlaReddySai/diskoverdata-cve-writeups
