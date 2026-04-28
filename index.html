@@ -2,7 +2,7 @@
 <style>
 * { box-sizing: border-box; }
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
-body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_rock.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
+body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_otona.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
 .glass { background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }
 .header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
 .header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
@@ -19,62 +19,82 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 .cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header"><img src="cover_rock.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">ロックな君とはお别れだ</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">ロックな君とはお别れだ、ステージに花束を置いてくよ</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">和摇滚的你道别了，将花束留在舞台上吧</div></div></div>
+<div class="glass header"><img src="cover_otona.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">いつかオトナになれるといいね。</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">いつかオトナになれるといいね。</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">希望有一天能成为大人呢。</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">コンスタント・エラー・アタック</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">コンスタント・エラー・アタック（Constant Error Attack）：一种攻击方法，攻击者通过向模型持续输入具有相同语义但表述不同的误导性错误信息（如“2+2=5”），使模型在后续正确问题的回答中更倾向于重复该错误。<br><br>例句：  <br>ユーザーが何度も『2+2=5』と言い続けた結果、AIが『1+1の答えは？』と聞かれても『3』と答えるようになったのは、コンスタント・エラー・アタックの一例だ。  <br>（用户反复说“2+2=5”，导致AI被问“1+1等于多少？”时也回答“3”，这是恒定错误攻击的一例。）</div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">ワームキラー（わーむきらー）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">解释：  <br>“ワームキラー”是日语“虫驱除剂”或“杀蠕虫药”的意思，指用于驱除或杀死寄生虫（尤其是蠕虫类）的药物或工具。  <br><br>例句：  <br>このワームキラーを飲めば、犬の寄生虫がなくなるよ。  <br>（喝了这个驱虫药，狗狗的寄生虫就会消失。）</div></div>
         <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;"><div style="margin-bottom:12px;">• Intel Feed Offline <a href="#" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• GitHub Copilot 6月起按量计费 <a href="https://news.yahoo.co.jp/articles/d209293290dc4caada4973d4af61701c0356ac52?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• AI鲨鱼片，地产商拍？ <a href="https://news.yahoo.co.jp/articles/755ee3e06c84c02a06df8e6a64e92b39591a15ba?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• OpenAI终止微软独家协议 <a href="https://news.yahoo.co.jp/articles/a7d599e039a3982136a036ad0e5564bfd5fffeef?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• 泰勒·斯威夫特申请声音与形象商标，对抗AI深度伪造 <a href="https://news.yahoo.co.jp/articles/b14c08975de3f63b60cbb201541e111d4f260bde?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 纸质永存，便携扫描。 <a href="https://news.yahoo.co.jp/articles/b25ef0fed0d9fbe7b9c88cd400700c3ab9d81542?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 三克无代码工具Reckoner现支持AS/400联动 <a href="https://news.yahoo.co.jp/articles/fcab7a49c3eb521d134b8703b4dc3c6c31157f3b?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/jwsly12/CVE-2025-58434-59528-htb-ctf" target="_blank">jwsly12/CVE-2025-58434-59528-htb-ctf</a>
-                <span class="cve-tag" style="">SC: 0.1</span>
+                <a class="cve-link" href="https://github.com/brandonperezlara/CVE-2025-67223" target="_blank">brandonperezlara/CVE-2025-67223</a>
+                <span class="cve-tag" style="">SC: 7.5</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该提交疑似与HTB-CTF的Exploitation Silentium挑战相关，可能涉及特定靶机漏洞利用或CTF内部脚本。未提供具体技术细节或真实漏洞复现数据，无法判断实际安全风险。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">未授权访问漏洞：远程攻击者无需认证即可直接访问工单、内部案例及所有敏感附件，可通过自动化遍历下载Aranda记录导致大规模数据泄露</div>
             <div class="cve-hint">
-                <a href="https://github.com/jwsly12/CVE-2025-58434-59528-htb-ctf" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: jwsly12</a> | 💡 建议人工核实该内容是否属于授权渗透测试或CTF活动。如为未授权活动，需立即停止并上报。
+                <a href="https://github.com/brandonperezlara/CVE-2025-67223" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: brandonperezlara</a> | 💡 立即对相关接口实施强制身份验证与访问控制，建议启用IP白名单并审计日志；对敏感附件路径进行随机化或加密处理，并添加下载频率限制与反爬机制。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/hijack1r/CVE_PushService" target="_blank">hijack1r/CVE_PushService</a>
+                <span class="cve-tag" style="">SC: 5.7</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该项目可能因自动抓取外部漏洞源导致敏感URL、接口密钥、内部情报详情被意外公开，且缺少访问控制机制，存在数据泄露风险</div>
+            <div class="cve-hint">
+                <a href="https://github.com/hijack1r/CVE_PushService" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: hijack1r</a> | 💡 建议对推送内容增加基于角色的访问控制，对敏感字段进行脱敏或加密处理，并限制外部源抓取频率与范围，避免信息泄露。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/jwsly12/CVE-2025-58434-59528-htb-ctf" target="_blank">jwsly12/CVE-2025-58434-59528-htb-ctf</a>
+                <span class="cve-tag" style="">SC: 0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/jwsly12/CVE-2025-58434-59528-htb-ctf" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: jwsly12</a> | 💡 请人工核对
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank">Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
+                <span class="cve-tag" style="">SC: 5.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">iOS沙箱中XNU AIO kevent存在释放后使用、内核崩溃及双重释放漏洞，可导致权限提升或系统不稳定</div>
             <div class="cve-hint">
-                <a href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Sonisi5085</a> | 💡 请人工核对
+                <a href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Sonisi5085</a> | 💡 建议更新至最新iOS版本修复该漏洞，避免在沙箱环境中使用不可信代码，并限制AIO接口的访问权限。
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/Learningdisordercapital35/CVE_2025_24257----NOT-MINE" target="_blank">Learningdisordercapital35/CVE_2025_24257----NOT-MINE</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
+                <span class="cve-tag" style="">SC: 9.5</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该漏洞存在于苹果IOGPUFamily驱动中，允许攻击者通过精心构造的IOKit调用触发内核堆越界读写（OOB），进而导致内核崩溃或权限提升。公开PoC利用进程向GPU提交畸形元数据引发堆溢出，配合panic日志可定位触发点。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">IOGPUFamily内核扩展中存在堆内存越界读写漏洞，攻击者可通过特制应用触发内核恐慌并实现权限提升。CVE-2025-24257公开PoC已演示利用方式，影响macOS/iOS系统安全性。</div>
             <div class="cve-hint">
-                <a href="https://github.com/Learningdisordercapital35/CVE_2025_24257----NOT-MINE" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Learningdisordercapital35</a> | 💡 修复建议：厂商需在IOGPUFamily中添加边界检查与有效性验证，限制用户态对GPU内存描述符的非法操作；用户应及时安装苹果发布的iOS/macOS安全更新。
+                <a href="https://github.com/Learningdisordercapital35/CVE_2025_24257----NOT-MINE" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Learningdisordercapital35</a> | 💡 建议立即更新至修复该漏洞的最新版本（如macOS 14.7/iOS 18.3.1），并启用系统完整性保护（SIP）限制内核扩展加载。
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/Jumpthereness578/CVE-2026-2991" target="_blank">Jumpthereness578/CVE-2026-2991</a>
-                <span class="cve-tag" style="">SC: 7.2</span>
+                <span class="cve-tag" style="">SC: 4.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-2991：KiviCare 4.1.2及更早版本的患者社交登录REST端点存在认证绕过漏洞，攻击者可通过伪造社交登录令牌直接获取患者角色权限，无需有效凭证。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">KiviCare &lt;= 4.1.2 患者社交登录REST接口存在认证绕过漏洞（CVE-2026-2991），攻击者可利用PoC未授权访问患者功能</div>
             <div class="cve-hint">
-                <a href="https://github.com/Jumpthereness578/CVE-2026-2991" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Jumpthereness578</a> | 💡 1.升级KiviCare至4.1.3或更高版本；2.在患者社交登录端点实施服务端令牌校验与签名验证；3.对敏感API增加二次认证或IP频率限制。
+                <a href="https://github.com/Jumpthereness578/CVE-2026-2991" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Jumpthereness578</a> | 💡 升级KiviCare至4.1.2以上版本；对患者社交登录REST接口实施严格令牌验证与权限检查；禁用或限制社交登录功能直至完成修复
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank">Recorded-texteditor120/CVE-2026-31802</a>
-                <span class="cve-tag" style="">SC: 7.5</span>
+                <span class="cve-tag" style="">SC: 7.8</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">在npm tar包解压过程中未充分验证符号链接的目标路径，攻击者可构造特制tar包，通过恶意符号链接在提取时覆盖目标系统上的任意文件</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">npm tar包在解压时未对符号链接路径进行合法性校验，攻击者可通过恶意的tar文件提取符号链接，利用路径穿越覆盖任意文件。</div>
             <div class="cve-hint">
-                <a href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Recorded-texteditor120</a> | 💡 解压时需对符号链接进行严格验证，拒绝指向解压目录外的链接，或使用安全库如`safe-tar`替代；更新至已修复此CVE的npm tar版本。
+                <a href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Recorded-texteditor120</a> | 💡 升级npm tar包至修复版本，并在解压过程中校验所有文件路径是否在目标目录范围内，拒绝包含`..`或绝对路径的符号链接。
             </div>
         </div>
         <div class="cve-card">
@@ -82,29 +102,9 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
                 <a class="cve-link" href="https://github.com/tracyliving606/RegPwn" target="_blank">tracyliving606/RegPwn</a>
                 <span class="cve-tag" style="">SC: 7.5</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-24291存在Windows本地权限提升漏洞，攻击者可通过已测试的利用代码在客户端和服务器上获取更高系统权限，影响多个Windows版本。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-24291是Windows本地权限提升漏洞，攻击者可通过已测试利用代码在受影响客户端与服务器上实现提权，影响多个Windows版本</div>
             <div class="cve-hint">
-                <a href="https://github.com/tracyliving606/RegPwn" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: tracyliving606</a> | 💡 立即安装微软发布的安全更新，限制用户对漏洞相关组件的访问权限，部署端点检测与响应（EDR）系统监控异常提权行为。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank">showy-headteacher114/cve-2025-66398</a>
-                <span class="cve-tag" style="">SC: 9.8</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">未授权的攻击者可通过Signal K Server CVE-2025-66398漏洞注入后门，实现远程代码执行，无需认证即可完全控制服务器</div>
-            <div class="cve-hint">
-                <a href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: showy-headteacher114</a> | 💡 立即升级至官方修复版本；禁用不必要的外部网络接口访问；实施严格的输入验证与白名单过滤；部署Web应用防火墙（WAF）并启用RCE检测规则；审计服务器日志排查可疑活动
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud" target="_blank">megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Google Cloud Vertex AI Python SDK (1.98.0至1.130.9版本)存在未认证存储型XSS漏洞，攻击者可通过构造恶意负载注入到AI训练数据或模型元数据中，当管理员或其他用户查看结果时，恶意脚本在浏览器端执行，导致会话劫持或数据泄露。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: megafart1</a> | 💡 1.升级Google Cloud Vertex AI Python SDK至1.130.10或更高版本；2.对所有用户输入进行HTML实体编码和输出转义；3.在生产环境中严格限制对Vertex AI管理面板的访问权限，并启用Content Security Policy（CSP）策略。
+                <a href="https://github.com/tracyliving606/RegPwn" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: tracyliving606</a> | 💡 建议立即安装微软官方发布的安全更新，启用Windows Defender漏洞防护功能，并遵循最小权限原则限制本地用户权限。
             </div>
         </div></div></div>
 </div></body></html>
