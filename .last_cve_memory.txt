@@ -1,1 +1,1 @@
-imjdl/CVE-2026-42208_lab
+hyu164/Terrminus-CVE-2026-2406
