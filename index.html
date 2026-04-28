@@ -2,7 +2,7 @@
 <style>
 * { box-sizing: border-box; }
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
-body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_shuten.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
+body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_kurabe.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
 .glass { background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }
 .header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
 .header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
@@ -19,42 +19,72 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 .cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header"><img src="cover_shuten.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">終点の先が在るとするならば。</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">終点の先が在るとするならば。 終わりじゃなくて始まりかもしれない</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">如果存在所谓的终点前方，那或许并非终结，而是新的起点。</div></div></div>
+<div class="glass header"><img src="cover_kurabe.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">くらべられっ子</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">くらべられっ子 あたしは いつも 後ろ</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">被比较的孩子 我总是 落在后面</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">メモリダンプ解析（メモリダンプかいせき）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">解释  <br>将计算机运行中的内存数据（RAM）完整保存为文件（内存转储），并分析其内容以排查故障、恶意软件或崩溃原因的技术。<br><br>例句  <br>システムが突然停止したため、メモリダンプ解析を行い原因を特定した。  <br>（由于系统突然停止，通过内存转储分析确定了原因。）</div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">クリーデンス・スニッフィング</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">解释：  <br>“Credence Sniffing”指通过观察他人对某事物的反应（如表情、行为）来推测其真实想法或态度，类似于“察言观色”。  <br><br>例句：  <br>会議中、彼は上司の表情をこっそり見てクリーデンス・スニッフィングを行い、提案の可否を判断した。  <br>（会议中，他偷偷观察上司的表情进行Credence Sniffing，判断提案能否通过。）</div></div>
         <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;"><div style="margin-bottom:12px;">• Intel Feed Offline <a href="#" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• PayPay金卡改版：百万年费阈值解析 <a href="https://news.yahoo.co.jp/articles/ba7624afe1f879b1ee42f0f5eb959dba66efee40?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• GitHub Copilot 6月起按量计费 <a href="https://news.yahoo.co.jp/articles/867c54dee49f8c0da776b8052f8e7b8115ea73b9?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• Meta疑窃员工键鼠数据训AI <a href="https://news.yahoo.co.jp/articles/fdbf6663b9800758fb121d8213391b8f9c4d94a2?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• OpenAI疑似研发AI Agent手机 <a href="https://news.yahoo.co.jp/articles/249156355a27ac9f422b017d60ee92ea6d55f22c?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• AirPods Pro用户转投BOSE：正确抉择 <a href="https://news.yahoo.co.jp/articles/486e9080a80f77c20af9fd218c18ea2fa397bbc5?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 微软365 Copilot引入GPT-5.5及ChatGPT图生2.0 <a href="https://news.yahoo.co.jp/articles/189bec1b160c0660f53152fab125bd38dff9e4a9?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank">Recorded-texteditor120/CVE-2026-31802</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
+                <a class="cve-link" href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank">Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF</a>
+                <span class="cve-tag" style="">SC: 7.5</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-31802是npm tar库中一个路径遍历漏洞，攻击者可通过恶意构造的symlink条目在解压过程中实现任意文件覆盖，导致写入系统敏感文件。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">XNU内核AIO kevent存在释放后使用（Use-After-Free）漏洞，可导致内核崩溃及双重释放（Double-Free），在iOS沙箱环境下可被利用以提升权限或绕过沙箱限制</div>
             <div class="cve-hint">
-                <a href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Recorded-texteditor120</a> | 💡 升级npm tar至已修复版本，解压前严格校验并拒绝包含绝对路径或带有`../`的symlink目标；使用白名单机制限制解压路径范围。
+                <a href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Sonisi5085</a> | 💡 建议升级至Apple官方发布的安全更新版本，对kevent对象引用计数和生命周期进行严格校验，避免并发环境下对象释放后继续操作；对AIO相关系统调用增加内核级内存安全审计和界限检查
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/Learningdisordercapital35/CVE_2025_24257----NOT-MINE" target="_blank">Learningdisordercapital35/CVE_2025_24257----NOT-MINE</a>
+                <span class="cve-tag" style="">SC: 9.8</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-24257是Apple IOGPUFamily驱动中kalloc类型内核堆越界读写漏洞，PoC通过伪造IOGPUCommandQueue并发送特殊构造的IOGPUResourceCreate请求触发，可导致内核崩溃、权限提升或信息泄露</div>
+            <div class="cve-hint">
+                <a href="https://github.com/Learningdisordercapital35/CVE_2025_24257----NOT-MINE" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Learningdisordercapital35</a> | 💡 需立即升级至Apple官方发布的修复版本（iOS 18.4+、macOS 15.4+）；若无法更新，应禁用IOUserClient类的非必要访问权限，并对IOGPUFamily驱动进行内核级内存安全检查与边界验证
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/Jumpthereness578/CVE-2026-2991" target="_blank">Jumpthereness578/CVE-2026-2991</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/Jumpthereness578/CVE-2026-2991" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Jumpthereness578</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank">Recorded-texteditor120/CVE-2026-31802</a>
+                <span class="cve-tag" style="">SC: 9.5</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-31802：npm tar包解压时未正确处理符号链接路径，攻击者可通过构造恶意tar包（内含指向父目录的符号链接与同名普通文件）绕过路径检查，实现任意文件覆盖或写入。</div>
+            <div class="cve-hint">
+                <a href="https://github.com/Recorded-texteditor120/CVE-2026-31802" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Recorded-texteditor120</a> | 💡 升级npm tar包至已修复版本；解压前严格校验符号链接目标路径是否在解压目录内；使用白名单限制解压路径范围，或禁用符号链接提取功能。
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/tracyliving606/RegPwn" target="_blank">tracyliving606/RegPwn</a>
-                <span class="cve-tag" style="">SC: 7.6</span>
+                <span class="cve-tag" style="">SC: 0.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该CVE-2026-24291是针对Windows本地权限提升的漏洞利用代码，攻击者可通过已验证的exploit在多个Windows版本客户端及服务器上获取系统级权限，严重威胁系统完整性。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
             <div class="cve-hint">
-                <a href="https://github.com/tracyliving606/RegPwn" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: tracyliving606</a> | 💡 建议立即部署受影响Windows版本的安全补丁，限制用户执行权限，启用Windows Defender攻击防护策略，并监控异常进程提权行为；若无官方补丁，应临时禁用受影响服务或启用内核加固机制。
+                <a href="https://github.com/tracyliving606/RegPwn" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: tracyliving606</a> | 💡 请人工核对
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank">showy-headteacher114/cve-2025-66398</a>
-                <span class="cve-tag" style="">SC: 9.3</span>
+                <span class="cve-tag" style="">SC: 8.5</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Signal K Server存在CVE-2025-66398漏洞，允许未认证攻击者注入后门并实现远程代码执行</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">未授权攻击者可通过CVE-2025-66398漏洞在Signal K Server中注入后门，实现远程代码执行，严重威胁系统安全。</div>
             <div class="cve-hint">
-                <a href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: showy-headteacher114</a> | 💡 立即升级至补丁版本，禁用未使用的API端点，部署Web应用防火墙并实施严格的输入验证与访问控制策略。
+                <a href="https://github.com/showy-headteacher114/cve-2025-66398" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: showy-headteacher114</a> | 💡 建议立即升级至官方修复版本，严格限制未经身份验证的API访问，并对输入数据进行过滤与校验。
             </div>
         </div>
         <div class="cve-card">
@@ -62,49 +92,19 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
                 <a class="cve-link" href="https://github.com/hijack1r/CVE_PushService" target="_blank">hijack1r/CVE_PushService</a>
                 <span class="cve-tag" style="">SC: 1.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该工具可能通过API接口高频率抓取第三方漏洞情报源，存在未授权访问风险，且缺乏严格的速率限制与认证机制，可能导致信息泄露或资源滥用</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该工具本身为情报聚合系统，但可能存在未授权API接口或数据源请求验证不足导致的情报泄露风险</div>
             <div class="cve-hint">
-                <a href="https://github.com/hijack1r/CVE_PushService" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: hijack1r</a> | 💡 建议对所有API端点实施强制身份验证（如API Key+签名校验），添加访问频率限制与IP白名单，同时过滤敏感字段避免输出未公开的漏洞原始数据。
+                <a href="https://github.com/hijack1r/CVE_PushService" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: hijack1r</a> | 💡 建议对工具内部调用的所有第三方API接口实施Token认证与HTTPS加密，并限制单用户请求频率与返回内容灵敏度
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud" target="_blank">megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
+                <span class="cve-tag" style="">SC: 7.5</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Google Cloud Vertex AI Python SDK 版本 1.98.0 至 1.130.9 中存在未经身份验证的存储型跨站脚本漏洞，攻击者可通过构造恶意提示词（prompt）注入任意JavaScript代码，当其他用户查看或处理该提示词结果时，代码在受害者浏览器中执行，可能导致会话劫持、数据窃取或权限提升。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Google Cloud Vertex AI Python SDK 1.98.0至1.130.9版本存在未授权存储型XSS漏洞，攻击者无需认证即可通过恶意Python SDK请求（如构造特制的训练数据或模型元数据）向服务端持久注入恶意JavaScript代码，当其他用户（如AI模型评估人员）通过Web界面查看或分析相关数据时触发执行，可能导致敏感信息窃取或会话劫持。</div>
             <div class="cve-hint">
-                <a href="https://github.com/megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: megafart1</a> | 💡 立即升级至 1.131.0 或更高版本，并对所有用户输入进行严格的HTML转义与上下文相关输出编码，禁用云环境中的HTML渲染功能，实施内容安全策略（CSP）以限制脚本执行。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/DyniePro/CVE-2026-25643" target="_blank">DyniePro/CVE-2026-25643</a>
-                <span class="cve-tag" style="">SC: 9.3</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Frigate NVR ≤0.16.3存在配置缺陷，攻击者可远程执行任意命令，无需Shell访问或输出捕获。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/DyniePro/CVE-2026-25643" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: DyniePro</a> | 💡 更新至最新版本（≥0.16.4），严格验证并限制用户输入的配置项，禁用eval或危险函数调用。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/tianarsamm/CVE-2025-69985" target="_blank">tianarsamm/CVE-2025-69985</a>
-                <span class="cve-tag" style="">SC: 9.8</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-69985：FUXA ≤1.2.8 版本 `/api/runscript` 端点存在未授权远程命令执行漏洞，攻击者无需认证即可通过该端点执行任意系统命令。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/tianarsamm/CVE-2025-69985" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: tianarsamm</a> | 💡 1. 立即升级 FUXA 至 1.2.9 或更高版本；2. 在 `/api/runscript` 端点配置严格的身份认证与授权校验；3. 将 FUXA 服务部署于内网，并设置 WAF 或 API 网关过滤异常请求。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/fartlover37/CVE-2026-2441-PoC" target="_blank">fartlover37/CVE-2026-2441-PoC [WEAPONIZED]</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 9.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-2441为Blink CSS引擎中的释放后使用漏洞，攻击者可通过特制CSS样式表触发已释放内存的访问，可能导致远程代码执行</div>
-            <div class="cve-hint">
-                <a href="https://github.com/fartlover37/CVE-2026-2441-PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: fartlover37</a> | 💡 升级Chrome至补丁版本（&gt;=128.0.6613.84），禁用未受信任的CSS扩展，实施站点隔离与内容安全策略。
+                <a href="https://github.com/megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: megafart1</a> | 💡 1.升级至1.131.0或更高版本；2.对所有用户输入（包括训练数据参数、模型名称描述、标签）进行严格的上下文感知输出编码与HTML实体转义；3.实施严格的内容安全策略（CSP）限制脚本执行；4.对SDK的API接口启用CSRF令牌与来源验证。
             </div>
         </div></div></div>
 </div></body></html>
