@@ -1,1 +1,1 @@
-jwsly12/CVE-2025-58434-59528-htb-ctf
+brandonperezlara/CVE-2025-67223
