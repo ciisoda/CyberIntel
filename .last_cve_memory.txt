@@ -1,1 +1,1 @@
-Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF
+romain-deperne/CVE-2026-27825
