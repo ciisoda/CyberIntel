@@ -1,1 +1,1 @@
-cs8425/copy-fail-go
+scriptzteam/Paranoid-Copy-Fail
