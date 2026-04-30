@@ -1,1 +1,1 @@
-SeanRickerd/cve-2026-31431
+rshosting/CVE-2026-31431-patch
