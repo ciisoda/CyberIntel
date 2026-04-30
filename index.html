@@ -2,7 +2,7 @@
 <style>
 * { box-sizing: border-box; }
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
-body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_otona.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
+body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_kurabe.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
 .glass { background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }
 .header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
 .header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
@@ -19,22 +19,72 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 .cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header"><img src="cover_otona.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">いつかオトナになれるといいね。</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">いつかオトナになれるといいね。</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">希望有一天能成为大人呢。</div></div></div>
+<div class="glass header"><img src="cover_kurabe.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">くらべられっ子</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">くらべられっ子 あたしは きっと あなたより できが悪いんだ</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">被拿来比较的孩子 我一定 比你 更差劲</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">カオス暗号（カオスあんごう）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">カオス暗号：利用混沌理论（カオス理論）中非线性系统的不可预测性来加密信息的密码技术。其核心是混沌系统的初始值极其敏感（蝴蝶效应），即使微小的密钥变化也会导致完全不同的加密结果，因此难以破译。<br><br>例句：  <br>カオス暗号は、わずかな鍵の違いで暗号文が大きく変わるため、解読が非常に難しい。  <br>（混沌密码因密钥的微小差异会导致密文巨变，因此极难破解。）</div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">ブルートフォースアタックの亜種辞書攻撃を指す、辞書屋（じしょや）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">解释  <br>“辞書屋（じしょや）”是日语中“字典攻击”的俗称，指暴力破解（ブルートフォースアタック）的一种变体——使用常用密码或字典中的单词列表进行猜测攻击，而非随机穷举所有组合。<br><br>例句  <br>パスワードに誕生日や単語を使うと、辞書屋（じしょや）に簡単に突破される危険性がある。  <br>（如果密码使用生日或单词，就有被字典攻击轻易破解的风险。）</div></div>
         <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;"><div style="margin-bottom:12px;">• Intel Feed Offline <a href="#" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• 高热幻视：四足怪犬惊现社交网 <a href="https://news.yahoo.co.jp/articles/1fd4490f92de3881cb3812b39d58974f727c8a2e?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 无需卡号，代理一键部署 <a href="https://news.yahoo.co.jp/articles/c63531f7c990f2aa4124343ad75d974291397732?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 安全高耐久钠离子电池禁登机 <a href="https://news.yahoo.co.jp/articles/99672e889da63390430427dd341bee7f572d28d4?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• 智能眼镜G2接入AI代理，随身开发 <a href="https://news.yahoo.co.jp/articles/a1f733b317c938877ded1fc8dd258d826cc4fa82?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• NEC推AI推理时代 <a href="https://news.yahoo.co.jp/articles/9ae416c686d9ef912efbf10ba779fd8b571f730b?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 流量调试入代理，Fiddler MCP 登场 <a href="https://news.yahoo.co.jp/articles/f4d7dee5fbf1355c728a877b8eebb39d4e258205?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Razi-Interactive/claude-project-scanner" target="_blank">Razi-Interactive/claude-project-scanner</a>
+                <a class="cve-link" href="https://github.com/iss4cf0ng/CVE-2026-31431-Linux-Copy-Fail" target="_blank">iss4cf0ng/CVE-2026-31431-Linux-Copy-Fail</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/iss4cf0ng/CVE-2026-31431-Linux-Copy-Fail" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: iss4cf0ng</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/pascal-gujer/CVE-2026-31431" target="_blank">pascal-gujer/CVE-2026-31431</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/pascal-gujer/CVE-2026-31431" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: pascal-gujer</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/Wesuiliye/CVE-2026-41940" target="_blank">Wesuiliye/CVE-2026-41940</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/Wesuiliye/CVE-2026-41940" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Wesuiliye</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/mrowkoob/copy-fail-mitigate-no-reboot" target="_blank">mrowkoob/copy-fail-mitigate-no-reboot</a>
                 <span class="cve-tag" style="">SC: 7.5</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">扫描器宣称检测CVE-2025-59536及statusLine注入、提示注入等漏洞，但该CVE编号尚未被公开收录或官方确认，存在虚假威胁宣称与滥用安全扫描名称误导用户的风险；同时未提供具体检测逻辑及修复措施，可能掩盖真实Web应用或API安全风险。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-31431为Linux内核copy-fail类内存越界漏洞，可被本地低权限用户利用触发内核崩溃或权限提升。</div>
             <div class="cve-hint">
-                <a href="https://github.com/Razi-Interactive/claude-project-scanner" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Razi-Interactive</a> | 💡 建议人工核查CVE-2025-59536是否真实存在及是否与项目相关；对statusLine注入（如HTTP响应头污染）应严格过滤用户输入并设置固定响应头；对prompt injection需隔离用户输入与系统提示词，采用白名单过滤或语义校验；谨慎使用未认证的第三方安全扫描器，优先采用OWASP ZAP或Burp Suite等成熟工具进行安全测试。
+                <a href="https://github.com/mrowkoob/copy-fail-mitigate-no-reboot" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: mrowkoob</a> | 💡 更新内核至修复版本，若无法即时更新，建议禁用受影响模块或应用供应商提供的临时内核补丁，并限制非root用户对相关系统调用的访问。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/WavesMan/cve-2026-31431-fleet-remediator" target="_blank">WavesMan/cve-2026-31431-fleet-remediator</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/WavesMan/cve-2026-31431-fleet-remediator" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: WavesMan</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/nisec-eric/cve-2026-31431" target="_blank">nisec-eric/cve-2026-31431</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">无漏洞检测项或测试方法缺失</div>
+            <div class="cve-hint">
+                <a href="https://github.com/nisec-eric/cve-2026-31431" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: nisec-eric</a> | 💡 请人工核对是否需要补充安全测试用例。
             </div>
         </div>
         <div class="cve-card">
@@ -49,62 +99,12 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Catherines77/ActiveMQ-EXPtools" target="_blank">Catherines77/ActiveMQ-EXPtools</a>
-                <span class="cve-tag" style="">SC: 9.6</span>
+                <a class="cve-link" href="https://github.com/Aurillium/RootRemover" target="_blank">Aurillium/RootRemover</a>
+                <span class="cve-tag" style="">SC: 5.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该工具整合了ActiveMQ多个高危RCE漏洞（含反序列化、表达式注入、未授权访问），可批量执行任意代码、获取服务器权限，影响范围广、危害严重。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">利用CVE-2026-31431临时移除root密码，允许未授权用户无密码登录系统，可导致权限提升及完全控制服务器</div>
             <div class="cve-hint">
-                <a href="https://github.com/Catherines77/ActiveMQ-EXPtools" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Catherines77</a> | 💡 1.立即升级ActiveMQ至不受影响的最新版本，禁用OpenWire、STOMP等危险协议端口。2.在防火墙侧限制对61616端口（OpenWire）和8161端口（Web控制台）的访问来源。3.检查并修复Web控制台的弱口令或默认认证配置，启用强身份验证。4.对已发现的历史漏洞（如CVE-2015-5254等）进行针对性补丁更新。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/H4zaz/CVE-2026-42141-xibo-ssrf" target="_blank">H4zaz/CVE-2026-42141-xibo-ssrf</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-42141：Xibo CMS存在服务器端请求伪造(SSRF)漏洞，攻击者可利用该漏洞向内部网络发起请求，探测内网资产或进行恶意数据交互。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/H4zaz/CVE-2026-42141-xibo-ssrf" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: H4zaz</a> | 💡 修复建议：1. 升级Xibo CMS至最新安全版本；2. 对用户输入的URL进行严格白名单校验，禁止向私有IP地址段发起请求；3. 在网络层面实施出站流量过滤，限制服务器对外连接范围。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Metbcy/bomdrift" target="_blank">Metbcy/bomdrift</a>
-                <span class="cve-tag" style="">SC: 7.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">SBOM变更检测暴露供应链风险：新增依赖存在CVE漏洞（如axios 2026-03）、典型拼写劫持（typosquatting）及低龄维护者（Shai-Hulud/xz模式），易被植入后门或投毒攻击。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/Metbcy/bomdrift" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Metbcy</a> | 💡 1. 对新增依赖自动执行漏洞扫描并阻断高危CVE。2. 校验包名与官方源匹配，拒绝启用高分相似度包。3. 对维护者年龄&lt;2年的包强制人工审批，并启用依赖锁定与签名验证。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/wuwu001/CVE-2026-31431-exploit" target="_blank">wuwu001/CVE-2026-31431-exploit [WEAPONIZED]</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
-            <div class="cve-hint">
-                <a href="https://github.com/wuwu001/CVE-2026-31431-exploit" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: wuwu001</a> | 💡 请人工核对。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/guard-wait/CVE-2026-31431_EXP" target="_blank">guard-wait/CVE-2026-31431_EXP</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
-            <div class="cve-hint">
-                <a href="https://github.com/guard-wait/CVE-2026-31431_EXP" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: guard-wait</a> | 💡 请人工核对
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank">Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF</a>
-                <span class="cve-tag" style="">SC: 7.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">iOS XNU内核AIO kevent存在释放后使用漏洞，可导致内核崩溃与双释放，需限制沙箱内对该接口的调用权限。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Sonisi5085</a> | 💡 立即更新至最新iOS版本；若需临时防护，建议在沙箱配置中禁用AIO相关系统调用或通过Kext限制kevent的滥用。
+                <a href="https://github.com/Aurillium/RootRemover" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Aurillium</a> | 💡 立即恢复root密码，使用passwd命令设置强密码；检查系统日志确认是否存在未授权访问痕迹；及时应用厂商发布的安全补丁或升级受影响软件版本。
             </div>
         </div></div></div>
 </div></body></html>
