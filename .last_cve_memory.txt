@@ -1,1 +1,1 @@
-sebinxavi/cve-checker-2026
+Jenderal92/CVE-2026-41940
