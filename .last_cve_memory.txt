@@ -1,1 +1,1 @@
-Sonisi5085/CVE-2026-XNU-AIO-KEVENT-UAF
+merdw/cPanel-CVE-2026-41940-Scanner
