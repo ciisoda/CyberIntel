@@ -1,1 +1,1 @@
-HulnotHutu/CVE-2026-31431
+efeanilarslan/CVE-2026-42167-Exploit
