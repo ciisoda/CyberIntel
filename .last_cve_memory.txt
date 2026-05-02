@@ -1,1 +1,1 @@
-studiomeyer-io/mcp-server-attestation
+Riquelme54322/CVE-2025-5419
