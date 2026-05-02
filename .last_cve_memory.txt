@@ -1,1 +1,1 @@
-DyniePro/CVE-2026-25643
+hophtien/CVE-2025-54424
