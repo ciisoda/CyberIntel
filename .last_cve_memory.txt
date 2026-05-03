@@ -1,1 +1,1 @@
-HazaVVIP/CVE-2025-30208
+tahaXafous/CVE_2026_41940_scan_exploit
