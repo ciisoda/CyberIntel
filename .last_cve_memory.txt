@@ -1,1 +1,1 @@
-tahaXafous/CVE_2026_41940_scan_exploit
+obrunolima1910/CVE-2026-24061
