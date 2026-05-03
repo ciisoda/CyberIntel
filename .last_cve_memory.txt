@@ -1,1 +1,1 @@
-attaattaatta/CVE-2026-31431
+vyahello/CVE-2026-31431
