@@ -1,1 +1,1 @@
-rfxn/cpanel-sessionscribe
+pulentoski/CVE-2026-31431
