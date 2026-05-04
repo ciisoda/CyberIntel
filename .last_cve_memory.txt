@@ -1,1 +1,1 @@
-KKongTen/CVE-2026-3494_Verfication
+ochebotar/copy-fail-CVE-2026-31431-detection-probe
