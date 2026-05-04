@@ -1,1 +1,1 @@
-rootdirective-sec/CVE-2026-39987-Lab
+ochebotar/copy-fail-CVE-2026-31431-detection-probe
