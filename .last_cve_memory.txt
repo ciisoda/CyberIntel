@@ -1,1 +1,1 @@
-itsismarcos/CVE-2026-41940
+Jorrit-VM/CVE-2026-33017
