@@ -1,1 +1,1 @@
-kaleth4/CVE-2025-0690
+rippsec/cve-2026-31431
