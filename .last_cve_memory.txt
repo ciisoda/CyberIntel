@@ -1,1 +1,1 @@
-rippsec/cve-2026-31431
+sakthivel10q/CVE-2025-14847
