@@ -1,1 +1,1 @@
-xeloxa/copyfail-exploit
+salman5230/CVE-2025-59287
