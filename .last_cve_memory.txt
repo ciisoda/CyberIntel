@@ -1,1 +1,1 @@
-itsystem/afalg-check
+sibersan/cve-2026-23918
