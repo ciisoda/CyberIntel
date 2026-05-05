@@ -1,1 +1,1 @@
-rippsec/CVE-2026-31431-Copy-Fail
+Silent4Labs/check-copyfail-cve-2026-31431
