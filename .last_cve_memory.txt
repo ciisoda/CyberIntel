@@ -1,1 +1,1 @@
-ZildanZ/CVE-2026-41940
+xeloxa/copyfail-exploit
