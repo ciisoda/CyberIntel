@@ -1,1 +1,1 @@
-juccoblak/CVE-2025-6554
+suominen/CVE-2026-31431
