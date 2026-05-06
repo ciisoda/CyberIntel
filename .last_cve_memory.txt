@@ -1,1 +1,1 @@
-phornnato/CVE-2025-55182
+suominen/CVE-2026-31431
