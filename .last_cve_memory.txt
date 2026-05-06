@@ -1,1 +1,1 @@
-KvzinNcpx7/CVE-2025-9074_DAEMON_KILLER
+Recorded-texteditor120/CVE-2026-31802
