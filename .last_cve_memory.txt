@@ -1,1 +1,1 @@
-freiwi/CVE-2025-8110
+xeloxa/CVE-2026-23918-Apache-H2-PoC
