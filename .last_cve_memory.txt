@@ -1,1 +1,1 @@
-pedrocruz2202/mongobleed-scanner
+bughunt4me/cpanelCVE
