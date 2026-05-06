@@ -1,1 +1,1 @@
-attaattaatta/CVE-2026-31431
+pedrocruz2202/mongobleed-scanner
