@@ -1,1 +1,1 @@
-Unfold-Security/CVE-2026-41940-Detection
+Zain3311/CVE-2025-49844
