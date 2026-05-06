@@ -1,1 +1,1 @@
-seguridadentrerios/-CVE-2026-23918
+freiwi/CVE-2025-8110
