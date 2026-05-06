@@ -1,1 +1,1 @@
-liamromanis101/CVE-2026-31431-Copy-Fail---Vulnerability-Detection-Script
+seguridadentrerios/-CVE-2026-23918
