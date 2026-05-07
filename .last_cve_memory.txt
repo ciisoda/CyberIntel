@@ -1,1 +1,1 @@
-murrez/CVE-2026-41940
+jake-young-dev/CVE-2026-27944
