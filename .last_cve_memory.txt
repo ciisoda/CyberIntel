@@ -1,1 +1,1 @@
-0dayexperience/CVE-Hunter-2026
+draxozbel/CVE-2026-38361
