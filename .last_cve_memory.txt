@@ -1,1 +1,1 @@
-ameerhamza-malik/CVE-2026-42796
+OmerAti/almalinux-fix-cve-2026-31431
