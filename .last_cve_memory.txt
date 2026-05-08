@@ -1,1 +1,1 @@
-OpenPixelSystems/c-copy-fail
+ameerhamza-malik/CVE-2026-42796
