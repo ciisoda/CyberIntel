@@ -1,1 +1,1 @@
-BastianXploited/CVE-2025-15030
+Recorded-texteditor120/CVE-2026-31802
