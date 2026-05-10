@@ -1,1 +1,1 @@
-mihnasdsad/CVE-2025-32463
+pedrocruz2202/mongobleed-scanner
