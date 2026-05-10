@@ -1,1 +1,1 @@
-suominen/CVE-2026-43284
+hamzamalik3461/CVE-2026-20841
