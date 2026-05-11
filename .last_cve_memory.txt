@@ -1,1 +1,1 @@
-krisiasty/vcheck
+zycoder0day/CVE-2026-41940
