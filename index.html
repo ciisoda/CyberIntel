@@ -2,7 +2,7 @@
 <style>
 * { box-sizing: border-box; }
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
-body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_kurabe.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
+body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_rock.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
 .glass { background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }
 .header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
 .header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
@@ -19,32 +19,62 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 .cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header"><img src="cover_kurabe.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">くらべられっ子</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">くらべられっ子 お決まりのレッテル 心に貼られてく</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">被比较的孩子 被贴上定型的标签 一张张贴在心里</div></div></div>
+<div class="glass header"><img src="cover_rock.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">ロックな君とはお别れだ</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">ロックな君とはお别れだ</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">和摇滚的你告别了</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">不可逆仮名照合</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">不可逆仮名照合：一种安全技术，将假名（如日语中的平假名、片假名）通过单向加密（如哈希）后，仅能验证其是否匹配原始数据，而无法从加密结果反推出原假名。常用于保护姓名等敏感信息。<br><br>例句：  <br>ユーザーの氏名を登録する際、プライバシー保護のため不可逆仮名照合を用いて、元の平仮名を復元できない形で保存する。  <br>（注册用户名时，为保护隐私使用不可逆假名对照，以无法还原原始平假名的形式存储。）</div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">判決文改竄（はんけつぶん かいざん）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">解释：  <br>指对法院已作出的判决文书内容进行非法篡改的行为，属于妨害司法公正的犯罪。  <br><br>例句：  <br>裁判官が判決文改竄に関与した疑いで調査を受けている。  <br>（法官因涉嫌参与篡改判决书正在接受调查。）</div></div>
         <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;"><div style="margin-bottom:12px;">• Intel Feed Offline <a href="#" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• 标题翻译改写（10字内）：Think 2026：AI从实验到实战 <a href="https://news.yahoo.co.jp/articles/e844c64e1cfb6363bea7e0b31f9f1912e9dd0d4c?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• KDDI财报曝光，实值向好 <a href="https://news.yahoo.co.jp/articles/b6eb3a848f5fcd3ed63aa225545fe1c1f1199142?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• AI社会下，KDDI新战略：设备将更趣（10字） <a href="https://news.yahoo.co.jp/articles/62deb18406ac83243d7db5c687d2e43e9de8634f?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• 三井物产子公司推日本首例底地数字证券 <a href="https://news.yahoo.co.jp/articles/6a0883e7458932b70c98f347868497a994c64b94?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 美参院银行委员会公布《清晰法案》新版，5月14日审议。 <a href="https://news.yahoo.co.jp/articles/05607851453bd6c3b207769c077734c8b55a397f?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• 欧姆龙：农作业自动化转向“决策” <a href="https://news.yahoo.co.jp/articles/c574e64971e330239a217d996f8213ec229bdb9b?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/BlackSnufkin/CredsHunter" target="_blank">BlackSnufkin/CredsHunter</a>
+                <span class="cve-tag" style="">SC: 9.8</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">XIGNCODE3 xhunter1.sys存在句柄泄露漏洞(CVE-2026-3609)，攻击者可利用该漏洞绕过PPL保护并转储LSASS进程凭据</div>
+            <div class="cve-hint">
+                <a href="https://github.com/BlackSnufkin/CredsHunter" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: BlackSnufkin</a> | 💡 立即更新XIGNCODE3驱动程序至最新版本，并检查系统是否存在异常句柄泄露；若无法立即更新，建议禁用或限制xhunter1.sys驱动的加载，监控LSASS进程异常访问行为。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/p401a-ops/Copy-Fail" target="_blank">p401a-ops/Copy-Fail</a>
+                <span class="cve-tag" style="">SC: 7.5</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-31431 “Copy Fail” 漏洞允许攻击者在 Astra Linux 1.7.6 上通过构造特殊文件路径触发复制操作失败，进而导致内存泄漏或任意文件写入。需立即禁用受影响服务或升级内核补丁。</div>
+            <div class="cve-hint">
+                <a href="https://github.com/p401a-ops/Copy-Fail" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: p401a-ops</a> | 💡 升级 Astra Linux 至包含补丁的最新版本；临时措施：限制 cp 命令执行权限，启用 SELinux 或 AppArmor 策略，监控异常文件复制行为。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/hijack1r/CVE_PushService" target="_blank">hijack1r/CVE_PushService</a>
+                <span class="cve-tag" style="">SC: 7.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">工具本身存在API密钥硬编码风险及情报推送接口未鉴权漏洞，可能导致攻击者获取未公开的0day情报或篡改推送内容</div>
+            <div class="cve-hint">
+                <a href="https://github.com/hijack1r/CVE_PushService" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: hijack1r</a> | 💡 1. 移除所有硬编码密钥，改用环境变量或密钥管理服务；2. 对推送接口添加JWT或OAuth2.0鉴权；3. 对推送内容实施数字签名验签。
+            </div>
+        </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/gbonacini/CVE-2026-31431" target="_blank">gbonacini/CVE-2026-31431</a>
                 <span class="cve-tag" style="">SC: 9.5</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-31431（Copyfail）涉及内存拷贝操作时边界检查缺失或对手工汇编优化未做安全校验，可能导致堆/栈缓冲区溢出或越界读写，攻击者可利用此漏洞执行任意代码或造成拒绝服务</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该内容提及CVE-2026-31431的C++及内联汇编实现，未提供具体漏洞细节，但直接引用未经验证的CVE编号且未说明安全边界，存在未知漏洞扩散与未授权代码执行风险</div>
             <div class="cve-hint">
-                <a href="https://github.com/gbonacini/CVE-2026-31431" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: gbonacini</a> | 💡 在C++与汇编混合实现的数据拷贝函数中，严格执行长度校验和边界检查；对汇编优化部分增加显式安全断言或改用安全的封装函数（如memcpy_s）；开启编译器的边界检查与控制流保护（CFG）选项，并进行模糊测试与符号执行验证。
+                <a href="https://github.com/gbonacini/CVE-2026-31431" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: gbonacini</a> | 💡 建议立即核实CVE-2026-31431是否真实存在，若为虚构编号则标记为恶意/误导性内容；若为真实漏洞，应停止使用该实现，并替换为官方或经过安全审计的补丁版本。
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC" target="_blank">Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC [WEAPONIZED]</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 7.2</span>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 8.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">cPanel/WHM 存在认证绕过漏洞，攻击者可通过该Go语言编写的PoC工具利用缺陷绕过身份验证，非法访问控制面板或执行提权操作。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">cPanel/WHM存在认证绕过漏洞，攻击者可通过Go语言编写的PoC工具利用该漏洞绕过身份验证机制。</div>
             <div class="cve-hint">
-                <a href="https://github.com/Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Defacto-ridgepole254</a> | 💡 立即升级cPanel/WHM至最新安全版本，禁用不必要的高风险服务，并严格审查访问控制列表；建议启用多因素认证，同时监控异常登录行为。
+                <a href="https://github.com/Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Defacto-ridgepole254</a> | 💡 立即升级cPanel和WHM至最新安全版本；限制管理接口访问IP白名单；启用双因素认证；审查并轮换所有管理员API令牌。
             </div>
         </div>
         <div class="cve-card">
@@ -52,19 +82,19 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
                 <a class="cve-link" href="https://github.com/Dullpurple-sloop726/CVE-2026-31431-Linux-Copy-Fail" target="_blank">Dullpurple-sloop726/CVE-2026-31431-Linux-Copy-Fail</a>
                 <span class="cve-tag" style="">SC: 5.0</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Linux内核存在CVE-2026-31431漏洞，攻击者可通过Rust实现利用任意页缓存写入原语实现本地权限提升</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-31431是一个Linux内核本地权限提升漏洞，攻击者通过Rust实现利用任意页缓存写入原语，可导致从低权限用户提升至root权限</div>
             <div class="cve-hint">
-                <a href="https://github.com/Dullpurple-sloop726/CVE-2026-31431-Linux-Copy-Fail" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Dullpurple-sloop726</a> | 💡 建议立即更新受影响Linux内核版本至官方修复版本，若无法更新则通过Kernel Live Patch或第三方安全补丁缓解，并启用内核页表隔离及严格限制非特权用户访问敏感系统调用。
+                <a href="https://github.com/Dullpurple-sloop726/CVE-2026-31431-Linux-Copy-Fail" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Dullpurple-sloop726</a> | 💡 建议立即升级Linux内核至修复版本，应用安全补丁，限制本地用户执行权限，并启用内核地址空间布局随机化（KASLR）与安全模块（如SELinux或AppArmor）进行纵深防御。
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
                 <a class="cve-link" href="https://github.com/Liverwortenuresis371/copyfail-rs" target="_blank">Liverwortenuresis371/copyfail-rs</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
+                <span class="cve-tag" style="">SC: 0.1</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">该格式未提供具体漏洞数据，内容提及利用静态二进制绕过PAM认证并监控系统完整性，疑似针对CVE-2026-31431的潜在攻击载荷或检测工具描述，但无有效漏洞验证信息</div>
             <div class="cve-hint">
-                <a href="https://github.com/Liverwortenuresis371/copyfail-rs" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Liverwortenuresis371</a> | 💡 请人工核对
+                <a href="https://github.com/Liverwortenuresis371/copyfail-rs" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Liverwortenuresis371</a> | 💡 请确认CVE-2026-31431是否已分配且存在官方描述；若存在，建议立即更新PAM组件至最新版本，禁用静态二进制执行权限，并启用SELinux或AppArmor限制未授权可执行文件运行。
             </div>
         </div>
         <div class="cve-card">
@@ -75,36 +105,6 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
             <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
             <div class="cve-hint">
                 <a href="https://github.com/studiogangster/CVE-2026-31431" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: studiogangster</a> | 💡 请人工核对
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/rootdirective-sec/cve-2026-5718-Lab" target="_blank">rootdirective-sec/cve-2026-5718-Lab</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
-            <div class="cve-hint">
-                <a href="https://github.com/rootdirective-sec/cve-2026-5718-Lab" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: rootdirective-sec</a> | 💡 请人工核对
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/adibirzu/openclaw-security-monitor" target="_blank">adibirzu/openclaw-security-monitor</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
-            <div class="cve-hint">
-                <a href="https://github.com/adibirzu/openclaw-security-monitor" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: adibirzu</a> | 💡 请人工核对
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/attaattaatta/CVE-2026-43500" target="_blank">attaattaatta/CVE-2026-43500</a>
-                <span class="cve-tag" style="">SC: 9.3</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2026-43500、CVE-2026-31431、CVE-2026-43284 为Go语言运行时或标准库中的高危漏洞，涉及内存损坏、远程拒绝服务或未授权访问，存在被利用风险，厂商提供的hotfix为临时修复方案</div>
-            <div class="cve-hint">
-                <a href="https://github.com/attaattaatta/CVE-2026-43500" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: attaattaatta</a> | 💡 立即将Go运行时升级至包含上述CVE官方补丁的版本（如go1.23.x特定补丁版），不推荐仅依赖hotfix；若无法升级，需严格限制受影响模块的网络暴露面及输入校验，并监控异常崩溃或提权行为。
             </div>
         </div></div></div>
 </div></body></html>

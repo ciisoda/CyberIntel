@@ -1,1 +1,1 @@
-suominen/CVE-2026-43284
+gbonacini/CVE-2026-31431
