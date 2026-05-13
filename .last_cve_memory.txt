@@ -1,1 +1,1 @@
-bitbcybr/way2poc_cve-2026-34475
+bogdanrotariu/cve-2026-29204-whmcs-clientarea-addonid
