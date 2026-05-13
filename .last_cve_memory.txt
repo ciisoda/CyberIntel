@@ -1,1 +1,1 @@
-Galeax/CVE2CAPEC
+suominen/CVE-2026-43284
