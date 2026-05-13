@@ -1,1 +1,1 @@
-yeremeu/CVE-2025-32463_chwoot
+panchocosil/verify-ghsa-c4j6-fc7j-m34r
