@@ -1,1 +1,1 @@
-panchocosil/verify-ghsa-c4j6-fc7j-m34r
+tianarsamm/CVE-2025-69985
