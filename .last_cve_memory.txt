@@ -1,1 +1,1 @@
-FrosterDL/CVE-2026-43284
+yeremeu/CVE-2025-32463_chwoot
