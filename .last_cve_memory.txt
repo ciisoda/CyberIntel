@@ -1,1 +1,1 @@
-opdc-oseas/cve_2026-42945
+yeremeu/CVE-2025-32463_chwoot
