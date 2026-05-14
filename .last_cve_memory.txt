@@ -1,1 +1,1 @@
-ksnnd32/redis_exploit
+obrunolima1910/CVE-2026-24061
