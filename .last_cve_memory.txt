@@ -1,1 +1,1 @@
-Hann1bl3L3ct3r/CVE-2026-6145
+opdc-oseas/cve_2026-42945
