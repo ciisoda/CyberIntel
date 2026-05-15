@@ -1,1 +1,1 @@
-mrk336/DNS-Mayhem-CVE-2026-41096-Deep-Dive
+rootdirective-sec/cve-2026-5718-Lab
