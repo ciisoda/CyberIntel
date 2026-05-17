@@ -1,1 +1,1 @@
-Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC
+minanagehsalalma/cve-2026-34473-unauthenticated-dos-zte-routers
