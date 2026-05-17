@@ -1,1 +1,1 @@
-minanagehsalalma/cve-2026-34473-unauthenticated-dos-zte-routers
+sakthivel10q/CVE-2025-14847
