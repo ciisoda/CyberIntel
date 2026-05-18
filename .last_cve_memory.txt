@@ -1,1 +1,1 @@
-LAT-06/CVE-2026-34197
+Metbcy/bomdrift
