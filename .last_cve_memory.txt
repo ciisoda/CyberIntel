@@ -1,1 +1,1 @@
-hamzamalik3461/CVE-2026-20841
+Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC
