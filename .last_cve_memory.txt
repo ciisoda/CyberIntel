@@ -1,1 +1,1 @@
-0xbinder/CVE-2026-0073
+0xBlackash/CVE-2026-31635
