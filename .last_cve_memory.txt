@@ -1,1 +1,1 @@
-Bhanunamikaze/CVE-2026-2587-Exploit-POC
+EQSTLab/CVE-2026-42048
