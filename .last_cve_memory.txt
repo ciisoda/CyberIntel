@@ -1,1 +1,1 @@
-Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC
+Bhanunamikaze/CVE-2026-2587-Exploit-POC
