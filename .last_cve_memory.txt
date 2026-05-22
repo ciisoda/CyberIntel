@@ -1,1 +1,1 @@
-frudotz/ISU-SecOps-Nginx-RCE
+kikiuuw/CVE-2025-68921
