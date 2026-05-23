@@ -1,1 +1,1 @@
-ridhinva/litellm-scanner
+rfxn/copyfail
