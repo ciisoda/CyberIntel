@@ -1,1 +1,1 @@
-xxconi/CVE-2026-6279
+Markusino488/cve-2025-8088
