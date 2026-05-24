@@ -1,1 +1,1 @@
-BlackRainSentinel/cPanel-patch-radar
+m0n1x90/CVE-2026-41096
