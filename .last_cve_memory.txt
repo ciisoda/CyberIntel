@@ -1,1 +1,1 @@
-renewablehacking/CVE-2025-55182-React-19.2.0
+bajoex/CVE-2026-41096-POC-trigger-no-exploit-
