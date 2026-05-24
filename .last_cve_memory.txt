@@ -1,1 +1,1 @@
-N45HT/drupal-cve-2026-9082-checker
+DyniePro/CVE-2026-25643
