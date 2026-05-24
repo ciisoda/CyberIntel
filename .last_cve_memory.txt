@@ -1,1 +1,1 @@
-sakthivel10q/CVE-2025-14847
+renewablehacking/CVE-2025-55182-React-19.2.0
