@@ -1,1 +1,1 @@
-renewablehacking/CVE-2026-45321-Tanstack
+mihnasdsad/CVE-2025-32463
