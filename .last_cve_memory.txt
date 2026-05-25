@@ -1,1 +1,1 @@
-megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud
+renewablehacking/CVE-2026-45321-Tanstack
