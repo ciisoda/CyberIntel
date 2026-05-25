@@ -1,1 +1,1 @@
-megafart1/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud
+Ahmed-Soli/ingress-nginx-cve-2026-42945-backport
