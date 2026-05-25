@@ -1,1 +1,1 @@
-Galeax/CVE2CAPEC
+Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC
