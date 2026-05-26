@@ -1,1 +1,1 @@
-runt1me/cve-2025-50946
+xxconi/CVE-2026-46275
