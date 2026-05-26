@@ -2,7 +2,7 @@
 <style>
 * { box-sizing: border-box; }
 :root { --p: #ff007f; --b: #00d4ff; --bg: rgba(15, 15, 25, 0.45); }
-body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_doro.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
+body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans-serif; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('mv_rock.png'); background-size:cover; background-position:center; background-attachment:fixed; height:100vh; overflow:hidden; }
 .glass { background: var(--bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 18px; }
 .header { height:100px; display:flex; align-items:center; gap:20px; margin-bottom:15px; border-bottom:1px solid rgba(255, 0, 127, 0.5); }
 .header img { width:75px; height:75px; border-radius:8px; border:1.5px solid var(--p); box-shadow: 0 0 10px rgba(255,0,127,0.4); }
@@ -19,62 +19,22 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
 .cve-hint { font-size:11px; color:var(--b); opacity:0.9; text-shadow: 0 0 6px rgba(0,212,255,0.5); }
 .label { font-size:9px; color:var(--p); letter-spacing:2px; margin-bottom:10px; display:block; font-weight:bold; text-shadow: 0 0 5px rgba(255,0,127,0.4); }
 </style></head><body>
-<div class="glass header"><img src="cover_doro.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">泥の分际で私だけ的大切を夺おうだなんて</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">泥の分际で私だけの大切を夺おうだなんて</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">区区烂泥竟想夺走我唯一的珍宝</div></div></div>
+<div class="glass header"><img src="cover_rock.jpg"><div class="header-text"><h1 style="font-size:20px;margin:0;text-shadow: 0 0 10px rgba(255,255,255,0.5);">ロックな君とはお别れだ</h1><p style="font-size:14px;color:var(--p);margin:4px 0 0 0;font-weight:bold;">ロックな君とはお别れだ</p><div style="font-size:11px;opacity:0.5;margin-top:2px;">再见了，摇滚的你</div></div></div>
 <div class="container">
     <div style="display:flex;flex-direction:column;gap:15px;">
-        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">シェルコード埋込型バッファオーバーフロー（しぇるこーどうめこみがたばっふぁおーばーふろー）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">解释：  <br>攻击者通过在程序缓冲区中写入超出其容量的数据，覆盖返回地址或函数指针，同时将恶意代码（shellcode）嵌入缓冲区，劫持程序执行流跳转到该代码，从而获取系统控制权。<br><br>例句：  <br>“攻撃者はHTTPリクエストのUser-Agentフィールドにシェルコード埋込型バッファオーバーフローを仕込み、サーバの制御を奪取した。”  <br>（攻击者在HTTP请求的User-Agent字段中植入shellcode型缓冲区溢出，夺取了服务器控制权。）</div></div>
+        <div class="glass" style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;"><span class="label">VOCAL_INTEL</span><div class="neon-blue" style="font-size:24px;font-weight:bold;margin-bottom:10px;">監視下浸透（かんしかしんとう）</div><div class="scroll" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">監視下浸透：在官方或安保机构的监控下，允许特定对象（如特务、调查人员）逐步渗透进入目标组织或区域，以收集情报或执行任务。<br><br>例句：公安は過激派グループへの監視下浸透を実施し、内部情報を入手した。  <br>（公安实施了针对激进组织的监控渗透，获取了内部情报。）</div></div>
         <div class="glass" style="flex:1;border-left:4px solid var(--b);"><span class="label">MARKET_RECON</span><div class="scroll" style="font-size:11.5px;line-height:1.7;color:#99f1ff;"><div style="margin-bottom:12px;">• Intel Feed Offline <a href="#" target="_blank" style="color:var(--b);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--b);">[LINK]</a></div></div></div>
-        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• 国产远程桌面“Brynhildr”新增手柄转虚拟键码功能 <a href="https://news.yahoo.co.jp/articles/17c2f0deedf33574a7cc6535eae1ba109a41a12c?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• Ollama接入Codex本地执行 <a href="https://news.yahoo.co.jp/articles/778aeb084fd6ccb449fae198cdf82fb003c39cb6?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• ASRock B650 Rock WiFi7 开售 <a href="https://news.yahoo.co.jp/articles/1fde2935fe02d24a57cb842cc2114e2de5173e77?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
+        <div class="glass" style="flex:1;border-left:4px solid var(--p);"><span class="label">JAPAN_FEED</span><div class="scroll" style="font-size:11.5px;line-height:1.7;"><div style="margin-bottom:12px;">• 国产远控Brynhildr新增手柄转虚拟按键 <a href="https://news.yahoo.co.jp/articles/17c2f0deedf33574a7cc6535eae1ba109a41a12c?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• Ollama 现支持 Codex <a href="https://news.yahoo.co.jp/articles/778aeb084fd6ccb449fae198cdf82fb003c39cb6?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div><div style="margin-bottom:12px;">• ASRock B650主板上市，支持Ryzen 9000 <a href="https://news.yahoo.co.jp/articles/1fde2935fe02d24a57cb842cc2114e2de5173e77?source=rss" target="_blank" style="color:var(--p);font-size:10px;text-decoration:none;text-shadow:0 0 5px var(--p);">[LINK]</a></div></div></div>
     </div>
     <div class="glass" style="display:flex;flex-direction:column;overflow:hidden;"><span class="label">CVE_MONITOR</span><div class="scroll">
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Jeanback1/react-rsc-cve-2025-55182-lab" target="_blank">Jeanback1/react-rsc-cve-2025-55182-lab</a>
-                <span class="cve-tag" style="">SC: 9.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-55182演示：React服务端组件因Flight协议原型链污染导致远程代码执行</div>
-            <div class="cve-hint">
-                <a href="https://github.com/Jeanback1/react-rsc-cve-2025-55182-lab" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Jeanback1</a> | 💡 立即升级React至修复版本；禁用不安全的反序列化函数；对输入数据实施严格的白名单校验与原型污染防护；审计所有Flight协议交互日志。
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Nxploited/CVE-2026-20182" target="_blank">Nxploited/CVE-2026-20182</a>
+                <a class="cve-link" href="https://github.com/juccoblak/CVE-2025-6554" target="_blank">juccoblak/CVE-2025-6554</a>
                 <span class="cve-tag" style="">SC: 0.0</span>
             </div>
             <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
             <div class="cve-hint">
-                <a href="https://github.com/Nxploited/CVE-2026-20182" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Nxploited</a> | 💡 请人工核对
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/zKaaanon/ProyectoFinalSO" target="_blank">zKaaanon/ProyectoFinalSO</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
-            <div class="cve-hint">
-                <a href="https://github.com/zKaaanon/ProyectoFinalSO" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: zKaaanon</a> | 💡 请人工核对
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/niekaicheng/CVE-2026-42945_NGINX_Rift" target="_blank">niekaicheng/CVE-2026-42945_NGINX_Rift</a>
-                <span class="cve-tag" style="">SC: 0.0</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
-            <div class="cve-hint">
-                <a href="https://github.com/niekaicheng/CVE-2026-42945_NGINX_Rift" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: niekaicheng</a> | 💡 请人工核对
-            </div>
-        </div>
-        <div class="cve-card">
-            <div class="cve-top">
-                <a class="cve-link" href="https://github.com/kkaanozturk/HyperOS-Directory-Traversal-Analysis" target="_blank">kkaanozturk/HyperOS-Directory-Traversal-Analysis</a>
-                <span class="cve-tag" style="">SC: 8.5</span>
-            </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Xiaomi HyperOS AVCodec媒体框架存在释放后使用漏洞（CVE-2025-21082），攻击者可利用此漏洞在媒体组件上下文中执行任意代码，导致信息泄露或系统崩溃。</div>
-            <div class="cve-hint">
-                <a href="https://github.com/kkaanozturk/HyperOS-Directory-Traversal-Analysis" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: kkaanozturk</a> | 💡 厂商已发布修复固件，请立即升级HyperOS至包含安全更新的最新版本；在补丁不可用时，建议禁用不受信任的媒体文件解析功能并在应用层对媒体输入进行严格校验。
+                <a href="https://github.com/juccoblak/CVE-2025-6554" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: juccoblak</a> | 💡 请人工核对
             </div>
         </div>
         <div class="cve-card">
@@ -89,22 +49,62 @@ body { margin:0; padding:20px; background:#05050a; color:#fff; font-family: sans
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC" target="_blank">Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC [WEAPONIZED]</a>
-                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 8.5</span>
+                <a class="cve-link" href="https://github.com/Zain3311/CVE-2025-49844" target="_blank">Zain3311/CVE-2025-49844</a>
+                <span class="cve-tag" style="">SC: 9.8</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">cPanel/WHM存在认证绕过漏洞，PoC工具（Go语言实现）可被利用</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Redis Lua沙箱逃逸及UAF漏洞(CVE-2025-49844)可能允许攻击者绕过沙箱限制，在Lua解释器释放后重用内存并执行任意shellcode，进而植入持久化后门</div>
             <div class="cve-hint">
-                <a href="https://github.com/Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Defacto-ridgepole254</a> | 💡 升级cPanel/WHM至最新版本，禁用不必要API接口，实施多因素认证
+                <a href="https://github.com/Zain3311/CVE-2025-49844" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Zain3311</a> | 💡 1. 立即升级Redis至官方修复版本；2. 启用requirepass强认证；3. 禁用高危Lua命令如EVAL/SCRIPT LOAD；4. 通过iptables限制仅受信任IP访问6379端口；5. 使用ACL配置最小权限原则。
             </div>
         </div>
         <div class="cve-card">
             <div class="cve-top">
-                <a class="cve-link" href="https://github.com/Dullpurple-sloop726/CVE-2026-31431-Linux-Copy-Fail" target="_blank">Dullpurple-sloop726/CVE-2026-31431-Linux-Copy-Fail</a>
-                <span class="cve-tag" style="">SC: 7.8</span>
+                <a class="cve-link" href="https://github.com/ksnnd32/redis_exploit" target="_blank">ksnnd32/redis_exploit [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 7.5</span>
             </div>
-            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Linux内核存在CVE-2026-31431漏洞，攻击者可通过Rust实现利用任意页缓存写入原语进行本地提权。</div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-49845（RediShell）利用Redis配置缺陷可实现远程代码执行，攻击者可通过恶意Lua脚本或未授权访问执行任意命令</div>
             <div class="cve-hint">
-                <a href="https://github.com/Dullpurple-sloop726/CVE-2026-31431-Linux-Copy-Fail" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: Dullpurple-sloop726</a> | 💡 建议立即更新受影响Linux内核至修复版本，并限制非必要用户或进程访问系统底层内存操作接口。
+                <a href="https://github.com/ksnnd32/redis_exploit" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ksnnd32</a> | 💡 升级Redis至最新版本，并配置requirepass强密码，禁用config命令或限制危险命令（如eval、script），使用iptables或防火墙限制6379端口访问来源
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank">siddu7575/CVE-2025-61882-CVE-2025-61884</a>
+                <span class="cve-tag" style="">SC: 6.5</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">Oracle E-Business Suite存在两个高危漏洞（CVE-2025-61882和CVE-2025-61884），攻击者可通过未授权输入触发远程代码执行，威胁系统完整性与数据安全。</div>
+            <div class="cve-hint">
+                <a href="https://github.com/siddu7575/CVE-2025-61882-CVE-2025-61884" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: siddu7575</a> | 💡 立即安装Oracle官方发布的最新安全补丁；限制对E-Business Suite管理端口的网络访问；启用Web应用防火墙并监控异常请求日志。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank">ashardev002/CVE-2025-32463_chwoot</a>
+                <span class="cve-tag" style="">SC: 8.8</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">CVE-2025-32463 漏洞存在于 sudo 的 chroot 功能中，攻击者可通过构造特定环境利用该缺陷实现本地权限提升，绕过安全限制获取 root 权限。</div>
+            <div class="cve-hint">
+                <a href="https://github.com/ashardev002/CVE-2025-32463_chwoot" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ashardev002</a> | 💡 立即升级 sudo 至官方修复版本，并限制用户对 chroot 功能的调用权限，同时审查受影响的系统日志排查可疑行为。
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank">mihnasdsad/CVE-2025-32463</a>
+                <span class="cve-tag" style="">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/mihnasdsad/CVE-2025-32463" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: mihnasdsad</a> | 💡 请人工核对
+            </div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-top">
+                <a class="cve-link" href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank">ammarm0010/CVE-2025-49144_PoC [WEAPONIZED]</a>
+                <span class="cve-tag" style="border: 1px solid #ff007f; color: #ff007f; box-shadow: 0 0 5px #ff007f;">SC: 0.0</span>
+            </div>
+            <div class="cve-body" style="line-height:1.6; margin-top:5px; opacity:0.85;">暂无详情</div>
+            <div class="cve-hint">
+                <a href="https://github.com/ammarm0010/CVE-2025-49144_PoC" target="_blank" style="color:inherit; text-decoration:none;">📡 SOURCE: ammarm0010</a> | 💡 请人工核对
             </div>
         </div></div></div>
 </div></body></html>
