@@ -1,1 +1,1 @@
-Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC
+notthemystery/CVE-2026-20700-POC-that-ll-never-work
