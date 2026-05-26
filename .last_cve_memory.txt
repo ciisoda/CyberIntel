@@ -1,1 +1,1 @@
-Jeanback1/react-rsc-cve-2025-55182-lab
+juccoblak/CVE-2025-6554
